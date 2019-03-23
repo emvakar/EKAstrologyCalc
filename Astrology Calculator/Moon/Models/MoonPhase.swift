@@ -18,5 +18,4 @@ public enum MoonPhase: String {
     case waningGibbous
     case lastQuarter
     case waningCrescent
-
 }
