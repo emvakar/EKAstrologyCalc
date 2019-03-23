@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
     s.social_media_url = 'https://twitter.com/e_karimov'
     
     # 6 - Replace this URL with your own Git URL from "Quick Setup"
-    s.source = { :git => "https://github.com/emvakar/AstrologyCalc.git", :tag => s.version }
+    s.source = { :git => "https://github.com/emvakar/AstrologyCalc.git", :tag => "v" + s.version.to_s }
     
     # 7
     s.framework = "UIKit"
