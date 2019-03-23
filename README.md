@@ -1,4 +1,4 @@
-# Astrology Calculator by ![Emil Karimov](http://karimov.site)
+# Astrology Calculator by [Emil Karimov](http://karimov.site)
 This is Moon Calc Framework
 Get moon phase by Date and Location
 
