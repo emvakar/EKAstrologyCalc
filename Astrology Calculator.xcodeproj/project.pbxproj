@@ -31,6 +31,7 @@
 		2087DE6D224646FC00C7336D /* MoonZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4322463BA500C7336D /* MoonZodiacSign.swift */; };
 		2087DE6E224646FC00C7336D /* MoonTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4422463BA500C7336D /* MoonTrajectory.swift */; };
 		2087DE6F224646FC00C7336D /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4522463BA500C7336D /* MoonPhase.swift */; };
+		2087E1AF2246E0FD00C7336D /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2087E1AE2246E0FD00C7336D /* .travis.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		2087DE5D224645A800C7336D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2087DE60224645A800C7336D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2087DE62224645A800C7336D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2087E1AE2246E0FD00C7336D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		2087DE142246376600C7336D = {
 			isa = PBXGroup;
 			children = (
+				2087E1AE2246E0FD00C7336D /* .travis.yml */,
 				2087DE55224645A700C7336D /* Example */,
 				2087DE202246376600C7336D /* Astrology Calculator */,
 				2087DE2B2246376600C7336D /* Astrology CalculatorTests */,
@@ -291,6 +294,7 @@
 			files = (
 				2087DE4F2246454B00C7336D /* README.md in Resources */,
 				2087DE3D22463B4E00C7336D /* LICENSE in Resources */,
+				2087E1AF2246E0FD00C7336D /* .travis.yml in Resources */,
 				2087DE392246385400C7336D /* AstrologyCalc.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
