@@ -19,9 +19,10 @@ Pod::Spec.new do |s|
     
     # 5 - Replace this URL with your own Github page's URL (from the address bar)
     s.homepage = "https://github.com/emvakar/AstrologyCalc.git"
+    s.social_media_url = 'https://twitter.com/e_karimov'
     
     # 6 - Replace this URL with your own Git URL from "Quick Setup"
-    s.source = { :git => "https://github.com/emvakar/AstrologyCalc.git", :tag => "#{s.version}"}
+    s.source = { :git => "https://github.com/emvakar/AstrologyCalc.git", :tag => s.version }
     
     # 7
     s.framework = "UIKit"
