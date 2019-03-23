@@ -28,10 +28,10 @@ Pod::Spec.new do |s|
     s.framework = "CoreLocation"
     
     # 8
-    s.source_files = "AstrologyCalc/**/*.{swift}"
+    s.source_files = "Astrology Calculator/**/**/*.{swift}"
     
     # 9
-    s.resources = "AstrologyCalc/**/*.{png,jpeg,jpg,storyboard,xib}"
+    s.resources = "Astrology Calculator/**/*.{png,jpeg,jpg,storyboard,xib}"
     s.resource_bundles = {
         'AstrologyCalcAssets' => ['AstrologyCalc/**/*.xcassets']
     }
