@@ -22,7 +22,7 @@ Get moon phase by Date and Location
 ### via Cocapods
 
 ```ruby
-pod 'AstrologyCalc'
+pod 'AstrologyCalc', :git => 'https://github.com/emvakar/AstrologyCalc.git', :tag => 'v0.0.1', :modular_headers => true
 ```
 
 ## Usage
