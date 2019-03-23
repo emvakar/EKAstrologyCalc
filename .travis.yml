@@ -1,5 +1,5 @@
 language: swift
 os: osx
-rvm:
-- 2.2
-- jruby
+osx_image: xcode10.1
+notifications:
+email: true
