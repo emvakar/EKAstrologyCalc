@@ -10,7 +10,6 @@ import UIKit
 
 /// Траектория луны
 public enum MoonTrajectory {
-
     case ascendent
     case descendent
 }

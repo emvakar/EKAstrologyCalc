@@ -13,16 +13,16 @@ class ViewController: UIViewController {
 
     let location = CLLocation(latitude: 55.751244, longitude: 37.618423)
     var moonPhaseManager: MoonCalculatorManager!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.moonPhaseManager = MoonCalculatorManager(location: location)
-        
+
         let info = self.moonPhaseManager.getInfo(date: Date())
-        
+
         print("Current localtion: -", info.location.coordinate)
-        
+
         print("Moon days at", "current date: -", info.date)
         info.moonModels.forEach {
             print("===========")
@@ -36,6 +36,4 @@ class ViewController: UIViewController {
 
     }
 
-
 }
-
