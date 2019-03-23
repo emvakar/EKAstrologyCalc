@@ -2,7 +2,7 @@
 This is Moon Calc Framework
 Get moon phase by Date and Location
 
-## What we can
+## What we can do right now:
 
 - [x] set and rise moon
 - [x] get moon Age
