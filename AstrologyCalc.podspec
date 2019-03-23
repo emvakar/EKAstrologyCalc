@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     s.framework = "CoreLocation"
     
     # 8
-    s.source_files = "Astrology Calculator/**/**/*.{swift}"
+    s.source_files = "Astrology Calculator/**/*.{swift}"
     
     # 9
     s.resources = "Astrology Calculator/**/*.{png,jpeg,jpg,storyboard,xib}"
