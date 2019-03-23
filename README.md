@@ -1,8 +1,8 @@
-# Astrology Calculator by ![Emil Karimov](http://karimov.site)
+# Astrology Calculator by [Emil Karimov](http://karimov.site)
 This is Moon Calc Framework
 Get moon phase by Date and Location
 
-## What we can
+## What we can do right now:
 
 - [x] set and rise moon
 - [x] get moon Age
@@ -22,7 +22,7 @@ Get moon phase by Date and Location
 ### via Cocapods
 
 ```ruby
-pod 'AstrologyCalc'
+pod 'AstrologyCalc', :git => 'https://github.com/emvakar/AstrologyCalc.git', :tag => 'v0.0.1', :modular_headers => true
 ```
 
 ## Usage

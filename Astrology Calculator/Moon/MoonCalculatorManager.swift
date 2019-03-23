@@ -64,7 +64,7 @@ extension MoonCalculatorManager {
     }
 
     //Получить восход луны
-    func getMoonRise(date: Date) -> (date: Date?, error: Error?) {
+    private func getMoonRise(date: Date) -> (date: Date?, error: Error?) {
         return self.getMoonRiseOrSet(date: date, isRise: true)
     }
 
@@ -123,7 +123,7 @@ extension MoonCalculatorManager {
     }
 
     //Получить знак зодиака для луны
-    func getMoonZodicaSign(date: Date) -> MoonZodiacSign {
+    private func getMoonZodicaSign(date: Date) -> MoonZodiacSign {
         var longitude: Double = 0.0
         var zodiac: MoonZodiacSign
 
@@ -197,7 +197,7 @@ extension MoonCalculatorManager {
     }
 
     //Получить фазу луны
-    func getMoonPhase(date: Date) -> MoonPhase {
+    private func getMoonPhase(date: Date) -> MoonPhase {
         var age: Double = 0.0
         var phase: MoonPhase
 
@@ -255,7 +255,7 @@ extension MoonCalculatorManager {
     }
 
     //Получить лунный день
-    func getMoonAge(date: Date) -> Double {
+    private func getMoonAge(date: Date) -> Double {
         var age: Double = 0.0
 
         var yy: Double = 0.0
@@ -292,7 +292,7 @@ extension MoonCalculatorManager {
     }
 
     //Получить знак зодиака для дуны, траекторию луны, фазу луны
-    func getMoonTrajectory(date: Date) -> MoonTrajectory {
+    private func getMoonTrajectory(date: Date) -> MoonTrajectory {
         var age: Double = 0.0
         var trajectory: MoonTrajectory
 
@@ -421,13 +421,13 @@ extension MoonCalculatorManager {
     }
 
     //Получить начало дня -- например 01.01.1970 23:59:59
-    func startOfDate(_ date: Date) -> Date {
+    private func startOfDate(_ date: Date) -> Date {
         let startDate = Calendar.current.startOfDay(for: date)
         return startDate
     }
 
     //Получить конец дня -- например 01.01.1970 00:00:00
-    func endOfDate(_ date: Date) -> Date? {
+    private func endOfDate(_ date: Date) -> Date? {
         var components = DateComponents()
         components.day = 1
         components.second = -1
