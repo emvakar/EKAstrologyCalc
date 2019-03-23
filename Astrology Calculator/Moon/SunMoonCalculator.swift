@@ -18,55 +18,55 @@ import UIKit
  * @author T. Alonso Albi - OAN (Spain), email t.alonso@oan.es
  * @version May 25, 2017 (fixed nutation correction and moon age, better accuracy in Moon)
  */
-public class SunMoonCalculator {
+class SunMoonCalculator {
 
     /** Radians to degrees. */
-    public static let RAD_TO_DEG: Double = 180.0 / Double.pi
+    static let RAD_TO_DEG: Double = 180.0 / Double.pi
 
     /** Degrees to radians. */
-    public static let DEG_TO_RAD: Double = 1.0 / RAD_TO_DEG
+    static let DEG_TO_RAD: Double = 1.0 / RAD_TO_DEG
 
     /** Radians to hours. */
-    public static let RAD_TO_HOUR: Double = 180.0 / (15.0 * Double.pi)
+    static let RAD_TO_HOUR: Double = 180.0 / (15.0 * Double.pi)
 
     /** Radians to days. */
-    public static let RAD_TO_DAY: Double = RAD_TO_HOUR / 24.0
+    static let RAD_TO_DAY: Double = RAD_TO_HOUR / 24.0
 
     /** Astronomical Unit in km. As defined by JPL. */
-    public static let AU: Double = 149597870.691
+    static let AU: Double = 149597870.691
 
     /** Earth equatorial radius in km. IERS 2003 Conventions. */
-    public static let EARTH_RADIUS: Double = 6378.1366
+    static let EARTH_RADIUS: Double = 6378.1366
 
     /** Two times Pi. */
-    public static let TWO_PI: Double = 2.0 * Double.pi
+    static let TWO_PI: Double = 2.0 * Double.pi
 
     /** The inverse of two times Pi. */
-    public static let TWO_PI_INVERSE: Double = 1.0 / (2.0 * Double.pi)
+    static let TWO_PI_INVERSE: Double = 1.0 / (2.0 * Double.pi)
 
     /** Four times Pi. */
-    public static let FOUR_PI: Double = 4.0 * Double.pi
+    static let FOUR_PI: Double = 4.0 * Double.pi
 
     /** Pi divided by two. */
-    public static let PI_OVER_TWO: Double = Double.pi / 2.0
+    static let PI_OVER_TWO: Double = Double.pi / 2.0
 
     /** Length of a sidereal day in days according to IERS Conventions. */
-    public static let SIDEREAL_DAY_LENGTH: Double = 1.00273781191135448
+    static let SIDEREAL_DAY_LENGTH: Double = 1.00273781191135448
 
     /** Julian century conversion constant = 100 * days per year. */
-    public static let JULIAN_DAYS_PER_CENTURY: Double = 36525.0
+    static let JULIAN_DAYS_PER_CENTURY: Double = 36525.0
 
     /** Seconds in one day. */
-    public static let SECONDS_PER_DAY: Double = 86400
+    static let SECONDS_PER_DAY: Double = 86400
 
     /** Our default epoch. <BR>
      * The Julian Day which represents noon on 2000-01-01. */
-    public static let J2000: Double = 2451545.0
+    static let J2000: Double = 2451545.0
 
     /**
      * The set of twilights to calculate (types of rise/set events).
      */
-    public enum TWILIGHT {
+    enum TWILIGHT {
         /**
          * Event ID for calculation of rising and setting times for astronomical
          * twilight. In this case, the calculated time will be the time when the
@@ -95,7 +95,7 @@ public class SunMoonCalculator {
         case HORIZON_34arcmin
     }
 
-    public enum Errors: Error {
+    enum Errors: Error {
         case invalidJulianDay(jd:Double)
     }
 
@@ -106,11 +106,11 @@ public class SunMoonCalculator {
 
     /** Values for azimuth, elevation, rise, set, and transit for the Sun. Angles in radians, rise ... as Julian days in UT.
      * Distance in AU. */
-    public var sunAz: Double, sunEl: Double, sunRise: Double, sunSet: Double, sunTransit: Double, sunTransitElev: Double, sunDist: Double
+    var sunAz: Double, sunEl: Double, sunRise: Double, sunSet: Double, sunTransit: Double, sunTransitElev: Double, sunDist: Double
 
     /** Values for azimuth, elevation, rise, set, and transit for the Moon. Angles in radians, rise ... as Julian days in UT.
      * Moon age is the number of days since last new Moon, in days, from 0 to 29.5. Distance in AU. */
-    public var moonAz: Double, moonEl: Double, moonRise: Double, moonSet: Double, moonTransit: Double, moonAge: Double, moonTransitElev: Double, moonDist: Double
+    var moonAz: Double, moonEl: Double, moonRise: Double, moonSet: Double, moonTransit: Double, moonAge: Double, moonTransitElev: Double, moonDist: Double
 
     /**
      * Main constructor for Sun/Moon calculations. Time should be given in
@@ -125,7 +125,7 @@ public class SunMoonCalculator {
      * @param obsLat Latitude for the observer.
      * @throws Exception If the date does not exists.
      */
-    public init(year: Int, month: Int, day: Int, h: Int, m: Int, s: Int, obsLon: Double, obsLat: Double) throws {
+    init(year: Int, month: Int, day: Int, h: Int, m: Int, s: Int, obsLon: Double, obsLat: Double) throws {
         self.sunAz = Double.nan
         self.sunEl = Double.nan
         self.sunRise = Double.nan
@@ -187,7 +187,7 @@ public class SunMoonCalculator {
      * for the local horizon.
      * @param t The Twilight.
      */
-    public func setTwilight(_ t: TWILIGHT) {
+    func setTwilight(_ t: TWILIGHT) {
         self.twilight = t
     }
 
@@ -197,7 +197,7 @@ public class SunMoonCalculator {
     }
 
     /** Calculates everything for the Sun and the Moon. */
-    public func calcSunAndMoon() {
+    func calcSunAndMoon() {
         let jd: Double = self.jd_UT
 
         // First the Sun
@@ -504,7 +504,7 @@ public class SunMoonCalculator {
      * @return A set of integers: year, month, day, hour, minute, second.
      * @throws Exception If the input date does not exists.
      */
-    public class func getDate(_ jd: Double) throws -> [Int] {
+    class func getDate(_ jd: Double) throws -> [Int] {
         if (jd < 2299160.0 && jd >= 2299150.0) {
             throw SunMoonCalculator.Errors.invalidJulianDay(jd: jd)
         }
@@ -546,7 +546,7 @@ public class SunMoonCalculator {
      * @return The String.
      * @throws Exception If the date does not exists.
      */
-    public class func getDateAsString(_ jd: Double) throws -> String {
+    class func getDateAsString(_ jd: Double) throws -> String {
         if (jd == -1) {
             return "NO RISE/SET/TRANSIT FOR THIS OBSERVER/DATE"
         }
@@ -561,7 +561,7 @@ public class SunMoonCalculator {
      * @param r Value in radians.
      * @return The reduced radian value.
      */
-    public class func normalizeRadians(_ r: Double) -> Double {
+    class func normalizeRadians(_ r: Double) -> Double {
         var r: Double = r
         if (r < 0 && r >= -SunMoonCalculator.TWO_PI) {
             return r + SunMoonCalculator.TWO_PI

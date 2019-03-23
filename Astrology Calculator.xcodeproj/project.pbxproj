@@ -19,6 +19,18 @@
 		2087DE4B22463BA500C7336D /* MoonTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4422463BA500C7336D /* MoonTrajectory.swift */; };
 		2087DE4C22463BA500C7336D /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4522463BA500C7336D /* MoonPhase.swift */; };
 		2087DE4D22463BA500C7336D /* SunMoonCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4622463BA500C7336D /* SunMoonCalculator.swift */; };
+		2087DE4F2246454B00C7336D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2087DE4E2246454B00C7336D /* README.md */; };
+		2087DE57224645A700C7336D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE56224645A700C7336D /* AppDelegate.swift */; };
+		2087DE59224645A700C7336D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE58224645A700C7336D /* ViewController.swift */; };
+		2087DE5E224645A800C7336D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2087DE5D224645A800C7336D /* Assets.xcassets */; };
+		2087DE61224645A800C7336D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2087DE5F224645A800C7336D /* LaunchScreen.storyboard */; };
+		2087DE69224646F300C7336D /* MoonCalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE3F22463BA500C7336D /* MoonCalculatorManager.swift */; };
+		2087DE6A224646F500C7336D /* SunMoonCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4622463BA500C7336D /* SunMoonCalculator.swift */; };
+		2087DE6B224646F700C7336D /* MoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4122463BA500C7336D /* MoonModel.swift */; };
+		2087DE6C224646FC00C7336D /* AstrologyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4222463BA500C7336D /* AstrologyModel.swift */; };
+		2087DE6D224646FC00C7336D /* MoonZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4322463BA500C7336D /* MoonZodiacSign.swift */; };
+		2087DE6E224646FC00C7336D /* MoonTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4422463BA500C7336D /* MoonTrajectory.swift */; };
+		2087DE6F224646FC00C7336D /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2087DE4522463BA500C7336D /* MoonPhase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +59,13 @@
 		2087DE4422463BA500C7336D /* MoonTrajectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonTrajectory.swift; sourceTree = "<group>"; };
 		2087DE4522463BA500C7336D /* MoonPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
 		2087DE4622463BA500C7336D /* SunMoonCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunMoonCalculator.swift; sourceTree = "<group>"; };
+		2087DE4E2246454B00C7336D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		2087DE54224645A700C7336D /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2087DE56224645A700C7336D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2087DE58224645A700C7336D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2087DE5D224645A800C7336D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2087DE60224645A800C7336D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2087DE62224645A800C7336D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +84,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2087DE51224645A700C7336D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2087DE142246376600C7336D = {
 			isa = PBXGroup;
 			children = (
+				2087DE55224645A700C7336D /* Example */,
 				2087DE202246376600C7336D /* Astrology Calculator */,
 				2087DE2B2246376600C7336D /* Astrology CalculatorTests */,
 				2087DE1F2246376600C7336D /* Products */,
@@ -82,6 +109,7 @@
 			children = (
 				2087DE1E2246376600C7336D /* Astrology_Calculator.framework */,
 				2087DE272246376600C7336D /* Astrology CalculatorTests.xctest */,
+				2087DE54224645A700C7336D /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +117,7 @@
 		2087DE202246376600C7336D /* Astrology Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				2087DE4E2246454B00C7336D /* README.md */,
 				2087DE3E22463BA500C7336D /* Moon */,
 				2087DE382246385400C7336D /* AstrologyCalc.podspec */,
 				2087DE3C22463B4E00C7336D /* LICENSE */,
@@ -111,8 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				2087DE3F22463BA500C7336D /* MoonCalculatorManager.swift */,
-				2087DE4022463BA500C7336D /* Models */,
 				2087DE4622463BA500C7336D /* SunMoonCalculator.swift */,
+				2087DE4022463BA500C7336D /* Models */,
 			);
 			path = Moon;
 			sourceTree = "<group>";
@@ -127,6 +156,18 @@
 				2087DE4522463BA500C7336D /* MoonPhase.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2087DE55224645A700C7336D /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				2087DE56224645A700C7336D /* AppDelegate.swift */,
+				2087DE58224645A700C7336D /* ViewController.swift */,
+				2087DE5D224645A800C7336D /* Assets.xcassets */,
+				2087DE5F224645A800C7336D /* LaunchScreen.storyboard */,
+				2087DE62224645A800C7336D /* Info.plist */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +220,23 @@
 			productReference = 2087DE272246376600C7336D /* Astrology CalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2087DE53224645A700C7336D /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2087DE63224645A800C7336D /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				2087DE50224645A700C7336D /* Sources */,
+				2087DE51224645A700C7336D /* Frameworks */,
+				2087DE52224645A700C7336D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Example;
+			productName = Example;
+			productReference = 2087DE54224645A700C7336D /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,6 +257,11 @@
 						DevelopmentTeam = V93MRMNEKV;
 						ProvisioningStyle = Automatic;
 					};
+					2087DE53224645A700C7336D = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = V93MRMNEKV;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 2087DE182246376600C7336D /* Build configuration list for PBXProject "Astrology Calculator" */;
@@ -207,6 +270,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2087DE142246376600C7336D;
 			productRefGroup = 2087DE1F2246376600C7336D /* Products */;
@@ -215,6 +279,7 @@
 			targets = (
 				2087DE1D2246376600C7336D /* Astrology Calculator */,
 				2087DE262246376600C7336D /* Astrology CalculatorTests */,
+				2087DE53224645A700C7336D /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2087DE4F2246454B00C7336D /* README.md in Resources */,
 				2087DE3D22463B4E00C7336D /* LICENSE in Resources */,
 				2087DE392246385400C7336D /* AstrologyCalc.podspec in Resources */,
 			);
@@ -233,6 +299,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2087DE52224645A700C7336D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2087DE61224645A800C7336D /* LaunchScreen.storyboard in Resources */,
+				2087DE5E224645A800C7336D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +336,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2087DE50224645A700C7336D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2087DE69224646F300C7336D /* MoonCalculatorManager.swift in Sources */,
+				2087DE6B224646F700C7336D /* MoonModel.swift in Sources */,
+				2087DE6C224646FC00C7336D /* AstrologyModel.swift in Sources */,
+				2087DE59224645A700C7336D /* ViewController.swift in Sources */,
+				2087DE57224645A700C7336D /* AppDelegate.swift in Sources */,
+				2087DE6A224646F500C7336D /* SunMoonCalculator.swift in Sources */,
+				2087DE6D224646FC00C7336D /* MoonZodiacSign.swift in Sources */,
+				2087DE6F224646FC00C7336D /* MoonPhase.swift in Sources */,
+				2087DE6E224646FC00C7336D /* MoonTrajectory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -270,6 +361,17 @@
 			targetProxy = 2087DE292246376600C7336D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2087DE5F224645A800C7336D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2087DE60224645A800C7336D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2087DE302246376600C7336D /* Debug */ = {
@@ -465,6 +567,38 @@
 			};
 			name = Release;
 		};
+		2087DE64224645A800C7336D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93MRMNEKV;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = site.karimov.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2087DE65224645A800C7336D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93MRMNEKV;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = site.karimov.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -491,6 +625,15 @@
 			buildConfigurations = (
 				2087DE362246376600C7336D /* Debug */,
 				2087DE372246376600C7336D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2087DE63224645A800C7336D /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2087DE64224645A800C7336D /* Debug */,
+				2087DE65224645A800C7336D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
