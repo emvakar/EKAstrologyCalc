@@ -1,8 +1,5 @@
-language: swift
-os: osx
 osx_image: xcode10.1
-xcode_project: Astrology Calculator.xcodeproj # path to your xcodeproj folder
-xcode_scheme: Astrology CalculatorTests
-xcode_destination: platform=iOS Simulator,OS=latest,name=iPhone X
-notifications:
-email: true
+language: swift
+xcode_sdk: iphonesimulator10.1
+script:
+- set -o pipefail && xcodebuild test -project Astrology\ Calculator.xcodeproj -scheme Astrology\ Calculator -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=10.1,name=iPhone 7' ONLY_ACTIVE_ARCH=NO | xcpretty -c --test --color
