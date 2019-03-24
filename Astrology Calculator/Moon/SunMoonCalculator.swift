@@ -112,20 +112,20 @@ class SunMoonCalculator {
      * Moon age is the number of days since last new Moon, in days, from 0 to 29.5. Distance in AU. */
     var moonAz: Double, moonEl: Double, moonRise: Double, moonSet: Double, moonTransit: Double, moonAge: Double, moonTransitElev: Double, moonDist: Double
 
-    /**
-     * Main constructor for Sun/Moon calculations. Time should be given in
-     * Universal Time (UT), observer angles in radians.
-     * @param year The year.
-     * @param month The month.
-     * @param day The day.
-     * @param h The hour.
-     * @param m Minute.
-     * @param s Second.
-     * @param obsLon Longitude for the observer.
-     * @param obsLat Latitude for the observer.
-     * @throws Exception If the date does not exists.
-     */
-    init(year: Int, month: Int, day: Int, h: Int, m: Int, s: Int, obsLon: Double, obsLat: Double) throws {
+    /// Main constructor for Sun/Moon calculations. Time should be given in
+    /// Universal Time (UT), observer angles in radians.
+    ///
+    /// - Parameters:
+    ///   - year: The year.
+    ///   - month: The month.
+    ///   - day: The day.
+    ///   - h: The hour.
+    ///   - m: Minute.
+    ///   - s: Second.
+    ///   - obsLon: Longitude for the observer.
+    ///   - obsLat: Latitude for the observer.
+    /// - Throws: Exception If the date does not exists.
+    internal init(year: Int, month: Int, day: Int, h: Int, m: Int, s: Int, obsLon: Double, obsLat: Double) throws {
         self.sunAz = Double.nan
         self.sunEl = Double.nan
         self.sunRise = Double.nan
@@ -182,12 +182,10 @@ class SunMoonCalculator {
         setUTDate(jd)
     }
 
-    /**
-     * Sets the rise/set times to return. Default is
-     * for the local horizon.
-     * @param t The Twilight.
-     */
-    func setTwilight(_ t: TWILIGHT) {
+    /// Sets the rise/set times to return. Default is for the local horizon.
+    ///
+    /// - Parameter t: The Twilight.
+    private func setTwilight(_ t: TWILIGHT) {
         self.twilight = t
     }
 
@@ -197,7 +195,7 @@ class SunMoonCalculator {
     }
 
     /** Calculates everything for the Sun and the Moon. */
-    func calcSunAndMoon() {
+    private func calcSunAndMoon() {
         let jd: Double = self.jd_UT
 
         // First the Sun
