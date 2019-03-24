@@ -10,6 +10,12 @@ import UIKit
 import CoreLocation
 
 /// Модель со всей инфой
+///
+/// - date: Date - дата обычная, например 01.01.1970
+/// - location: CLLocation - гео позиция
+/// - trajectory: MoonTrajectory - траектория луны
+/// - phase: MoonPhase - фаза луны
+/// - moonModels: [MoonModel] - модель лунных дней для даты
 public class AstrologyModel {
 
     /// дата обычная, например 01.01.1970
