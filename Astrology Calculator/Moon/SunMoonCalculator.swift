@@ -195,7 +195,7 @@ class SunMoonCalculator {
     }
 
     /** Calculates everything for the Sun and the Moon. */
-    private func calcSunAndMoon() {
+    internal func calcSunAndMoon() {
         let jd: Double = self.jd_UT
 
         // First the Sun
