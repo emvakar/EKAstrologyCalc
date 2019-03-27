@@ -21,6 +21,9 @@
 		20EBC767224B96960054E6E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EBC766224B96960054E6E5 /* ViewController.swift */; };
 		20EBC76C224B96980054E6E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC76B224B96980054E6E5 /* Assets.xcassets */; };
 		20EBC76F224B96980054E6E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC76D224B96980054E6E5 /* LaunchScreen.storyboard */; };
+		20EBC791224B985D0054E6E5 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC790224B985D0054E6E5 /* .travis.yml */; };
+		20EBC794224B986E0054E6E5 /* AstrologyCalc.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */; };
+		20EBC795224B986E0054E6E5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC793224B986E0054E6E5 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		20EBC76B224B96980054E6E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20EBC76E224B96980054E6E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20EBC770224B96980054E6E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20EBC790224B985D0054E6E5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AstrologyCalc.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		20EBC793224B986E0054E6E5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,9 @@
 		20EBC72A224B958C0054E6E5 = {
 			isa = PBXGroup;
 			children = (
+				20EBC790224B985D0054E6E5 /* .travis.yml */,
+				20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */,
+				20EBC793224B986E0054E6E5 /* README.md */,
 				20EBC736224B958C0054E6E5 /* AstrologyCalc */,
 				20EBC741224B958C0054E6E5 /* AstrologyCalcTests */,
 				20EBC763224B96960054E6E5 /* Example App */,
@@ -267,6 +276,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20EBC795224B986E0054E6E5 /* README.md in Resources */,
+				20EBC794224B986E0054E6E5 /* AstrologyCalc.podspec in Resources */,
+				20EBC791224B985D0054E6E5 /* .travis.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
