@@ -6,10 +6,10 @@ Pod::Spec.new do |s|
     s.name = "AstrologyCalc"
     s.summary = "AstrologyCalc swift 4.2 framework for simple development amazing apps."
     s.requires_arc = true
-    s.swift_version = "4.2"
+    # s.swift_version = '4.2'
     
     # 2
-    s.version = "0.0.2"
+    s.version = "0.0.3"
     
     # 3
     s.license = { :type => "MIT", :file => "LICENSE" }
@@ -30,11 +30,11 @@ Pod::Spec.new do |s|
     s.framework = "CoreLocation"
     
     # 8
-    s.source_files = "Astrology Calculator/**/*.{swift}"
+    s.source_files = "AstrologyCalc/Moon/**/*.{swift}"
     
     # 9
-#    s.resources = "Astrology Calculator/**/*.{png,jpeg,jpg,storyboard,xib}"
-#    s.resource_bundles = {
-#        'AstrologyCalcAssets' => ['AstrologyCalc/**/*.xcassets']
-#    }
+    # s.resources = "AstrologyCalc/**/*.{png,jpeg,jpg,storyboard,xib}"
+    # s.resource_bundles = {
+        #'AstrologyCalcAssets' => ['AstrologyCalc/**/*.xcassets']
+    # }
 end
