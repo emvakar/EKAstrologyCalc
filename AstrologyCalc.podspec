@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
     s.name = "AstrologyCalc"
     s.summary = "AstrologyCalc swift 4.2 framework for simple development amazing apps."
     s.requires_arc = true
-    s.swift_version = '4.2'
+    # s.swift_version = '4.2'
     
     # 2
     s.version = "0.0.3"
