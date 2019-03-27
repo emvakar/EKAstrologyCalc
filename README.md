@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/emvakar/AstrologyCalc.svg?branch=master)](https://travis-ci.com/emvakar/AstrologyCalc)
 
-# Astrology Calculator by [Emil Karimov](http://karimov.site)
+# Astrology Calculator by [Emil Karimov](https://twitter.com/e_karimov)
 This is Moon Calc Framework
 Get moon phase by Date and Location
 
