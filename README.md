@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/emvakar/AstrologyCalc.svg?branch=master)](https://travis-ci.com/emvakar/AstrologyCalc)
-
 # Astrology Calculator by [Emil Karimov](https://twitter.com/e_karimov)
 This is Moon Calc Framework
 Get moon phase by Date and Location
@@ -13,10 +11,12 @@ Get moon phase by Date and Location
 - [x] get zodiac sign
 - [x] get moon phase
 - [x] get moon trajectory
+- [ ] get moon rise if rise on past date
+- [ ] get moon set if set on future date
 - [ ] get zodiac sign rise time
 - [ ] get zodiac sign set time
-- [ ] get mercury status
-- [ ] get eclipse times
+- [ ] get mercury status and times
+- [ ] get eclipse times (begin, duration, finish)
 
 ### Support AstrologyCalc development by giving a ⭐️
 
@@ -25,7 +25,7 @@ Get moon phase by Date and Location
 ### via Cocapods
 
 ```ruby
-pod 'AstrologyCalc', :git => 'https://github.com/emvakar/AstrologyCalc.git', :tag => 'v0.0.1', :modular_headers => true
+pod 'AstrologyCalc', :git => 'https://github.com/emvakar/AstrologyCalc.git', :tag => 'v0.0.2', :modular_headers => true
 ```
 
 ## Usage
@@ -62,3 +62,9 @@ class ViewController: UIViewController {
     }
 }
 ```
+
+We have also an application example in which you can see clearly how it use.
+
+1. Just clone the repository
+2. Select run target "Example"
+3. Now just run App
