@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,10 +16,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2087DE262246376600C7336D"
-               BuildableName = "Astrology CalculatorTests.xctest"
-               BlueprintName = "Astrology CalculatorTests"
-               ReferencedContainer = "container:Astrology Calculator.xcodeproj">
+               BlueprintIdentifier = "20EBC73C224B958C0054E6E5"
+               BuildableName = "AstrologyCalcTests.xctest"
+               BlueprintName = "AstrologyCalcTests"
+               ReferencedContainer = "container:AstrologyCalc.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

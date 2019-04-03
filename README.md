@@ -1,3 +1,5 @@
+[![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org) ![Cocoapods](https://img.shields.io/cocoapods/v/AstrologyCalc.svg) [![Build Status](https://travis-ci.com/emvakar/AstrologyCalc.svg?branch=master)](https://travis-ci.com/emvakar/AstrologyCalc)
+
 # Astrology Calculator by [Emil Karimov](https://twitter.com/e_karimov)
 This is Moon Calc Framework
 Get moon phase by Date and Location
@@ -25,7 +27,7 @@ Get moon phase by Date and Location
 ### via Cocapods
 
 ```ruby
-pod 'AstrologyCalc', :git => 'https://github.com/emvakar/AstrologyCalc.git', :tag => 'v0.0.2', :modular_headers => true
+pod 'AstrologyCalc'
 ```
 
 ## Usage
