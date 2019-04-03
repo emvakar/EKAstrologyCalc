@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AstrologyCalc
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = ViewController()
         self.window?.makeKeyAndVisible()
+        
+        let fd = Date()
+        let sd = Date(timeIntervalSince1970: 1576800000)
+        
+        let fe = EclipseCalculator.getEclipseFor(date: fd, eclipseType: Eclipse.LUNAR, next: true)
+        let se = EclipseCalculator.getEclipseFor(date: sd, eclipseType: Eclipse.LUNAR, next: true)
+        
+        let JD_JAN_1_1970_0000GMT = 2440587.5
+        
+        let fr = Date(timeIntervalSince1970: (fe.jd - JD_JAN_1_1970_0000GMT) * 86400)
+        let sr = Date(timeIntervalSince1970: (se.jd - JD_JAN_1_1970_0000GMT) * 86400)
+        
+        print("Next eclipse from date \(fd) will be at: \(fr)")
+        print("Next eclipse from date \(sd) will be at: \(sr)")
         return true
     }
     
