@@ -12,19 +12,17 @@ import Foundation
 /// Provides detailed info about eclipse (lunar or solar).
 public class Eclipse {
     
-    // Types of eclipse
-    public static let SOLAR = 0
-    public static let LUNAR = 1
-    
-    // Details of eclipses
-    public static let SOLAR_NONCENTRAL            = 0;
-    public static let SOLAR_PARTIAL               = 1;
-    public static let SOLAR_CENTRAL_TOTAL         = 2;
-    public static let SOLAR_CENTRAL_ANNULAR       = 3;
-    public static let SOLAR_CENTRAL_ANNULAR_TOTAL = 4;
-    public static let LUNAR_UMBRAL_TOTAL          = 5;
-    public static let LUNAR_UMBRAL_PARTIAL        = 6;
-    public static let LUNAR_PENUMBRAL             = 7;
+    public enum EclipseType {
+        case undefined
+        case SolarNoncenral
+        case SolarPartial
+        case SolarCentralTotal
+        case SolarCentralAnnular
+        case SolarCentralAnnularTotal
+        case LunarUmbralTotal
+        case LunarUmbralPartial
+        case LunarPenumbral
+    }
     
     // Local visibility circumstances (lunar & solar both)
     public static let VISIBILITY_NONE             = 0;
@@ -38,13 +36,13 @@ public class Eclipse {
     public static let VISIBILITY_END_PENUMBRA     = 8;
     
     /** UTC date & time of maximal phase of eclipse (for Earth center) */
-    public var jd:Double = 0
+    public var maxPhaseDate:Date?
     
     /** Maximal phase of eclipse */
     public var phase:Double = 0
     
     /** Type of eclipse */
-    public var type:Int?
+    public var type:EclipseType = .undefined
     
     /** Minimal distance between:
      a) solar eclipse: center of Moon shadow axis and Earth center;

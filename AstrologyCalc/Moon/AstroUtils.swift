@@ -27,13 +27,13 @@ class AstroUtils {
     }
     
     /// get day number in year
-    public static func dayOfYear(year: Int, month: Int, day: Int) -> Int {
+    static func dayOfYear(year: Int, month: Int, day: Int) -> Int {
         let K = AstroUtils.isLeap(year: year) ? 1 : 2
         return ((275 * month) / 9) - K * ((month + 9) / 12) + day - 30
     }
     
     /// Converts date to year with fractions
-    public static func dayToYear(_ date:Date) -> Double {
+    static func dayToYear(_ date:Date) -> Double {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day, .month, .year], from: date)
         
@@ -50,9 +50,25 @@ class AstroUtils {
         return Double(year) + Double(dayOfYear) / 365.2425;
     }
     
-    public static func jdFromDate(date : Date) -> Double {
+    // returns julian date timestamp from date by gregorian calendar
+    static func jdFromDate(date : Date) -> Double {
         let JD_JAN_1_1970_0000GMT = 2440587.5
         return JD_JAN_1_1970_0000GMT + date.timeIntervalSince1970 / 86400
+    }
+    
+    // returns gregorian date from julian calendar date timestamp
+    static func gregorianDateFrom(julianTime: Double) -> Date {
+        let JD_JAN_1_1970_0000GMT = 2440587.5
+        return Date(timeIntervalSince1970: (julianTime - JD_JAN_1_1970_0000GMT) * 86400)
+    }
+    
+    static func to360(_ angle: Double) -> Double {
+        return angle.truncatingRemainder(dividingBy: 360.0) + (angle < 0 ? 360 : 0)
+    }
+    
+    // convert angle to radians
+    static func toRadians(_ angle: Double) -> Double {
+        return angle * .pi / 180
     }
 
 }
