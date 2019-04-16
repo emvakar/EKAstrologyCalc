@@ -1,6 +1,6 @@
 [![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org) ![Cocoapods](https://img.shields.io/cocoapods/v/AstrologyCalc.svg) [![Build Status](https://travis-ci.com/emvakar/AstrologyCalc.svg?branch=master)](https://travis-ci.com/emvakar/AstrologyCalc)
 
-# Astrology Calculator by [Emil Karimov](https://twitter.com/e_karimov)
+# Astrology Calculator
 This is Moon Calc Framework
 Get moon phase by Date and Location
 
