@@ -18,7 +18,7 @@ Get moon phase by Date and Location
 - [ ] get zodiac sign rise time
 - [ ] get zodiac sign set time
 - [ ] get mercury status and times
-- [ ] get eclipse times (begin, duration, finish)
+- [x] get eclipse times (begin, duration, finish)
 
 ### Support AstrologyCalc development by giving a ⭐️
 
