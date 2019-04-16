@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AstrologyCalc
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = ViewController()
         self.window?.makeKeyAndVisible()
+        
         return true
     }
     

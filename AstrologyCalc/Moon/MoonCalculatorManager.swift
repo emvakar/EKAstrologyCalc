@@ -25,7 +25,20 @@ public class MoonCalculatorManager {
         let phase = self.getMoonPhase(date: date)
         let trajectory = self.getMoonTrajectory(date: date)
         let moonModels = self.getMoonModels(date: date)
-        let astrologyModel = AstrologyModel(date: date, location: self.location, trajectory: trajectory, phase: phase, moonModels: moonModels)
+        let eclipses = [
+            EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: false),
+            EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: true)
+        ]
+        
+        let astrologyModel = AstrologyModel(
+            date: date,
+            location: self.location,
+            trajectory: trajectory,
+            phase: phase,
+            moonModels: moonModels,
+            lunarEclipses: eclipses
+        )
+        
         return astrologyModel
     }
 }

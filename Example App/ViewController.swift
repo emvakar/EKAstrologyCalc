@@ -56,6 +56,8 @@ class ViewController: UIViewController {
         
         self.addInfo(param: "Moon phase", value: "\(info.phase)", on: self.container, textAlignment: .left)
         self.addInfo(param: "Moon trajectory", value: "\(info.trajectory)", on: self.container, textAlignment: .left)
+        self.addInfo(param: "Previous eclipse", value: "\(info.previousLunarEclipse.maxPhaseDate!))", on: self.container, textAlignment: .left)
+        self.addInfo(param: "Next eclipse", value: "\(info.nextLunarEclipse.maxPhaseDate!))", on: self.container, textAlignment: .left)
         
     }
     

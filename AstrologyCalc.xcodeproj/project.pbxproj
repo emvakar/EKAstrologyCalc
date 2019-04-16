@@ -24,6 +24,10 @@
 		20EBC791224B985D0054E6E5 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC790224B985D0054E6E5 /* .travis.yml */; };
 		20EBC794224B986E0054E6E5 /* AstrologyCalc.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */; };
 		20EBC795224B986E0054E6E5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC793224B986E0054E6E5 /* README.md */; };
+		DA6456F92253FE570031867D /* Eclipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456F82253FE570031867D /* Eclipse.swift */; };
+		DA6456FB2254030D0031867D /* EclipseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456FA2254030D0031867D /* EclipseCalculator.swift */; };
+		DA6456FD225405560031867D /* AstroUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456FC225405560031867D /* AstroUtils.swift */; };
+		DA6456FF2254F48F0031867D /* AstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EBC734224B958C0054E6E5 /* AstrologyCalc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,9 @@
 		20EBC790224B985D0054E6E5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AstrologyCalc.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		20EBC793224B986E0054E6E5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DA6456F82253FE570031867D /* Eclipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eclipse.swift; sourceTree = "<group>"; };
+		DA6456FA2254030D0031867D /* EclipseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EclipseCalculator.swift; sourceTree = "<group>"; };
+		DA6456FC225405560031867D /* AstroUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6456FF2254F48F0031867D /* AstrologyCalc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +105,7 @@
 				20EBC741224B958C0054E6E5 /* AstrologyCalcTests */,
 				20EBC763224B96960054E6E5 /* Example App */,
 				20EBC735224B958C0054E6E5 /* Products */,
+				DA6456FE2254F48F0031867D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +144,8 @@
 				20EBC756224B96400054E6E5 /* SunMoonCalculator.swift */,
 				20EBC74F224B96400054E6E5 /* MoonCalculatorManager.swift */,
 				20EBC750224B96400054E6E5 /* Models */,
+				DA6456FA2254030D0031867D /* EclipseCalculator.swift */,
+				DA6456FC225405560031867D /* AstroUtils.swift */,
 			);
 			path = Moon;
 			sourceTree = "<group>";
@@ -147,6 +158,7 @@
 				20EBC753224B96400054E6E5 /* MoonZodiacSign.swift */,
 				20EBC754224B96400054E6E5 /* MoonTrajectory.swift */,
 				20EBC755224B96400054E6E5 /* MoonPhase.swift */,
+				DA6456F82253FE570031867D /* Eclipse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,6 +173,13 @@
 				20EBC770224B96980054E6E5 /* Info.plist */,
 			);
 			path = "Example App";
+			sourceTree = "<group>";
+		};
+		DA6456FE2254F48F0031867D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,11 +324,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6456FB2254030D0031867D /* EclipseCalculator.swift in Sources */,
 				20EBC758224B96400054E6E5 /* MoonModel.swift in Sources */,
 				20EBC757224B96400054E6E5 /* MoonCalculatorManager.swift in Sources */,
 				20EBC759224B96400054E6E5 /* AstrologyModel.swift in Sources */,
 				20EBC75A224B96400054E6E5 /* MoonZodiacSign.swift in Sources */,
+				DA6456FD225405560031867D /* AstroUtils.swift in Sources */,
 				20EBC75D224B96400054E6E5 /* SunMoonCalculator.swift in Sources */,
+				DA6456F92253FE570031867D /* Eclipse.swift in Sources */,
 				20EBC75C224B96400054E6E5 /* MoonPhase.swift in Sources */,
 				20EBC75B224B96400054E6E5 /* MoonTrajectory.swift in Sources */,
 			);
