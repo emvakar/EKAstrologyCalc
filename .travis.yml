@@ -1,7 +1,6 @@
 osx_image: xcode10.2
 language: swift
 xcode_sdk: iphonesimulator10.2
-podfile: path/to/Podfile
 notifications:
   slack: eskaria:RRTsJOW40z95SajyTLBy7lxy
 script:
