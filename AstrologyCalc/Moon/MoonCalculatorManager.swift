@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import DevHelper
 
 //Тут все расчеты
 public class MoonCalculatorManager {
@@ -23,9 +24,22 @@ public class MoonCalculatorManager {
     //Получить необходимую инфу
     public func getInfo(date: Date) -> AstrologyModel {
         let phase = self.getMoonPhase(date: date)
+
         let trajectory = self.getMoonTrajectory(date: date)
         let moonModels = self.getMoonModels(date: date)
-        let astrologyModel = AstrologyModel(date: date, location: self.location, trajectory: trajectory, phase: phase, moonModels: moonModels)
+        let eclipses = [
+            EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: false),
+            EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: true)
+        ]
+
+        let astrologyModel = AstrologyModel(
+            date: date,
+            location: self.location,
+            trajectory: trajectory,
+            phase: phase,
+            moonModels: moonModels,
+            lunarEclipses: eclipses
+        )
         return astrologyModel
     }
 }
@@ -34,8 +48,8 @@ extension MoonCalculatorManager {
 
     //Получить модели лунного дня для текущего человеческого дня
     private func getMoonModels(date: Date) -> [MoonModel] {
-        let startDate = self.startOfDate(date)
-        let endDate = self.endOfDate(date) ?? Date()
+        let startDate = date.startOfDay
+        guard let endDate = date.endOfDay else { return [] }
 
         let ages = self.getMoonAges(date: date)
         let moonRise = self.getMoonRise(date: startDate).date
@@ -46,14 +60,14 @@ extension MoonCalculatorManager {
         if ages.count < 1 {
             return []
         } else if ages.count == 1 {
-            let model = MoonModel(age: ages[0], zodiacSign: zodiacSignStart, moonRise: nil, moonSet: nil)
+            let model = MoonModel(age: ages[0], zodiacSign: zodiacSignEnd, moonRise: nil, moonSet: nil)
             return [model]
         } else if ages.count == 2 {
             let model1 = MoonModel(age: ages[0], zodiacSign: zodiacSignStart, moonRise: nil, moonSet: moonRise)
             let model2 = MoonModel(age: ages[1], zodiacSign: zodiacSignEnd, moonRise: moonRise, moonSet: nil)
             return [model1, model2]
         } else if ages.count == 3 {
-            let middleZodiacSign = zodiacSignStart == zodiacSignEnd ? zodiacSignStart : zodiacSignEnd
+            let middleZodiacSign = (zodiacSignStart == zodiacSignEnd) ? zodiacSignStart : zodiacSignEnd
             let model1 = MoonModel(age: ages[0], zodiacSign: zodiacSignStart, moonRise: nil, moonSet: moonRise)
             let model2 = MoonModel(age: ages[1], zodiacSign: middleZodiacSign, moonRise: moonRise, moonSet: moonSet)
             let model3 = MoonModel(age: ages[2], zodiacSign: zodiacSignEnd, moonRise: moonSet, moonSet: nil)
@@ -75,8 +89,8 @@ extension MoonCalculatorManager {
 
     //Получить массив лунных дней в текущем Человеческом дне
     private func getMoonAges(date: Date) -> [Int] {
-        let startDate = self.startOfDate(date)
-        let endDate = startDate.addingTimeInterval(TimeInterval(exactly: (24 * 60 * 60)) ?? 0)
+        let startDate = date.startOfDay
+        let endDate = startDate.adjust(.day, offset: 1)//.adjust(.second, offset: -1)
 
         var ageStart = self.getMoonAge(date: startDate)
         var ageEnd = self.getMoonAge(date: endDate)
@@ -106,7 +120,7 @@ extension MoonCalculatorManager {
         let (y, month, d, h, m, s, lat, lon) = self.getCurrentData(date: date)
 
         do {
-            let moonCalculator: SunMoonCalculator = try SunMoonCalculator(year: y, month: month, day: d, h: h, m: m, s: s, obsLon: lon, obsLat: lat)
+            let moonCalculator = try SunMoonCalculator(year: y, month: month, day: d, h: h, m: m, s: s, obsLon: lon, obsLat: lat)
             moonCalculator.calcSunAndMoon()
             var moonDateInt: [Int]
             if isRise {
@@ -123,7 +137,7 @@ extension MoonCalculatorManager {
     }
 
     //Получить знак зодиака для луны
-    private func getMoonZodicaSign(date: Date) -> MoonZodiacSign {
+    public func getMoonZodicaSign(date: Date) -> MoonZodiacSign {
         var longitude: Double = 0.0
         var zodiac: MoonZodiacSign
 
@@ -198,38 +212,9 @@ extension MoonCalculatorManager {
 
     //Получить фазу луны
     private func getMoonPhase(date: Date) -> MoonPhase {
-        var age: Double = 0.0
+        let age: Double = self.getMoonAge(date: date)
+
         var phase: MoonPhase
-
-        var yy: Double = 0.0
-        var mm: Double = 0.0
-        var k1: Double = 0.0
-        var k2: Double = 0.0
-        var k3: Double = 0.0
-        var jd: Double = 0.0
-        var ip: Double = 0.0
-
-        let year: Double = Double(Calendar.current.component(.year, from: date))
-        let month: Double = Double(Calendar.current.component(.month, from: date))
-        let day: Double = Double(Calendar.current.component(.day, from: date))
-
-        yy = year - floor((12 - month) / 10)
-        mm = month + 9.0
-        if (mm >= 12) {
-            mm = mm - 12
-        }
-
-        k1 = floor(365.25 * (yy + 4712))
-        k2 = floor(30.6 * mm + 0.5)
-        k3 = floor(floor((yy / 100) + 49) * 0.75) - 38
-
-        jd = k1 + k2 + day + 59
-        if (jd > 2299160) {
-            jd = jd - k3
-        }
-
-        ip = normalize((jd - 2451550.1) / 29.530588853)
-        age = ip * 29.53
 
         if (age < 1.84566) {
             phase = .newMoon
@@ -256,45 +241,8 @@ extension MoonCalculatorManager {
 
     //Получить лунный день
     private func getMoonAge(date: Date) -> Double {
+
         var age: Double = 0.0
-
-        var yy: Double = 0.0
-        var mm: Double = 0.0
-        var k1: Double = 0.0
-        var k2: Double = 0.0
-        var k3: Double = 0.0
-        var jd: Double = 0.0
-        var ip: Double = 0.0
-
-        let year: Double = Double(Calendar.current.component(.year, from: date))
-        let month: Double = Double(Calendar.current.component(.month, from: date))
-        let day: Double = Double(Calendar.current.component(.day, from: date))
-
-        yy = year - floor((12 - month) / 10)
-        mm = month + 9.0
-        if (mm >= 12) {
-            mm = mm - 12
-        }
-
-        k1 = floor(365.25 * (yy + 4712))
-        k2 = floor(30.6 * mm + 0.5)
-        k3 = floor(floor((yy / 100) + 49) * 0.75) - 38
-
-        jd = k1 + k2 + day + 59
-        if (jd > 2299160) {
-            jd = jd - k3
-        }
-
-        ip = normalize((jd - 2451550.1) / 29.530588853)
-        age = ip * 29.0//53
-
-        return age
-    }
-
-    //Получить знак зодиака для дуны, траекторию луны, фазу луны
-    private func getMoonTrajectory(date: Date) -> MoonTrajectory {
-        var age: Double = 0.0
-        var trajectory: MoonTrajectory
 
         var yy: Double = 0.0
         var mm: Double = 0.0
@@ -326,6 +274,15 @@ extension MoonCalculatorManager {
         ip = normalize((jd - 2451550.1) / 29.530588853)
         age = ip * 29.53
 
+        return age
+    }
+
+    //Получить знак зодиака для дуны, траекторию луны, фазу луны
+    private func getMoonTrajectory(date: Date) -> MoonTrajectory {
+        let age: Double = self.getMoonAge(date: date)
+        var trajectory: MoonTrajectory
+
+
         if (age < 1.84566) {
             trajectory = .ascendent
         } else if (age < 5.53699) {
@@ -351,10 +308,6 @@ extension MoonCalculatorManager {
 
     //Получить дату из кмпонент дня -- например [1970, 1, 1, 12, 24, 33] -> 01.01.1970 12:24:33
     private func getDateFromComponents(_ components: [Int]) -> Date? {
-        var calendar = Calendar(identifier: .gregorian)
-        if let timeZone = TimeZone(abbreviation: "UTC") {
-            calendar.timeZone = timeZone
-        }
 
         var dateComponents = DateComponents()
         dateComponents.year = components[0]
@@ -364,13 +317,15 @@ extension MoonCalculatorManager {
         dateComponents.minute = components[4]
         dateComponents.second = components[5]
 
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? calendar.timeZone
         let date = calendar.date(from: dateComponents)
 
         return date
     }
 
     //Получить дату дату и геопозицию ввиде -> [1970, 1, 1, 12, 24, 33, широта, долгота]
-    private func getCurrentData(date: Date) -> (y: Int, month: Int, d: Int, h: Int, m: Int, s: Int, lat: Double, lon: Double) {
+    public func getCurrentData(date: Date) -> (y: Int, month: Int, d: Int, h: Int, m: Int, s: Int, lat: Double, lon: Double) {
         let (y, month, d, h, m, s) = self.getDateComponents(from: date)
         let lat = self.location.coordinate.latitude * SunMoonCalculator.DEG_TO_RAD
         let lon = self.location.coordinate.longitude * SunMoonCalculator.DEG_TO_RAD
