@@ -29,6 +29,8 @@ Pod::Spec.new do |s|
     s.framework = "Foundation"
     s.framework = "CoreLocation"
     
+    s.dependency 'DevHelper'
+
     # 8
     s.source_files = "AstrologyCalc/Moon/**/*.{swift}"
     
