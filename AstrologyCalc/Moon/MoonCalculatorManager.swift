@@ -48,15 +48,47 @@ extension MoonCalculatorManager {
 
     //Получить модели лунного дня для текущего человеческого дня
     private func getMoonModels(date: Date) -> [MoonModel] {
+        var dateMoonModels = self.getMoonModelsOnlyFor(date: date)
+        let yesterdayModels = self.getMoonModelsOnlyFor(date: date.adjust(.day, offset: -1))
+        
+        // ищем заходы, в предыдущем дне, которые указывали на текущий
+        // и добавляем их в текущий
+        yesterdayModels.forEach { (model) in
+            guard let moonSet = model.moonSet, Calendar.current.isDate(moonSet, inSameDayAs: date) else {
+                return
+            }
+            
+            dateMoonModels.first?.moonRise = moonSet
+        }
+        
+        dateMoonModels.removeAll {
+            // ищем заходы в текущем дне, которые на деле относятся к предыдущим
+            if let moonSet = $0.moonSet, !Calendar.current.isDate(moonSet, inSameDayAs: date) {
+                $0.moonSet = nil
+            }
+            
+            // ищем восходы, которые не принадлежат текущему дню и удаляем их
+            if let moonRise = $0.moonRise, !Calendar.current.isDate(moonRise, inSameDayAs: date) {
+                return true
+            }
+            
+            return false
+        }
+        
+        return dateMoonModels
+    }
+    
+    private func getMoonModelsOnlyFor(date: Date) -> [MoonModel] {
         let startDate = date.startOfDay
-        guard let endDate = date.endOfDay else { return [] }
-
+        let endDate = date.adjust(.day, offset: 1)
+        //guard let endDate = date.endOfDay else { return [] }
+        
         let ages = self.getMoonAges(date: date)
         let moonRise = self.getMoonRise(date: startDate).date
         let moonSet = self.getMoonSet(date: endDate).date
         let zodiacSignStart = self.getMoonZodicaSign(date: startDate)
         let zodiacSignEnd = self.getMoonZodicaSign(date: endDate)
-
+        
         if ages.count < 1 {
             return []
         } else if ages.count == 1 {
@@ -111,7 +143,7 @@ extension MoonCalculatorManager {
         if ageStartInt == ageEndInt {
             return [ageStartInt]
         } else {
-            return self.getInt(from: ageStartInt, to: ageEndInt, module: 30)
+            return self.getInt(from: ageStartInt, to: ageEndInt, module: 29)
         }
     }
 
