@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import CoreLocation
 import DevHelper
 
@@ -46,6 +47,22 @@ public class MoonCalculatorManager {
 
 extension MoonCalculatorManager {
 
+    public func getMoonDays(at date: Date) -> Int {
+        
+        var myDate = date
+        var age: Double = self.getMoonAge(date: myDate.startOfMonth())
+        
+        var daysCount = 0
+        
+        while age >= 1.84566 {
+            daysCount += 1
+            myDate = myDate.adjust(.day, offset: 1)
+            age = self.getMoonAge(date: myDate.startOfMonth())
+        }
+        
+        return daysCount
+    }
+    
     //Получить модели лунного дня для текущего человеческого дня
     private func getMoonModels(date: Date) -> [MoonModel] {
         let startDate = date.startOfDay
@@ -111,10 +128,62 @@ extension MoonCalculatorManager {
         if ageStartInt == ageEndInt {
             return [ageStartInt]
         } else {
-            return self.getInt(from: ageStartInt, to: ageEndInt, module: 30)
+            
+            let module = self.getModule(for: date)
+            
+            return self.getInt(from: ageStartInt, to: ageEndInt, module: module)
         }
     }
 
+    /// получение модуля для количества дней в лунном месяце
+    private func getModule(for date: Date) -> Int {
+        var module = 0
+        
+        var lastCountDays = 0
+        
+        var dateForModule = date.startOfDay
+        while lastCountDays <= 30 {
+            
+            dateForModule = dateForModule.adjust(.day, offset: 1)
+            if lastCountDays < 30 && self.getDaysInMoonMonth(date: dateForModule) > 29 {
+                
+                module = self.getDaysInMoonMonth(date: dateForModule)
+                break
+            }
+            
+            lastCountDays = self.getDaysInMoonMonth(date: dateForModule)
+            
+        }
+        
+        return module
+    }
+    
+    /// получение лня в на конкретную дату
+    private func getDaysInMoonMonth(date: Date) -> Int {
+        var module: Int = 29
+        if let path = Bundle.init(for: Eclipse.self).path(forResource: "parsing", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonDecoder = JSONDecoder()
+                
+                let responseModel = try jsonDecoder.decode([ZodiacParse].self, from: data).first(where: { (zodiacParse) -> Bool in
+                    if let zodiacDate = Date.dateFromString(string: zodiacParse.date) {
+                        return zodiacDate.isSameDate(date)
+                    }
+                    
+                    return false
+                })
+                
+                if let daysCount = responseModel?.daysCount {
+                    module = daysCount
+                }
+            } catch {
+                // handle error
+            }
+        }
+        return module
+    }
+    
     //Получить восход/заход луны для лунного дня
     private func getMoonRiseOrSet(date: Date, isRise: Bool) -> (date: Date?, error: Error?) {
         let (y, month, d, h, m, s, lat, lon) = self.getCurrentData(date: date)

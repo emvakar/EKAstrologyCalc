@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		204B3F2322B6FE6100F62DB7 /* ParsedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204B3F2222B6FE6100F62DB7 /* ParsedModel.swift */; };
+		204B3F2522B6FFA500F62DB7 /* parsing.json in Resources */ = {isa = PBXBuildFile; fileRef = 204B3F2422B6FFA500F62DB7 /* parsing.json */; };
 		208F402B2296976800C5CF98 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F402A2296976800C5CF98 /* Date+Extension.swift */; };
 		20EBC73E224B958C0054E6E5 /* AstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EBC734224B958C0054E6E5 /* AstrologyCalc.framework */; };
 		20EBC743224B958C0054E6E5 /* AstrologyCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EBC742224B958C0054E6E5 /* AstrologyCalcTests.swift */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		18D411F6004E98FF62ABBBEA /* Pods_AstrologyCalcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		203ECD472F3BE256BE1815A9 /* Pods_AstrologyCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		204B3F2222B6FE6100F62DB7 /* ParsedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedModel.swift; sourceTree = "<group>"; };
+		204B3F2422B6FFA500F62DB7 /* parsing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parsing.json; sourceTree = "<group>"; };
 		208F402A2296976800C5CF98 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		20EBC734224B958C0054E6E5 /* AstrologyCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AstrologyCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EBC737224B958C0054E6E5 /* AstrologyCalc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AstrologyCalc.h; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				20EBC790224B985D0054E6E5 /* .travis.yml */,
 				20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */,
 				20EBC793224B986E0054E6E5 /* README.md */,
+				204B3F2422B6FFA500F62DB7 /* parsing.json */,
 				20EBC736224B958C0054E6E5 /* AstrologyCalc */,
 				20EBC741224B958C0054E6E5 /* AstrologyCalcTests */,
 				20EBC763224B96960054E6E5 /* Example App */,
@@ -178,6 +183,7 @@
 				20EBC754224B96400054E6E5 /* MoonTrajectory.swift */,
 				20EBC755224B96400054E6E5 /* MoonPhase.swift */,
 				DA6456F82253FE570031867D /* Eclipse.swift */,
+				204B3F2222B6FE6100F62DB7 /* ParsedModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204B3F2522B6FFA500F62DB7 /* parsing.json in Resources */,
 				20EBC795224B986E0054E6E5 /* README.md in Resources */,
 				20EBC794224B986E0054E6E5 /* AstrologyCalc.podspec in Resources */,
 				20EBC791224B985D0054E6E5 /* .travis.yml in Resources */,
@@ -493,6 +500,7 @@
 				208F402B2296976800C5CF98 /* Date+Extension.swift in Sources */,
 				20EBC758224B96400054E6E5 /* MoonModel.swift in Sources */,
 				20EBC757224B96400054E6E5 /* MoonCalculatorManager.swift in Sources */,
+				204B3F2322B6FE6100F62DB7 /* ParsedModel.swift in Sources */,
 				20EBC759224B96400054E6E5 /* AstrologyModel.swift in Sources */,
 				20EBC75A224B96400054E6E5 /* MoonZodiacSign.swift in Sources */,
 				DA6456FD225405560031867D /* AstroUtils.swift in Sources */,

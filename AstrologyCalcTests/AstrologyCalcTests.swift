@@ -27,6 +27,26 @@ class AstrologyCalcTests: XCTestCase {
         
     }
     
+    func testMay18() {
+        let dateString = "22.05.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy")) else {
+            fatalError("cant get date from string!")
+        }
+        let info = manager.getInfo(date: date)
+        
+        let days = manager.getMoonDays(at: date)
+        print(days)
+        
+//        info.moonModels.forEach {
+//            print($0.age)
+//            print($0.moonRise)
+//            print($0.moonSet)
+//            print("========")
+//        }
+//
+//
+    }
+    
     func testTimeInfo() {
         
         let info = manager.getInfo(date: self.date)

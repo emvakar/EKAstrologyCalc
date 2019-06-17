@@ -37,6 +37,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Started...")
+        
         self.view.backgroundColor = .white
         self.moonPhaseManager = MoonCalculatorManager(location: location)
         
@@ -59,6 +61,14 @@ class ViewController: UIViewController {
         self.addInfo(param: "Previous eclipse", value: "\(info.previousLunarEclipse.maxPhaseDate!))", on: self.container, textAlignment: .left)
         self.addInfo(param: "Next eclipse", value: "\(info.nextLunarEclipse.maxPhaseDate!))", on: self.container, textAlignment: .left)
         
+        
+        let dateString = "22.05.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy")) else {
+            fatalError("cant get date from string!")
+        }
+        
+        let days = self.moonPhaseManager.getMoonDays(at: date)
+        print(days)
     }
     
     override var shouldAutorotate: Bool {

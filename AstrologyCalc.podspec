@@ -32,11 +32,12 @@ Pod::Spec.new do |s|
     s.dependency 'DevHelper'
 
     # 8
-    s.source_files = "AstrologyCalc/Moon/**/*.{swift}"
+    s.source_files = "AstrologyCalc/**/*.{swift}"
     
     # 9
-    # s.resources = "AstrologyCalc/**/*.{png,jpeg,jpg,storyboard,xib}"
-    # s.resource_bundles = {
-        #'AstrologyCalcAssets' => ['AstrologyCalc/**/*.xcassets']
-    # }
+#     s.resources = "AstrologyCalc/*.{png,jpeg,jpg,storyboard,xib,json}"
+     s.resources = ['parsing.json']
+     s.resource_bundles = {
+        'AstrologyCalcAssets' => ['AstrologyCalc/**/*.xcassets']
+     }
 end
