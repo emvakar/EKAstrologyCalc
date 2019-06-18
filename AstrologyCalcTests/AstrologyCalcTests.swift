@@ -38,7 +38,7 @@ class AstrologyCalcTests: XCTestCase {
         
         let info = manager.getInfo(date: self.date)
         let phase = info.phase
-        XCTAssert(phase == .newMoon, "phase is failed \(phase), must be \(MoonPhase.newMoon)")
+        XCTAssert(phase == .waningGibbous, "phase is failed \(phase), must be \(MoonPhase.waningGibbous)")
     }
     
     func testLocation() {
@@ -52,7 +52,7 @@ class AstrologyCalcTests: XCTestCase {
         
         let info = manager.getInfo(date: self.date)
         let trajectory = info.trajectory
-        XCTAssert(trajectory == MoonTrajectory.ascendent, "trajectory is failed, must be \(MoonTrajectory.ascendent)")
+        XCTAssert(trajectory == MoonTrajectory.descendent, "trajectory is failed, must be \(MoonTrajectory.descendent)")
     }
     
     func testMoonModels() {
@@ -60,7 +60,7 @@ class AstrologyCalcTests: XCTestCase {
         let info = manager.getInfo(date: self.date)
         let models = info.moonModels
         
-        XCTAssert(models.count == 3, "moonModels is failed, must be \(3)")
+        XCTAssert(models.count == 1, "moonModels is failed, must be \(1)")
     }
     
     func test_23May() {
