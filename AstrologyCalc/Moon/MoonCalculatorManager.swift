@@ -191,14 +191,15 @@ extension MoonCalculatorManager {
         var dateForModule = date.startOfDay
         while lastCountDays <= 30 {
             
-            dateForModule = dateForModule.adjust(.day, offset: 1)
-            if lastCountDays < 30 && self.getDaysInMoonMonth(date: dateForModule) > 29 {
+            let nextDate = dateForModule.adjust(.day, offset: 1)
+            let daysInMonth = self.getDaysInMoonMonth(date: nextDate)
+            if lastCountDays < 30 && daysInMonth > 29 {
                 
-                module = self.getDaysInMoonMonth(date: dateForModule)
+                module = daysInMonth
                 break
             }
-            
-            lastCountDays = self.getDaysInMoonMonth(date: dateForModule)
+            dateForModule = nextDate
+            lastCountDays = daysInMonth
             
         }
         
@@ -207,9 +208,8 @@ extension MoonCalculatorManager {
     
     /// получение лня в на конкретную дату
     private func getDaysInMoonMonth(date: Date) -> Int {
-        
-        let stringDate = date.stringFromDate()
-        let module = self.parsedModels.first(where: {  $0.date == stringDate })?.daysCount ?? 30
+        let startDate = date.startOfDay
+        let module = self.parsedModels.first(where: {  $0.date.isSameDate(startDate) })?.daysCount ?? 29
         return module
     }
     

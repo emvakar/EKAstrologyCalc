@@ -35,8 +35,41 @@ public struct ZodiacParse: Codable {
     var newPhase: NewPhase?
     var oldZodiac: String?
     var oldPhase: String?
-    let date: String
+    var date: Date = Date()
     var daysCount: Int = 29
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case oldPhase = "oldPhase"
+        case date = "date"
+        case daysCount = "daysCount"
+        case newPhase = "newPhase"
+        case oldZodiac = "oldZodiac"
+        case newZodiac = "newZodiac"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        oldPhase = try values.decodeIfPresent(String.self, forKey: .oldPhase)
+        let stringDate = try values.decode(String.self, forKey: .date)
+        if let modelDate = Date(fromString: stringDate, format: .custom("yyyy-MM-dd'T'HH:mmZ"))?.startOfDay {
+            self.date = modelDate
+        }
+        daysCount = try values.decode(Int.self, forKey: .daysCount)
+        newPhase = try values.decodeIfPresent(NewPhase.self, forKey: .newPhase)
+        oldZodiac = try values.decodeIfPresent(String.self, forKey: .oldZodiac)
+        newZodiac = try values.decodeIfPresent(NewZodiac.self, forKey: .newZodiac)
+    }
+    
+    init(newZodiac: NewZodiac?, newPhase: NewPhase?, oldZodiac: String?, oldPhase: String?, date: Date, daysCount: Int) {
+        self.newZodiac = newZodiac
+        self.newPhase = newPhase
+        self.oldZodiac = oldZodiac
+        self.oldPhase = oldPhase
+        self.date = date
+        self.daysCount = daysCount
+        
+    }
     
     public func copy() -> ZodiacParse {
         let zodiac = ZodiacParse(newZodiac: self.newZodiac, newPhase: self.newPhase, oldZodiac: self.oldZodiac, oldPhase: self.oldPhase, date: self.date, daysCount: self.daysCount)
