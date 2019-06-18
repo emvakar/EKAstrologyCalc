@@ -13,13 +13,13 @@ import CoreLocation
 class AstrologyCalcTests: XCTestCase {
 
     let location = CLLocation(latitude: 55.751244, longitude: 37.618423)
-    let timeInterval = TimeInterval(1551878863) // Wed, 06 Mar 2019 13:27:43 +0000
+    
     var manager: MoonCalculatorManager!
     var date: Date!
     
     override func setUp() {
         
-        self.date = Date(timeIntervalSince1970: timeInterval)
+        self.date = Date(fromString: "23.05.2019", format: .custom("dd.MM.yyyy"))
         self.manager = MoonCalculatorManager(location: location)
     }
     
@@ -27,31 +27,11 @@ class AstrologyCalcTests: XCTestCase {
         
     }
     
-    func testMay18() {
-        let dateString = "22.05.2019"
-        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy")) else {
-            fatalError("cant get date from string!")
-        }
-        let info = manager.getInfo(date: date)
-        
-        let days = manager.getMoonDays(at: date)
-        print(days)
-        
-//        info.moonModels.forEach {
-//            print($0.age)
-//            print($0.moonRise)
-//            print($0.moonSet)
-//            print("========")
-//        }
-//
-//
-    }
-    
     func testTimeInfo() {
         
         let info = manager.getInfo(date: self.date)
-        let time = info.date.timeIntervalSince1970
-        XCTAssert(time == (self.timeInterval), "time is failed, must be \(1551878863)")
+        let date = info.date.timeIntervalSince1970
+        XCTAssert(date == self.date.timeIntervalSince1970, "date is failed, must be 23.05.2019")
     }
     
     func testMoonPhase() {
@@ -83,38 +63,26 @@ class AstrologyCalcTests: XCTestCase {
         XCTAssert(models.count == 3, "moonModels is failed, must be \(3)")
     }
     
-    func testModel1() {
+    func test_23May() {
         
         let info = manager.getInfo(date: self.date)
         let model = info.moonModels[0]
         
-        XCTAssert(model.age == 29, "moonModel is failed, must be \(29)")
-        XCTAssert(model.zodiacSign == .pisces, "moonModel is failed, must be \(MoonZodiacSign.pisces)")
-        XCTAssert(model.moonRise == nil, "moonModel is failed, must be nil")
-        XCTAssert(model.moonSet?.timeIntervalSince1970 == TimeInterval(1551846875), "moonModel is failed, must be \(1551846875) Wed, 06 Mar 2019 04:34:35 +0000")
-    }
-    
-    func testModel2() {
-        
-        let info = manager.getInfo(date: self.date)
-        let model = info.moonModels[1]
-        
-        XCTAssert(model.age == 30, "moonModel is failed, must be \(30)")
-        XCTAssert(model.zodiacSign == .pisces, "moonModel is failed, must be \(MoonZodiacSign.pisces)")
-        XCTAssert(model.moonRise?.timeIntervalSince1970 == TimeInterval(1551846875), "moonModel is failed, must be \(1551846875) Wed, 06 Mar 2019 04:34:35 +0000")
-        XCTAssert(model.moonSet?.timeIntervalSince1970 == TimeInterval(1551883653), "moonModel is failed, must be \(1551883653) Wed, 06 Mar 2019 14:47:33 +0000")
-    }
-    
-    func testModel3() {
-        
-        let info = manager.getInfo(date: self.date)
-        let model = info.moonModels[2]
-        
-        XCTAssert(model.age == 1, "moonModel is failed, must be \(1)")
-        XCTAssert(model.zodiacSign == .pisces, "moonModel is failed, must be \(MoonZodiacSign.pisces)")
-        XCTAssert(model.moonRise?.timeIntervalSince1970 == TimeInterval(1551883653), "moonModel is failed, must be \(1551883653) Wed, 06 Mar 2019 14:47:33 +0000")
+        XCTAssert(model.age == 19, "moonModel is failed, must be \(19)")
+        XCTAssert(model.zodiacSign == .sagittarius, "moonModel is failed sodiac is \(model.zodiacSign), must be \(MoonZodiacSign.sagittarius)")
+        XCTAssert(model.moonRise == Date(fromString: "2019-05-22 21:20:55 +0000", format: .custom("yyyy-MM-dd HH:mm:ssZ")), "moonModel is failed, must be 2019-05-22 21:20:55 +0000")
         XCTAssert(model.moonSet == nil, "moonModel is failed, must be nil")
     }
-
     
+    func test_21May() {
+        let dateString = "21.05.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy")) else {
+            fatalError("cant get date from string!")
+        }
+        let info = manager.getInfo(date: date)
+        XCTAssert(info.moonModels.first?.age == 17, "first day age is failed, must be 17")
+        XCTAssert(info.moonModels.last?.age == 18, "last day age is failed, must be 18")
+        XCTAssert(info.moonModels.first?.moonSet?.day == "21", "moon set day is failed, must be 21")
+        XCTAssert(info.moonModels.first?.moonSet?.toString(format: .custom("HH:mm")) == "23:29", "moon set time is failed, must be 23:29")
+    }
 }
