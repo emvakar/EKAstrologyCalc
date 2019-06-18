@@ -17,6 +17,16 @@ public extension Date {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mmZ"
         return dateFormatter.date(from: string)
     }
+    
+    func stringFromDate() -> String {
+        let calendar = Calendar.current
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = calendar
+        dateFormatter.timeZone = calendar.timeZone
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mmZ"
+        
+        return dateFormatter.string(from: self)
+    }
 }
 
 
