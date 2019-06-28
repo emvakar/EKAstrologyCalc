@@ -42,7 +42,20 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .white
         self.moonPhaseManager = MoonCalculatorManager(location: location)
         
-        let info = self.moonPhaseManager.getInfo(date: Date())
+        /////-------- проверка лунных дней -----------
+        let countries = DataBaseManager().makeCountriesFromJSON()
+        let firstCity = countries[0].cities[0]
+        
+        let manager = MoonCalculatorManager(location: CLLocation(latitude: 55.751244, longitude: 37.618423))
+        
+        let calendar = Calendar(identifier: .gregorian)
+        let dateComponents = DateComponents(calendar: calendar, year: 2019, month: 5, day: 5, hour: 13, minute: 21)
+        guard let day = calendar.date(from: dateComponents) else {return}
+        
+        let models = manager.getMoonModels(date: day, city: firstCity)
+        /////////////////////////////////////////////////////////////
+        
+        let info = self.moonPhaseManager.getInfo(date: Date(), city: firstCity)
         
         self.addInfo(param: "=== Current localtion ===", value: "", on: self.container, textAlignment: .center)
         self.addInfo(param: "Latitude", value: "\(info.location.coordinate.latitude)", on: self.container, textAlignment: .left)

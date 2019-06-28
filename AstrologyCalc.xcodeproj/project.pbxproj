@@ -31,6 +31,7 @@
 		CE5A943D22C60A5400AF8280 /* DataBase.json in Resources */ = {isa = PBXBuildFile; fileRef = CE5A943C22C60A5400AF8280 /* DataBase.json */; };
 		CE5A943F22C60A7300AF8280 /* DataBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A943E22C60A7300AF8280 /* DataBaseModels.swift */; };
 		CE5A944122C60AA100AF8280 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A944022C60AA100AF8280 /* DataBaseManager.swift */; };
+		CE5A944422C6309D00AF8280 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A944322C6309D00AF8280 /* String+Extension.swift */; };
 		DA6456F92253FE570031867D /* Eclipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456F82253FE570031867D /* Eclipse.swift */; };
 		DA6456FB2254030D0031867D /* EclipseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456FA2254030D0031867D /* EclipseCalculator.swift */; };
 		DA6456FD225405560031867D /* AstroUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456FC225405560031867D /* AstroUtils.swift */; };
@@ -87,6 +88,7 @@
 		CE5A943C22C60A5400AF8280 /* DataBase.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataBase.json; sourceTree = "<group>"; };
 		CE5A943E22C60A7300AF8280 /* DataBaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseModels.swift; sourceTree = "<group>"; };
 		CE5A944022C60AA100AF8280 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		CE5A944322C6309D00AF8280 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DA6456F82253FE570031867D /* Eclipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eclipse.swift; sourceTree = "<group>"; };
 		DA6456FA2254030D0031867D /* EclipseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EclipseCalculator.swift; sourceTree = "<group>"; };
 		DA6456FC225405560031867D /* AstroUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroUtils.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		20EBC736224B958C0054E6E5 /* AstrologyCalc */ = {
 			isa = PBXGroup;
 			children = (
+				CE5A944222C6308700AF8280 /* Extensions */,
 				CE5A943B22C60A4300AF8280 /* DataBase */,
 				20EBC74E224B96400054E6E5 /* Moon */,
 				20EBC737224B958C0054E6E5 /* AstrologyCalc.h */,
@@ -173,7 +176,6 @@
 			children = (
 				20EBC756224B96400054E6E5 /* SunMoonCalculator.swift */,
 				20EBC74F224B96400054E6E5 /* MoonCalculatorManager.swift */,
-				208F402A2296976800C5CF98 /* Date+Extension.swift */,
 				20EBC750224B96400054E6E5 /* Models */,
 				DA6456FA2254030D0031867D /* EclipseCalculator.swift */,
 				DA6456FC225405560031867D /* AstroUtils.swift */,
@@ -228,6 +230,15 @@
 				CE5A944022C60AA100AF8280 /* DataBaseManager.swift */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		CE5A944222C6308700AF8280 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				208F402A2296976800C5CF98 /* Date+Extension.swift */,
+				CE5A944322C6309D00AF8280 /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DA6456FE2254F48F0031867D /* Frameworks */ = {
@@ -505,6 +516,7 @@
 				20EBC75D224B96400054E6E5 /* SunMoonCalculator.swift in Sources */,
 				DA6456F92253FE570031867D /* Eclipse.swift in Sources */,
 				20EBC75C224B96400054E6E5 /* MoonPhase.swift in Sources */,
+				CE5A944422C6309D00AF8280 /* String+Extension.swift in Sources */,
 				20EBC75B224B96400054E6E5 /* MoonTrajectory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

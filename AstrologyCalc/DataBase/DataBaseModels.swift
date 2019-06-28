@@ -10,8 +10,8 @@ import Foundation
 
 public struct DBCountryModel: Codable {
     
-    let countryName: String
-    let cities: [DBCityModel]
+    public let countryName: String
+    public let cities: [DBCityModel]
     
     enum CodingKeys: String, CodingKey {
         case countryName = "countryName"
@@ -27,8 +27,8 @@ public struct DBCountryModel: Codable {
 
 public struct DBCityModel: Codable {
     
-    let cityName: String
-    let moonDays: [DBMoonDayModel]
+    public let cityName: String
+    public let moonDays: [DBMoonDayModel]
     
     enum CodingKeys: String, CodingKey {
         
@@ -45,10 +45,10 @@ public struct DBCityModel: Codable {
 
 public struct DBMoonDayModel : Codable {
     
-    let age: Int
-    let date: String
-    let signDate: String
-    let sign: String
+    public let age: Int
+    public let date: Date?
+    public let signDate: String
+    public let sign: String
     
     enum CodingKeys: String, CodingKey {
         
@@ -61,7 +61,8 @@ public struct DBMoonDayModel : Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         age = try values.decode(Int.self, forKey: .age)
-        date = try values.decode(String.self, forKey: .date)
+        let stringDate = try values.decode(String.self, forKey: .date)
+        date = stringDate.toDate
         signDate = try values.decode(String.self, forKey: .signDate)
         sign = try values.decode(String.self, forKey: .sign)
     }
