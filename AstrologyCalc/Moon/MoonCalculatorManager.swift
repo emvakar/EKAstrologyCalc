@@ -48,7 +48,22 @@ public class MoonCalculatorManager {
         let phase = self.getMoonPhase(date: date)
         
         let trajectory = self.getMoonTrajectory(date: date)
-        let moonModels = self.getMoonModels(date: date, city: currentCity)
+        
+        
+        let startOfDay = date.startOfDay
+        let endOfDay = date.endOfDay ?? Date()
+        let dayInterval = DateInterval(start: startOfDay.adjust(.day, offset: -3), end: endOfDay.adjust(.day, offset: 4))
+        
+        let moons = city?.moonDays.filter({
+            if let date = $0.date {
+                return dayInterval.contains(date)
+            }
+            return false
+        }) ?? []
+        
+        let newCity = DBCityModel(cityName: city?.cityName ?? "", moonDays: moons)
+        
+        let moonModels = self.getMoonModels(date: date, city: newCity)
         let eclipses = [
             EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: false),
             EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: true)
@@ -149,8 +164,11 @@ extension MoonCalculatorManager {
         if let correctMoonDay = correctMoonDay {
             
             let currentMoonDay = correctMoonDay.moonDay
-            let nextMoonDay = allMoonDays[correctMoonDay.index + 1]
-            let previousMoonDay = allMoonDays[correctMoonDay.index - 1]
+            
+            let nextIndex = ((correctMoonDay.index + 1) < allMoonDays.count) ? (correctMoonDay.index + 1) : (allMoonDays.count - 1)
+            let nextMoonDay = allMoonDays[nextIndex]
+            let prevIndex = ((correctMoonDay.index - 1) >= 0) ? (correctMoonDay.index - 1) : 0
+            let previousMoonDay = allMoonDays[prevIndex]
             
             let firstMoonDay = self.makeMoonModel(age: currentMoonDay.age, zodiacSign: currentMoonDay.sign, zodiacSignDate: currentMoonDay.signDate.toDate, moonRise: currentMoonDay.date, moonSet: nextMoonDay.date)
             
@@ -159,23 +177,39 @@ extension MoonCalculatorManager {
             filteredMoonDays = [secondMoonDay, firstMoonDay]
             
             //случай с 3 днями
-            if let nextMoonDayStart = allMoonDays[correctMoonDay.index + 1].date, dayInterval.contains(nextMoonDayStart) {
+            if ((correctMoonDay.index + 2) < allMoonDays.count), let nextMoonDayStart = allMoonDays[correctMoonDay.index + 1].date, dayInterval.contains(nextMoonDayStart) {
                 let thirdMoonDay = self.makeMoonModel(age: nextMoonDay.age, zodiacSign: nextMoonDay.sign, zodiacSignDate: nextMoonDay.signDate.toDate, moonRise: nextMoonDay.date, moonSet: allMoonDays[correctMoonDay.index + 2].date)
                 
                 filteredMoonDays.append(thirdMoonDay)
             }
             
-            return filteredMoonDays
+            var models = [MoonModel]()
+            for f in filteredMoonDays {
+                if models.contains(where: { $0.age == f.age }) {
+                    continue
+                }
+                models.append(f)
+            }
+            
+            return models
         }
         
         //если лунный день не попал в переданный календарный день, то тут 1 вариант: в этот календарный день содержит 1 лунный день (он начался раньше календарного дня и закончится позже календарного дня)
         if let moonDayTuple = moonDayForExtraCase {
-            let moonDay = self.makeMoonModel(age: moonDayTuple.moonDay.age, zodiacSign: moonDayTuple.moonDay.sign, zodiacSignDate: moonDayTuple.moonDay.signDate.toDate, moonRise: moonDayTuple.moonDay.date, moonSet: allMoonDays[moonDayTuple.index + 1].date)
+            let moonDay = self.makeMoonModel(age: moonDayTuple.moonDay.age, zodiacSign: moonDayTuple.moonDay.sign, zodiacSignDate: moonDayTuple.moonDay.signDate.toDate, moonRise: nil, moonSet: nil)
             filteredMoonDays = [moonDay]
             return filteredMoonDays
         }
         
-        return filteredMoonDays
+        var models = [MoonModel]()
+        for f in filteredMoonDays {
+            if models.contains(where: { $0.age == f.age }) {
+                continue
+            }
+            models.append(f)
+        }
+        
+        return models
     }
     
     private func makeMoonModel(age: Int, zodiacSign: String, zodiacSignDate: Date?, moonRise: Date?, moonSet: Date?) -> MoonModel {
