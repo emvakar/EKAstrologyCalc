@@ -38,11 +38,17 @@ public class MoonCalculatorManager {
     }
     
     //Получить необходимую инфу
-    public func getInfo(date: Date, city: DBCityModel) -> AstrologyModel {
+    public func getInfo(date: Date, city: DBCityModel?) -> AstrologyModel {
+        var currentCity: DBCityModel
+        if let nonOptional = city {
+            currentCity = nonOptional
+        } else {
+            currentCity = DataBaseManager().makeCountriesFromJSON()[0].cities[0]
+        }
         let phase = self.getMoonPhase(date: date)
         
         let trajectory = self.getMoonTrajectory(date: date)
-        let moonModels = self.getMoonModels(date: date, city: city)
+        let moonModels = self.getMoonModels(date: date, city: currentCity)
         let eclipses = [
             EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: false),
             EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: true)

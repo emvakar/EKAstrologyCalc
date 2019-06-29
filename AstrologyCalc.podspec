@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     
     # 9
 #     s.resources = "AstrologyCalc/*.{png,jpeg,jpg,storyboard,xib,json}"
-     s.resources = ['parsing.json']
+     s.resources = ['parsing.json', 'AstrologyCalc/DataBase/DataBase.json']
      s.resource_bundles = {
         'AstrologyCalcAssets' => ['AstrologyCalc/**/*.xcassets']
      }

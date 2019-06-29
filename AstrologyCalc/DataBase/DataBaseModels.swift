@@ -23,6 +23,11 @@ public struct DBCountryModel: Codable {
         countryName = try values.decode(String.self, forKey: .countryName)
         cities = try values.decode([DBCityModel].self, forKey: .cities)
     }
+    
+    public init(countryName: String, cities: [DBCityModel]) {
+        self.countryName = countryName
+        self.cities = cities
+    }
 }
 
 public struct DBCityModel: Codable {
@@ -40,6 +45,11 @@ public struct DBCityModel: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         moonDays = try values.decode([DBMoonDayModel].self, forKey: .moonDays)
         cityName = try values.decode(String.self, forKey: .cityName)
+    }
+    
+    public init(cityName: String, moonDays: [DBMoonDayModel]) {
+        self.cityName = cityName
+        self.moonDays = moonDays
     }
 }
 
@@ -65,5 +75,12 @@ public struct DBMoonDayModel : Codable {
         date = stringDate.toDate
         signDate = try values.decode(String.self, forKey: .signDate)
         sign = try values.decode(String.self, forKey: .sign)
+    }
+    
+    public init(age: Int, date: Date?, signDate: String, sign: String) {
+        self.age = age
+        self.date = date
+        self.signDate = signDate
+        self.sign = sign
     }
 }

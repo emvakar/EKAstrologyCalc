@@ -13,7 +13,7 @@ public class DataBaseManager {
     public init() {}
     
     public func makeCountriesFromJSON() -> [DBCountryModel] {
-        if let path = Bundle.init(identifier: "site.karimov.AstrologyCalc")?.path(forResource: "DataBase", ofType: "json") {
+        if let path = Bundle.init(for: DataBaseManager.self).path(forResource: "DataBase", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
                 let decoder = JSONDecoder()
