@@ -50,7 +50,18 @@ public class MoonCalculatorManager {
         
         let moonModels = self.getMoonModels(date: date, city: currentCity)
         
-        let phase = currentCity.moonDays.first?.moonPhase ?? .newMoon //self.getMoonPhase(date: date)
+        
+//        var phase = moonModels.first?.moonPhase ?? .newMoon
+//
+//        let ms = currentCity.moonDays.filter({ $0.date?.isSameDate(date) ?? false })
+//
+//        for m in ms {
+//            if m.moonPhase == DBMoonPhase.newMoon || m.moonPhase == DBMoonPhase.fullMoon {
+//                phase = m.moonPhase!
+//            }
+//        }
+        
+        let phase = self.getMoonPhase(date: date, city: currentCity)
         
         let eclipses = [
             EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: false),
@@ -406,10 +417,28 @@ extension MoonCalculatorManager {
     
     
     //Получить фазу луны
-    private func getMoonPhase(date: Date) -> DBMoonPhase {
+    private func getMoonPhase(date: Date, city: DBCityModel) -> DBMoonPhase {
+        
+        let moonDays = city.moonDays
         
         
-        return .newMoon
+        let ms = moonDays.filter({ $0.date?.isSameDate(date) ?? false })
+        
+        var phase = ms.first?.moonPhase ?? .newMoon
+        if let p = ms.first?.moonPhase {
+            phase = p
+        } else {
+            phase = moonDays.filter({ $0.date?.isSameDate(date.adjust(.day, offset: -1)) ?? false }).last?.moonPhase ?? .newMoon
+        }
+        
+        
+        for m in ms {
+            if m.moonPhase == DBMoonPhase.newMoon || m.moonPhase == DBMoonPhase.fullMoon {
+                return m.moonPhase!
+            }
+        }
+        
+        return phase
     }
     
     
