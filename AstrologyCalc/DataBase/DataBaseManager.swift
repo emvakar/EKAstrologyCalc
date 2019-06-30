@@ -13,17 +13,28 @@ public class DataBaseManager {
     public init() {}
     
     public func makeCountriesFromJSON() -> [DBCountryModel] {
-        if let path = Bundle.init(for: DataBaseManager.self).path(forResource: "DataBase", ofType: "json") {
+        var countries = [DBCountryModel]()
+        
+        for i in 1...67 {
+            if let country = self.getCountry(n: i) {
+                countries.append(country)
+            }
+        }
+        
+        return countries
+    }
+    
+    public func getCountry(n: Int) -> DBCountryModel? {
+        if let path = Bundle.init(for: DataBaseManager.self).path(forResource: "db_\(n)", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
                 let decoder = JSONDecoder()
-                let models = try decoder.decode([DBCountryModel].self, from: data)
-                return models
+                let model = try decoder.decode(DBCountryModel.self, from: data)
+                return model
             } catch {
                 print(error)
             }
         }
-        
-        return []
+        return nil
     }
 }
