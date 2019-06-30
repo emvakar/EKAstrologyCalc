@@ -431,9 +431,11 @@ extension MoonCalculatorManager {
             phase = moonDays.filter({ $0.date?.isSameDate(date.adjust(.day, offset: -1)) ?? false }).last?.moonPhase ?? .newMoon
         }
         
-        
         for m in ms {
             if m.moonPhase == DBMoonPhase.newMoon || m.moonPhase == DBMoonPhase.fullMoon {
+                if (m.age == 1 || m.age == 29 || m.age == 30) && m.moonPhase == DBMoonPhase.fullMoon {
+                    return .newMoon
+                }
                 return m.moonPhase!
             }
         }
