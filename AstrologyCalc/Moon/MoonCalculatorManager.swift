@@ -183,8 +183,8 @@ extension MoonCalculatorManager {
         }
         
         //если лунный день не попал в переданный календарный день, то тут 1 вариант: в этот календарный день содержит 1 лунный день (он начался раньше календарного дня и закончится позже календарного дня)
-        if let moonDayTuple = moonDayForExtraCase {
-            let moonDay = self.makeMoonModel(age: moonDayTuple.moonDay.age, zodiacSign: moonDayTuple.moonDay.sign, zodiacSignDate: moonDayTuple.moonDay.signDate.toDate, moonRise: nil, moonSet: nil)
+        if let moonDayTuple = moonDayForExtraCase, ((moonDayTuple.index + 1) < allMoonDays.count) {
+            let moonDay = self.makeMoonModel(age: moonDayTuple.moonDay.age, zodiacSign: moonDayTuple.moonDay.sign, zodiacSignDate: moonDayTuple.moonDay.signDate.toDate, moonRise: moonDayTuple.moonDay.date, moonSet: allMoonDays[moonDayTuple.index + 1].date)
             filteredMoonDays = [moonDay]
             return filteredMoonDays
         }
