@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import AstrologyCalc
+import DevHelper
 
 class ViewController: UIViewController {
     
@@ -48,10 +49,25 @@ class ViewController: UIViewController {
         
         let manager = MoonCalculatorManager(location: CLLocation(latitude: 55.751244, longitude: 37.618423))
         
-        let calendar = Calendar(identifier: .gregorian)
-        let dateComponents = DateComponents(calendar: calendar, year: 2019, month: 5, day: 5, hour: 13, minute: 21)
-        guard let day = calendar.date(from: dateComponents) else {return}
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? .current
+        var dateComponents = DateComponents(calendar: calendar, year: 2019, month: 5, day: 23, hour: 00, minute: 00)
+        dateComponents.calendar = calendar
+        dateComponents.timeZone = calendar.timeZone
         
+//        guard let day = calendar.date(from: dateComponents) else {return}
+        guard let day = Date(fromString: "23.05.2019", format: .custom("dd.MM.yyyy")) else { return }
+        
+//        let moons = firstCity.moonDays.filter({
+//
+//            if ($0.date?.isSameDate(day)) ?? false || ($0.date?.isSameDate(day.adjust(.day, offset: -1)) ?? false) || ($0.date?.isSameDate(day.adjust(.day, offset: 1)) ?? false) {
+//                return true
+//            }
+//            return false
+//        })
+//
+//        let newCity = DBCityModel(cityName: firstCity.cityName, moonDays: moons)
+//
         let models = manager.getMoonModels(date: day, city: firstCity)
         /////////////////////////////////////////////////////////////
         

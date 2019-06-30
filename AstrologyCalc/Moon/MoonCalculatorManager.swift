@@ -45,25 +45,13 @@ public class MoonCalculatorManager {
         } else {
             currentCity = DataBaseManager().makeCountriesFromJSON()[0].cities[0]
         }
-        let phase = self.getMoonPhase(date: date)
         
         let trajectory = self.getMoonTrajectory(date: date)
         
+        let moonModels = self.getMoonModels(date: date, city: currentCity)
         
-        let startOfDay = date.startOfDay
-        let endOfDay = date.endOfDay ?? Date()
-        let dayInterval = DateInterval(start: startOfDay.adjust(.day, offset: -3), end: endOfDay.adjust(.day, offset: 4))
+        let phase = currentCity.moonDays.first?.moonPhase ?? .newMoon //self.getMoonPhase(date: date)
         
-        let moons = city?.moonDays.filter({
-            if let date = $0.date {
-                return dayInterval.contains(date)
-            }
-            return false
-        }) ?? []
-        
-        let newCity = DBCityModel(cityName: city?.cityName ?? "", moonDays: moons)
-        
-        let moonModels = self.getMoonModels(date: date, city: newCity)
         let eclipses = [
             EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: false),
             EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: true)
@@ -415,34 +403,43 @@ extension MoonCalculatorManager {
 //        return zodiac
 //    }
     
+    
+    
     //Получить фазу луны
-    private func getMoonPhase(date: Date) -> MoonPhase {
-        let age: Double = self.getMoonAge(date: date)
+    private func getMoonPhase(date: Date) -> DBMoonPhase {
         
-        var phase: MoonPhase
         
-        if (age < 1.84566) {
-            phase = .newMoon
-        } else if (age < 5.53699) {
-            phase = .waxingCrescent
-        } else if (age < 9.22831) {
-            phase = .firstQuarter
-        } else if (age < 12.91963) {
-            phase = .waxingGibbous
-        } else if (age < 16.61096) {
-            phase = .fullMoon
-        } else if (age < 20.30228) {
-            phase = .waningGibbous
-        } else if (age < 23.99361) {
-            phase = .lastQuarter
-        } else if (age < 27.68493) {
-            phase = .waningCrescent
-        } else {
-            phase = .newMoon
-        }
-        
-        return phase
+        return .newMoon
     }
+    
+    
+//    private func getMoonPhase(date: Date) -> MoonPhase {
+//        let age: Double = self.getMoonAge(date: date)
+//
+//        var phase: MoonPhase
+//
+//        if (age < 1.84566) {
+//            phase = .newMoon
+//        } else if (age < 5.53699) {
+//            phase = .waxingCrescent
+//        } else if (age < 9.22831) {
+//            phase = .firstQuarter
+//        } else if (age < 12.91963) {
+//            phase = .waxingGibbous
+//        } else if (age < 16.61096) {
+//            phase = .fullMoon
+//        } else if (age < 20.30228) {
+//            phase = .waningGibbous
+//        } else if (age < 23.99361) {
+//            phase = .lastQuarter
+//        } else if (age < 27.68493) {
+//            phase = .waningCrescent
+//        } else {
+//            phase = .newMoon
+//        }
+//
+//        return phase
+//    }
     
     //Получить лунный день
     private func getMoonAge(date: Date) -> Double {
