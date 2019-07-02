@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0460F5EF30D6AFF229041060 /* Pods_AstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F30C604999DC6B28D77967B /* Pods_AstrologyCalc.framework */; };
 		204B3F2322B6FE6100F62DB7 /* ParsedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204B3F2222B6FE6100F62DB7 /* ParsedModel.swift */; };
 		204B3F2522B6FFA500F62DB7 /* parsing.json in Resources */ = {isa = PBXBuildFile; fileRef = 204B3F2422B6FFA500F62DB7 /* parsing.json */; };
 		208F402B2296976800C5CF98 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F402A2296976800C5CF98 /* Date+Extension.swift */; };
@@ -95,7 +96,8 @@
 		20EBC791224B985D0054E6E5 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC790224B985D0054E6E5 /* .travis.yml */; };
 		20EBC794224B986E0054E6E5 /* AstrologyCalc.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */; };
 		20EBC795224B986E0054E6E5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC793224B986E0054E6E5 /* README.md */; };
-		A32C0C45A959E3A04B992895 /* Pods_Example_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477876DF6A30A17F2536E864 /* Pods_Example_App.framework */; };
+		2F68F45A7173B89F9656D392 /* Pods_AstrologyCalcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D7D23C9E5A981E556DA1B70 /* Pods_AstrologyCalcTests.framework */; };
+		A072ED0E67393CF9F9303D0B /* Pods_Example_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF82974B3499682CC223A5F4 /* Pods_Example_App.framework */; };
 		CE5A943F22C60A7300AF8280 /* DataBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A943E22C60A7300AF8280 /* DataBaseModels.swift */; };
 		CE5A944122C60AA100AF8280 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A944022C60AA100AF8280 /* DataBaseManager.swift */; };
 		CE5A944422C6309D00AF8280 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A944322C6309D00AF8280 /* String+Extension.swift */; };
@@ -103,8 +105,6 @@
 		DA6456FB2254030D0031867D /* EclipseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456FA2254030D0031867D /* EclipseCalculator.swift */; };
 		DA6456FD225405560031867D /* AstroUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456FC225405560031867D /* AstroUtils.swift */; };
 		DA6456FF2254F48F0031867D /* AstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EBC734224B958C0054E6E5 /* AstrologyCalc.framework */; };
-		F389940F32EDC0A762A1D3E2 /* Pods_AstrologyCalcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D411F6004E98FF62ABBBEA /* Pods_AstrologyCalcTests.framework */; };
-		F85AC6816C2B732AC93D7F89 /* Pods_AstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203ECD472F3BE256BE1815A9 /* Pods_AstrologyCalc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,8 +118,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18D411F6004E98FF62ABBBEA /* Pods_AstrologyCalcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		203ECD472F3BE256BE1815A9 /* Pods_AstrologyCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0616024A03BE1380F82D0C0A /* Pods-AstrologyCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalc.release.xcconfig"; path = "Target Support Files/Pods-AstrologyCalc/Pods-AstrologyCalc.release.xcconfig"; sourceTree = "<group>"; };
 		204B3F2222B6FE6100F62DB7 /* ParsedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedModel.swift; sourceTree = "<group>"; };
 		204B3F2422B6FFA500F62DB7 /* parsing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parsing.json; sourceTree = "<group>"; };
 		208F402A2296976800C5CF98 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -213,19 +212,20 @@
 		20EBC790224B985D0054E6E5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AstrologyCalc.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		20EBC793224B986E0054E6E5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		2D900E6B069FF35073EFFE4C /* Pods-AstrologyCalcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalcTests.release.xcconfig"; path = "Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests.release.xcconfig"; sourceTree = "<group>"; };
-		36C5DB6A849630696E12E4D5 /* Pods-AstrologyCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalc.release.xcconfig"; path = "Target Support Files/Pods-AstrologyCalc/Pods-AstrologyCalc.release.xcconfig"; sourceTree = "<group>"; };
-		477876DF6A30A17F2536E864 /* Pods_Example_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55879174E2BCD59F291F8281 /* Pods-AstrologyCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalc.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyCalc/Pods-AstrologyCalc.debug.xcconfig"; sourceTree = "<group>"; };
-		767E4DDBD47A64B386C1EA83 /* Pods-AstrologyCalcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalcTests.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8570A83D9C39C43EC090A2D2 /* Pods-Example App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example App.release.xcconfig"; path = "Target Support Files/Pods-Example App/Pods-Example App.release.xcconfig"; sourceTree = "<group>"; };
-		912D2F06AE7AAADDA0E169CD /* Pods-Example App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example App.debug.xcconfig"; path = "Target Support Files/Pods-Example App/Pods-Example App.debug.xcconfig"; sourceTree = "<group>"; };
+		286AB5AC2AD8371476BCDA9E /* Pods-AstrologyCalcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalcTests.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D7D23C9E5A981E556DA1B70 /* Pods_AstrologyCalcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		587FDFBE2ED5875BB4AC89A1 /* Pods-AstrologyCalcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalcTests.release.xcconfig"; path = "Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests.release.xcconfig"; sourceTree = "<group>"; };
+		9B8DC7EBE385168627D0EFF6 /* Pods-Example App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example App.debug.xcconfig"; path = "Target Support Files/Pods-Example App/Pods-Example App.debug.xcconfig"; sourceTree = "<group>"; };
+		9F30C604999DC6B28D77967B /* Pods_AstrologyCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B980AA1ACEA9838635FACF85 /* Pods-Example App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example App.release.xcconfig"; path = "Target Support Files/Pods-Example App/Pods-Example App.release.xcconfig"; sourceTree = "<group>"; };
 		CE5A943E22C60A7300AF8280 /* DataBaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseModels.swift; sourceTree = "<group>"; };
 		CE5A944022C60AA100AF8280 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		CE5A944322C6309D00AF8280 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D3E842279DFEF0214A9E97FA /* Pods-AstrologyCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalc.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyCalc/Pods-AstrologyCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		DA6456F82253FE570031867D /* Eclipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eclipse.swift; sourceTree = "<group>"; };
 		DA6456FA2254030D0031867D /* EclipseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EclipseCalculator.swift; sourceTree = "<group>"; };
 		DA6456FC225405560031867D /* AstroUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroUtils.swift; sourceTree = "<group>"; };
+		EF82974B3499682CC223A5F4 /* Pods_Example_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,7 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F85AC6816C2B732AC93D7F89 /* Pods_AstrologyCalc.framework in Frameworks */,
+				0460F5EF30D6AFF229041060 /* Pods_AstrologyCalc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20EBC73E224B958C0054E6E5 /* AstrologyCalc.framework in Frameworks */,
-				F389940F32EDC0A762A1D3E2 /* Pods_AstrologyCalcTests.framework in Frameworks */,
+				2F68F45A7173B89F9656D392 /* Pods_AstrologyCalcTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA6456FF2254F48F0031867D /* AstrologyCalc.framework in Frameworks */,
-				A32C0C45A959E3A04B992895 /* Pods_Example_App.framework in Frameworks */,
+				A072ED0E67393CF9F9303D0B /* Pods_Example_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,8 +344,8 @@
 				20EBC741224B958C0054E6E5 /* AstrologyCalcTests */,
 				20EBC763224B96960054E6E5 /* Example App */,
 				20EBC735224B958C0054E6E5 /* Products */,
-				DA6456FE2254F48F0031867D /* Frameworks */,
 				6B264221D88DD0B36BF3B334 /* Pods */,
+				2B26D85AFD37E91B56B861C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -418,15 +418,25 @@
 			path = "Example App";
 			sourceTree = "<group>";
 		};
+		2B26D85AFD37E91B56B861C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F30C604999DC6B28D77967B /* Pods_AstrologyCalc.framework */,
+				2D7D23C9E5A981E556DA1B70 /* Pods_AstrologyCalcTests.framework */,
+				EF82974B3499682CC223A5F4 /* Pods_Example_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B264221D88DD0B36BF3B334 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				55879174E2BCD59F291F8281 /* Pods-AstrologyCalc.debug.xcconfig */,
-				36C5DB6A849630696E12E4D5 /* Pods-AstrologyCalc.release.xcconfig */,
-				767E4DDBD47A64B386C1EA83 /* Pods-AstrologyCalcTests.debug.xcconfig */,
-				2D900E6B069FF35073EFFE4C /* Pods-AstrologyCalcTests.release.xcconfig */,
-				912D2F06AE7AAADDA0E169CD /* Pods-Example App.debug.xcconfig */,
-				8570A83D9C39C43EC090A2D2 /* Pods-Example App.release.xcconfig */,
+				D3E842279DFEF0214A9E97FA /* Pods-AstrologyCalc.debug.xcconfig */,
+				0616024A03BE1380F82D0C0A /* Pods-AstrologyCalc.release.xcconfig */,
+				286AB5AC2AD8371476BCDA9E /* Pods-AstrologyCalcTests.debug.xcconfig */,
+				587FDFBE2ED5875BB4AC89A1 /* Pods-AstrologyCalcTests.release.xcconfig */,
+				9B8DC7EBE385168627D0EFF6 /* Pods-Example App.debug.xcconfig */,
+				B980AA1ACEA9838635FACF85 /* Pods-Example App.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -450,16 +460,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		DA6456FE2254F48F0031867D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				203ECD472F3BE256BE1815A9 /* Pods_AstrologyCalc.framework */,
-				18D411F6004E98FF62ABBBEA /* Pods_AstrologyCalcTests.framework */,
-				477876DF6A30A17F2536E864 /* Pods_Example_App.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -478,7 +478,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EBC748224B958C0054E6E5 /* Build configuration list for PBXNativeTarget "AstrologyCalc" */;
 			buildPhases = (
-				2AE435468954D4E6E24A38E7 /* [CP] Check Pods Manifest.lock */,
+				ED7D384E20E01867BEB2FC86 /* [CP] Check Pods Manifest.lock */,
 				20EBC72F224B958C0054E6E5 /* Headers */,
 				20EBC730224B958C0054E6E5 /* Sources */,
 				20EBC731224B958C0054E6E5 /* Frameworks */,
@@ -497,11 +497,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EBC74B224B958C0054E6E5 /* Build configuration list for PBXNativeTarget "AstrologyCalcTests" */;
 			buildPhases = (
-				AE5276FE6578874F9052DB3F /* [CP] Check Pods Manifest.lock */,
+				3D656D6FD8BAC8BC99DE6414 /* [CP] Check Pods Manifest.lock */,
 				20EBC739224B958C0054E6E5 /* Sources */,
 				20EBC73A224B958C0054E6E5 /* Frameworks */,
 				20EBC73B224B958C0054E6E5 /* Resources */,
-				324745A3F417ECC8DA3DD9C8 /* [CP] Embed Pods Frameworks */,
+				64EE0C23ABA630CF72B5A564 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -517,11 +517,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EBC77C224B96980054E6E5 /* Build configuration list for PBXNativeTarget "Example App" */;
 			buildPhases = (
-				95EF8AF07E0FC0B20DEDFE1E /* [CP] Check Pods Manifest.lock */,
+				A26E65A9EA0594D5A0174D9C /* [CP] Check Pods Manifest.lock */,
 				20EBC75E224B96960054E6E5 /* Sources */,
 				20EBC75F224B96960054E6E5 /* Frameworks */,
 				20EBC760224B96960054E6E5 /* Resources */,
-				A766E5B48094DAC4E33B3463 /* [CP] Embed Pods Frameworks */,
+				B6D6BBCC029C4E88AF63EC1A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -672,7 +672,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2AE435468954D4E6E24A38E7 /* [CP] Check Pods Manifest.lock */ = {
+		3D656D6FD8BAC8BC99DE6414 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -687,14 +687,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AstrologyCalc-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AstrologyCalcTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		324745A3F417ECC8DA3DD9C8 /* [CP] Embed Pods Frameworks */ = {
+		64EE0C23ABA630CF72B5A564 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -711,7 +711,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95EF8AF07E0FC0B20DEDFE1E /* [CP] Check Pods Manifest.lock */ = {
+		A26E65A9EA0594D5A0174D9C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -733,7 +733,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A766E5B48094DAC4E33B3463 /* [CP] Embed Pods Frameworks */ = {
+		B6D6BBCC029C4E88AF63EC1A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -750,7 +750,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example App/Pods-Example App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AE5276FE6578874F9052DB3F /* [CP] Check Pods Manifest.lock */ = {
+		ED7D384E20E01867BEB2FC86 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -765,7 +765,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AstrologyCalcTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AstrologyCalc-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -962,7 +962,7 @@
 		};
 		20EBC749224B958C0054E6E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55879174E2BCD59F291F8281 /* Pods-AstrologyCalc.debug.xcconfig */;
+			baseConfigurationReference = D3E842279DFEF0214A9E97FA /* Pods-AstrologyCalc.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -988,7 +988,7 @@
 		};
 		20EBC74A224B958C0054E6E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36C5DB6A849630696E12E4D5 /* Pods-AstrologyCalc.release.xcconfig */;
+			baseConfigurationReference = 0616024A03BE1380F82D0C0A /* Pods-AstrologyCalc.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1014,7 +1014,7 @@
 		};
 		20EBC74C224B958C0054E6E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 767E4DDBD47A64B386C1EA83 /* Pods-AstrologyCalcTests.debug.xcconfig */;
+			baseConfigurationReference = 286AB5AC2AD8371476BCDA9E /* Pods-AstrologyCalcTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1034,7 +1034,7 @@
 		};
 		20EBC74D224B958C0054E6E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D900E6B069FF35073EFFE4C /* Pods-AstrologyCalcTests.release.xcconfig */;
+			baseConfigurationReference = 587FDFBE2ED5875BB4AC89A1 /* Pods-AstrologyCalcTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1054,7 +1054,7 @@
 		};
 		20EBC77D224B96980054E6E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 912D2F06AE7AAADDA0E169CD /* Pods-Example App.debug.xcconfig */;
+			baseConfigurationReference = 9B8DC7EBE385168627D0EFF6 /* Pods-Example App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1074,7 +1074,7 @@
 		};
 		20EBC77E224B96980054E6E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8570A83D9C39C43EC090A2D2 /* Pods-Example App.release.xcconfig */;
+			baseConfigurationReference = B980AA1ACEA9838635FACF85 /* Pods-Example App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

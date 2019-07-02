@@ -4,6 +4,6 @@ xcode_sdk: iphonesimulator10.2
 notifications:
   slack: eskaria:RRTsJOW40z95SajyTLBy7lxy
 script:
-- set -o pipefail && pod update && xcodebuild test -workspace AstrologyCalc.xcworkspace -scheme AstrologyCalcTests -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X' ONLY_ACTIVE_ARCH=NO | xcpretty -c --test --color
+- set -o pipefail && pod deintegrate && pod update && xcodebuild test -workspace AstrologyCalc.xcworkspace -scheme AstrologyCalcTests -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X' ONLY_ACTIVE_ARCH=NO | xcpretty -c --test --color
 after_script:
 - bash ./telegram_notification.sh
