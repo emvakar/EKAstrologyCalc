@@ -1016,7 +1016,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 767E4DDBD47A64B386C1EA83 /* Pods-AstrologyCalcTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V93MRMNEKV;
 				INFOPLIST_FILE = AstrologyCalcTests/Info.plist;
@@ -1036,7 +1036,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D900E6B069FF35073EFFE4C /* Pods-AstrologyCalcTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V93MRMNEKV;
 				INFOPLIST_FILE = AstrologyCalcTests/Info.plist;
