@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import AstrologyCalc
+import DevHelper
 
 class ViewController: UIViewController {
     
@@ -37,10 +38,40 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Started...")
+        
         self.view.backgroundColor = .white
         self.moonPhaseManager = MoonCalculatorManager(location: location)
         
-        let info = self.moonPhaseManager.getInfo(date: Date())
+        /////-------- проверка лунных дней -----------
+        let countries = DataBaseManager().makeCountriesFromJSON()
+        let firstCity = countries[0].cities[0]
+        
+        let manager = MoonCalculatorManager(location: CLLocation(latitude: 55.751244, longitude: 37.618423))
+        
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? .current
+        var dateComponents = DateComponents(calendar: calendar, year: 2019, month: 5, day: 23, hour: 00, minute: 00)
+        dateComponents.calendar = calendar
+        dateComponents.timeZone = calendar.timeZone
+        
+//        guard let day = calendar.date(from: dateComponents) else {return}
+        guard let day = Date(fromString: "23.05.2019", format: .custom("dd.MM.yyyy")) else { return }
+        
+//        let moons = firstCity.moonDays.filter({
+//
+//            if ($0.date?.isSameDate(day)) ?? false || ($0.date?.isSameDate(day.adjust(.day, offset: -1)) ?? false) || ($0.date?.isSameDate(day.adjust(.day, offset: 1)) ?? false) {
+//                return true
+//            }
+//            return false
+//        })
+//
+//        let newCity = DBCityModel(cityName: firstCity.cityName, moonDays: moons)
+//
+        let models = manager.getMoonModels(date: day, city: firstCity)
+        /////////////////////////////////////////////////////////////
+        
+        let info = self.moonPhaseManager.getInfo(date: Date(), city: firstCity)
         
         self.addInfo(param: "=== Current localtion ===", value: "", on: self.container, textAlignment: .center)
         self.addInfo(param: "Latitude", value: "\(info.location.coordinate.latitude)", on: self.container, textAlignment: .left)
@@ -59,6 +90,14 @@ class ViewController: UIViewController {
         self.addInfo(param: "Previous eclipse", value: "\(info.previousLunarEclipse.maxPhaseDate!))", on: self.container, textAlignment: .left)
         self.addInfo(param: "Next eclipse", value: "\(info.nextLunarEclipse.maxPhaseDate!))", on: self.container, textAlignment: .left)
         
+        
+        let dateString = "22.05.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy")) else {
+            fatalError("cant get date from string!")
+        }
+        
+        let days = self.moonPhaseManager.getMoonDays(at: date)
+        print(days)
     }
     
     override var shouldAutorotate: Bool {

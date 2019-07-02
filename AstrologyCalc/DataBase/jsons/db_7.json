@@ -1,0 +1,2234 @@
+{
+  "countryName" : "Армения",
+  "cities" : [
+    {
+      "cityName" : "Ереван",
+      "moonDays" : [
+        {
+          "signDate" : "2019-05-02T10:23+0000",
+          "date" : "2019-05-01T00:37+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : null,
+          "age" : 26,
+          "moonPhase" : null
+        },
+        {
+          "signDate" : "2019-05-02T10:23+0000",
+          "date" : "2019-05-02T01:04+0000",
+          "sign" : "aries",
+          "age" : 27,
+          "moonPhaseDate" : null,
+          "moonPhase" : null
+        },
+        {
+          "signDate" : "2019-05-02T10:23+0000",
+          "date" : "2019-05-03T01:30+0000",
+          "sign" : "aries",
+          "age" : 28,
+          "moonPhaseDate" : null,
+          "moonPhase" : null
+        },
+        {
+          "signDate" : "2019-05-04T20:21+0000",
+          "sign" : "taurus",
+          "date" : "2019-05-04T01:58+0000",
+          "age" : 29,
+          "moonPhaseDate" : null,
+          "moonPhase" : null
+        },
+        {
+          "signDate" : "2019-05-04T20:21+0000",
+          "sign" : "taurus",
+          "date" : "2019-05-04T22:45+0000",
+          "moonPhaseDate" : "2019-05-05T22:45+0000",
+          "age" : 1,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-05-04T20:21+0000",
+          "date" : "2019-05-05T02:29+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-05-05T22:45+0000",
+          "age" : 2,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-05-07T03:42+0000",
+          "sign" : "gemini",
+          "date" : "2019-05-06T03:03+0000",
+          "moonPhaseDate" : "2019-05-04T22:45+0000",
+          "age" : 3,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-05-07T03:42+0000",
+          "sign" : "gemini",
+          "date" : "2019-05-07T03:43+0000",
+          "moonPhaseDate" : "2019-05-04T22:45+0000",
+          "age" : 4,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-05-09T09:05+0000",
+          "sign" : "cancer",
+          "date" : "2019-05-08T04:30+0000",
+          "age" : 5,
+          "moonPhaseDate" : "2019-05-04T22:45+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-05-09T09:05+0000",
+          "date" : "2019-05-09T05:24+0000",
+          "sign" : "cancer",
+          "moonPhaseDate" : "2019-05-04T22:45+0000",
+          "age" : 6,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-05-11T13:12+0000",
+          "date" : "2019-05-10T06:26+0000",
+          "sign" : "leo",
+          "age" : 7,
+          "moonPhaseDate" : "2019-05-04T22:45+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-05-11T13:12+0000",
+          "date" : "2019-05-11T07:32+0000",
+          "sign" : "leo",
+          "age" : 8,
+          "moonPhaseDate" : "2019-05-04T22:45+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-05-13T01:12+0000",
+          "date" : "2019-05-12T08:42+0000",
+          "sign" : "virgo",
+          "moonPhaseDate" : "2019-05-13T01:12+0000",
+          "age" : 9,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-05-13T01:12+0000",
+          "sign" : "virgo",
+          "date" : "2019-05-13T09:53+0000",
+          "moonPhaseDate" : "2019-05-12T01:12+0000",
+          "age" : 10,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-05-15T18:53+0000",
+          "date" : "2019-05-14T11:04+0000",
+          "sign" : "libra",
+          "age" : 11,
+          "moonPhaseDate" : "2019-05-12T01:12+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-05-15T18:53+0000",
+          "date" : "2019-05-15T12:14+0000",
+          "sign" : "libra",
+          "moonPhaseDate" : "2019-05-12T01:12+0000",
+          "age" : 12,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-05-15T18:53+0000",
+          "sign" : "libra",
+          "date" : "2019-05-16T13:24+0000",
+          "moonPhaseDate" : "2019-05-12T01:12+0000",
+          "age" : 13,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-05-17T21:25+0000",
+          "date" : "2019-05-17T14:34+0000",
+          "sign" : "scorpio",
+          "moonPhaseDate" : "2019-05-12T01:12+0000",
+          "age" : 14,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-05-17T21:25+0000",
+          "sign" : "scorpio",
+          "date" : "2019-05-18T15:43+0000",
+          "age" : 15,
+          "moonPhaseDate" : "2019-05-12T01:12+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-05-19T21:11+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-05-19T16:49+0000",
+          "age" : 16,
+          "moonPhaseDate" : "2019-05-19T21:11+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-05-19T21:11+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-05-20T17:53+0000",
+          "moonPhaseDate" : "2019-05-18T21:11+0000",
+          "age" : 17,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-05-22T07:56+0000",
+          "date" : "2019-05-21T18:51+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-05-18T21:11+0000",
+          "age" : 18,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-05-22T07:56+0000",
+          "date" : "2019-05-22T19:43+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-05-18T21:11+0000",
+          "age" : 19,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-05-22T07:56+0000",
+          "sign" : "aquarius",
+          "date" : "2019-05-23T20:28+0000",
+          "moonPhaseDate" : "2019-05-18T21:11+0000",
+          "age" : 20,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-05-22T07:56+0000",
+          "date" : "2019-05-24T21:08+0000",
+          "sign" : "aquarius",
+          "moonPhaseDate" : "2019-05-18T21:11+0000",
+          "age" : 21,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-05-27T16:33+0000",
+          "sign" : "pisces",
+          "date" : "2019-05-25T21:42+0000",
+          "age" : 22,
+          "moonPhaseDate" : "2019-05-27T16:33+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-05-27T16:33+0000",
+          "date" : "2019-05-26T22:12+0000",
+          "sign" : "pisces",
+          "age" : 23,
+          "moonPhaseDate" : "2019-05-26T16:33+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-05-29T18:29+0000",
+          "date" : "2019-05-27T22:40+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2019-05-26T16:33+0000",
+          "age" : 24,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-05-29T18:29+0000",
+          "date" : "2019-05-28T23:06+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2019-05-26T16:33+0000",
+          "age" : 25,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-05-29T18:29+0000",
+          "sign" : "aries",
+          "date" : "2019-05-29T23:32+0000",
+          "age" : 26,
+          "moonPhaseDate" : "2019-05-26T16:33+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-01T04:44+0000",
+          "date" : "2019-05-30T23:59+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-05-26T16:33+0000",
+          "age" : 27,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-01T04:44+0000",
+          "date" : "2019-06-01T00:28+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : null,
+          "age" : 28,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-03T11:51+0000",
+          "date" : "2019-06-02T01:01+0000",
+          "sign" : "gemini",
+          "age" : 29,
+          "moonPhaseDate" : null,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-03T11:51+0000",
+          "date" : "2019-06-03T01:38+0000",
+          "sign" : "gemini",
+          "moonPhaseDate" : "2019-06-04T10:02+0000",
+          "age" : 30,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-06-03T11:51+0000",
+          "date" : "2019-06-03T10:02+0000",
+          "sign" : "gemini",
+          "age" : 1,
+          "moonPhaseDate" : "2019-06-04T10:02+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-06-05T16:18+0000",
+          "date" : "2019-06-04T02:23+0000",
+          "sign" : "cancer",
+          "moonPhaseDate" : "2019-06-03T10:02+0000",
+          "age" : 2,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-06-05T16:18+0000",
+          "date" : "2019-06-05T03:16+0000",
+          "sign" : "cancer",
+          "age" : 3,
+          "moonPhaseDate" : "2019-06-03T10:02+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-06-07T19:14+0000",
+          "sign" : "leo",
+          "date" : "2019-06-06T04:16+0000",
+          "moonPhaseDate" : "2019-06-03T10:02+0000",
+          "age" : 4,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-06-07T19:14+0000",
+          "date" : "2019-06-07T05:23+0000",
+          "sign" : "leo",
+          "moonPhaseDate" : "2019-06-03T10:02+0000",
+          "age" : 5,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-06-07T19:14+0000",
+          "sign" : "leo",
+          "date" : "2019-06-08T06:33+0000",
+          "age" : 6,
+          "moonPhaseDate" : "2019-06-03T10:02+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-06-09T21:43+0000",
+          "date" : "2019-06-09T07:44+0000",
+          "sign" : "virgo",
+          "age" : 7,
+          "moonPhaseDate" : "2019-06-03T10:02+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-06-11T05:59+0000",
+          "date" : "2019-06-10T08:55+0000",
+          "sign" : "virgo",
+          "age" : 8,
+          "moonPhaseDate" : "2019-06-11T05:59+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-06-12T00:30+0000",
+          "sign" : "libra",
+          "date" : "2019-06-11T10:05+0000",
+          "age" : 9,
+          "moonPhaseDate" : "2019-06-10T05:59+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-06-12T00:30+0000",
+          "sign" : "libra",
+          "date" : "2019-06-12T11:13+0000",
+          "moonPhaseDate" : "2019-06-10T05:59+0000",
+          "age" : 10,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-06-14T04:03+0000",
+          "sign" : "scorpio",
+          "date" : "2019-06-13T12:21+0000",
+          "moonPhaseDate" : "2019-06-10T05:59+0000",
+          "age" : 11,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-06-14T04:03+0000",
+          "date" : "2019-06-14T13:29+0000",
+          "sign" : "scorpio",
+          "age" : 12,
+          "moonPhaseDate" : "2019-06-10T05:59+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-06-16T09:01+0000",
+          "date" : "2019-06-15T14:35+0000",
+          "sign" : "sagittarius",
+          "age" : 13,
+          "moonPhaseDate" : "2019-06-10T05:59+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-06-16T09:01+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-06-16T15:39+0000",
+          "moonPhaseDate" : "2019-06-10T05:59+0000",
+          "age" : 14,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-06-18T08:31+0000",
+          "date" : "2019-06-17T16:40+0000",
+          "sign" : "capricorn",
+          "age" : 15,
+          "moonPhaseDate" : "2019-06-18T08:31+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-06-18T08:31+0000",
+          "date" : "2019-06-18T17:35+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-06-17T08:31+0000",
+          "age" : 16,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-06-18T08:31+0000",
+          "sign" : "capricorn",
+          "date" : "2019-06-19T18:23+0000",
+          "moonPhaseDate" : "2019-06-17T08:31+0000",
+          "age" : 17,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-06-21T02:01+0000",
+          "date" : "2019-06-20T19:05+0000",
+          "sign" : "aquarius",
+          "age" : 18,
+          "moonPhaseDate" : "2019-06-17T08:31+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-06-21T02:01+0000",
+          "sign" : "aquarius",
+          "date" : "2019-06-21T19:41+0000",
+          "moonPhaseDate" : "2019-06-17T08:31+0000",
+          "age" : 19,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-06-21T02:01+0000",
+          "sign" : "pisces",
+          "date" : "2019-06-22T20:13+0000",
+          "moonPhaseDate" : "2019-06-17T08:31+0000",
+          "age" : 20,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-06-21T02:01+0000",
+          "sign" : "pisces",
+          "date" : "2019-06-23T20:42+0000",
+          "moonPhaseDate" : "2019-06-17T08:31+0000",
+          "age" : 21,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-06-26T09:46+0000",
+          "date" : "2019-06-24T21:08+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2019-06-26T09:46+0000",
+          "age" : 22,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-26T09:46+0000",
+          "date" : "2019-06-25T21:34+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2019-06-25T09:46+0000",
+          "age" : 23,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-28T13:30+0000",
+          "date" : "2019-06-26T22:00+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-06-25T09:46+0000",
+          "age" : 24,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-28T13:30+0000",
+          "date" : "2019-06-27T22:27+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-06-25T09:46+0000",
+          "age" : 25,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-28T13:30+0000",
+          "sign" : "taurus",
+          "date" : "2019-06-28T22:57+0000",
+          "moonPhaseDate" : "2019-06-25T09:46+0000",
+          "age" : 26,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-30T21:10+0000",
+          "sign" : "gemini",
+          "date" : "2019-06-29T23:32+0000",
+          "moonPhaseDate" : "2019-06-25T09:46+0000",
+          "age" : 27,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-06-30T21:10+0000",
+          "sign" : "gemini",
+          "date" : "2019-07-01T00:13+0000",
+          "moonPhaseDate" : null,
+          "age" : 28,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-07-03T01:26+0000",
+          "date" : "2019-07-02T01:03+0000",
+          "sign" : "cancer",
+          "moonPhaseDate" : "2019-07-03T19:16+0000",
+          "age" : 29,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-07-03T01:26+0000",
+          "sign" : "cancer",
+          "date" : "2019-07-02T19:16+0000",
+          "moonPhaseDate" : "2019-07-03T19:16+0000",
+          "age" : 1,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-07-03T01:26+0000",
+          "sign" : "cancer",
+          "date" : "2019-07-03T02:01+0000",
+          "moonPhaseDate" : "2019-07-02T19:16+0000",
+          "age" : 2,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-07-05T03:21+0000",
+          "date" : "2019-07-04T03:07+0000",
+          "sign" : "leo",
+          "age" : 3,
+          "moonPhaseDate" : "2019-07-02T19:16+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-07-05T03:21+0000",
+          "sign" : "leo",
+          "date" : "2019-07-05T04:18+0000",
+          "moonPhaseDate" : "2019-07-02T19:16+0000",
+          "age" : 4,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-07-07T04:25+0000",
+          "date" : "2019-07-06T05:32+0000",
+          "sign" : "virgo",
+          "moonPhaseDate" : "2019-07-02T19:16+0000",
+          "age" : 5,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-07-07T04:25+0000",
+          "date" : "2019-07-07T06:44+0000",
+          "sign" : "virgo",
+          "age" : 6,
+          "moonPhaseDate" : "2019-07-02T19:16+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-07-09T06:07+0000",
+          "date" : "2019-07-08T07:56+0000",
+          "sign" : "libra",
+          "age" : 7,
+          "moonPhaseDate" : "2019-07-02T19:16+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-07-10T10:55+0000",
+          "sign" : "libra",
+          "date" : "2019-07-09T09:05+0000",
+          "moonPhaseDate" : "2019-07-10T10:55+0000",
+          "age" : 8,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-07-11T09:28+0000",
+          "date" : "2019-07-10T10:13+0000",
+          "sign" : "scorpio",
+          "moonPhaseDate" : "2019-07-09T10:55+0000",
+          "age" : 9,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-07-11T09:28+0000",
+          "sign" : "scorpio",
+          "date" : "2019-07-11T11:20+0000",
+          "age" : 10,
+          "moonPhaseDate" : "2019-07-09T10:55+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-07-13T15:04+0000",
+          "date" : "2019-07-12T12:26+0000",
+          "sign" : "sagittarius",
+          "age" : 11,
+          "moonPhaseDate" : "2019-07-09T10:55+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-07-13T15:04+0000",
+          "date" : "2019-07-13T13:30+0000",
+          "sign" : "sagittarius",
+          "moonPhaseDate" : "2019-07-09T10:55+0000",
+          "age" : 12,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-07-13T15:04+0000",
+          "date" : "2019-07-14T14:31+0000",
+          "sign" : "sagittarius",
+          "age" : 13,
+          "moonPhaseDate" : "2019-07-09T10:55+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-07-15T23:03+0000",
+          "date" : "2019-07-15T15:27+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-07-09T10:55+0000",
+          "age" : 14,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-07-15T23:03+0000",
+          "date" : "2019-07-16T16:18+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-07-09T10:55+0000",
+          "age" : 15,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-07-17T21:38+0000",
+          "sign" : "aquarius",
+          "date" : "2019-07-17T17:01+0000",
+          "moonPhaseDate" : "2019-07-17T21:38+0000",
+          "age" : 16,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-07-17T21:38+0000",
+          "date" : "2019-07-18T17:40+0000",
+          "sign" : "aquarius",
+          "moonPhaseDate" : "2019-07-16T21:38+0000",
+          "age" : 17,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-07-17T21:38+0000",
+          "sign" : "aquarius",
+          "date" : "2019-07-19T18:14+0000",
+          "age" : 18,
+          "moonPhaseDate" : "2019-07-16T21:38+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-07-20T21:19+0000",
+          "date" : "2019-07-20T18:43+0000",
+          "sign" : "pisces",
+          "age" : 19,
+          "moonPhaseDate" : "2019-07-16T21:38+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-07-20T21:19+0000",
+          "date" : "2019-07-21T19:10+0000",
+          "sign" : "pisces",
+          "moonPhaseDate" : "2019-07-16T21:38+0000",
+          "age" : 20,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-07-23T10:01+0000",
+          "date" : "2019-07-22T19:36+0000",
+          "sign" : "aries",
+          "age" : 21,
+          "moonPhaseDate" : "2019-07-16T21:38+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-07-23T10:01+0000",
+          "sign" : "aries",
+          "date" : "2019-07-23T20:01+0000",
+          "moonPhaseDate" : "2019-07-16T21:38+0000",
+          "age" : 22,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-07-25T01:18+0000",
+          "sign" : "taurus",
+          "date" : "2019-07-24T20:28+0000",
+          "moonPhaseDate" : "2019-07-25T01:18+0000",
+          "age" : 23,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-07-25T01:18+0000",
+          "date" : "2019-07-25T20:56+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-07-25T01:18+0000",
+          "age" : 24,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-07-28T06:28+0000",
+          "date" : "2019-07-26T21:28+0000",
+          "sign" : "gemini",
+          "age" : 25,
+          "moonPhaseDate" : "2019-07-25T01:18+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-07-28T06:28+0000",
+          "sign" : "gemini",
+          "date" : "2019-07-27T22:05+0000",
+          "moonPhaseDate" : "2019-07-25T01:18+0000",
+          "age" : 26,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-07-30T11:30+0000",
+          "sign" : "cancer",
+          "date" : "2019-07-28T22:49+0000",
+          "age" : 27,
+          "moonPhaseDate" : "2019-07-25T01:18+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-07-30T11:30+0000",
+          "date" : "2019-07-29T23:43+0000",
+          "sign" : "cancer",
+          "moonPhaseDate" : "2019-07-25T01:18+0000",
+          "age" : 28,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-08-01T13:18+0000",
+          "date" : "2019-07-31T00:45+0000",
+          "sign" : "leo",
+          "moonPhaseDate" : "2019-07-25T01:18+0000",
+          "age" : 29,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-08-01T13:18+0000",
+          "date" : "2019-08-01T01:55+0000",
+          "sign" : "leo",
+          "moonPhaseDate" : "2019-08-02T03:12+0000",
+          "age" : 30,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-08-01T13:18+0000",
+          "date" : "2019-08-01T03:12+0000",
+          "sign" : "leo",
+          "moonPhaseDate" : "2019-08-02T03:12+0000",
+          "age" : 1,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-08-03T13:23+0000",
+          "date" : "2019-08-02T03:10+0000",
+          "sign" : "virgo",
+          "age" : 2,
+          "moonPhaseDate" : "2019-08-01T03:12+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-08-03T13:23+0000",
+          "sign" : "virgo",
+          "date" : "2019-08-03T04:26+0000",
+          "moonPhaseDate" : "2019-08-01T03:12+0000",
+          "age" : 3,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-08-05T13:32+0000",
+          "date" : "2019-08-04T05:40+0000",
+          "sign" : "libra",
+          "moonPhaseDate" : "2019-08-01T03:12+0000",
+          "age" : 4,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-08-05T13:32+0000",
+          "date" : "2019-08-05T06:53+0000",
+          "sign" : "libra",
+          "moonPhaseDate" : "2019-08-01T03:12+0000",
+          "age" : 5,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-08-07T15:31+0000",
+          "date" : "2019-08-06T08:03+0000",
+          "sign" : "scorpio",
+          "moonPhaseDate" : "2019-08-01T03:12+0000",
+          "age" : 6,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-08-08T17:31+0000",
+          "sign" : "scorpio",
+          "date" : "2019-08-07T09:12+0000",
+          "age" : 7,
+          "moonPhaseDate" : "2019-08-08T17:31+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-08-08T17:31+0000",
+          "date" : "2019-08-08T10:19+0000",
+          "sign" : "scorpio",
+          "moonPhaseDate" : "2019-08-07T17:31+0000",
+          "age" : 8,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-08-09T20:32+0000",
+          "date" : "2019-08-09T11:24+0000",
+          "sign" : "sagittarius",
+          "moonPhaseDate" : "2019-08-07T17:31+0000",
+          "age" : 9,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-08-09T20:32+0000",
+          "date" : "2019-08-10T12:26+0000",
+          "sign" : "sagittarius",
+          "moonPhaseDate" : "2019-08-07T17:31+0000",
+          "age" : 10,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-08-12T04:48+0000",
+          "sign" : "capricorn",
+          "date" : "2019-08-11T13:23+0000",
+          "moonPhaseDate" : "2019-08-07T17:31+0000",
+          "age" : 11,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-08-12T04:48+0000",
+          "date" : "2019-08-12T14:15+0000",
+          "sign" : "capricorn",
+          "age" : 12,
+          "moonPhaseDate" : "2019-08-07T17:31+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-08-14T15:36+0000",
+          "date" : "2019-08-13T15:00+0000",
+          "sign" : "aquarius",
+          "moonPhaseDate" : "2019-08-07T17:31+0000",
+          "age" : 13,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-08-14T15:36+0000",
+          "date" : "2019-08-14T15:40+0000",
+          "sign" : "aquarius",
+          "age" : 14,
+          "moonPhaseDate" : "2019-08-07T17:31+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-08-16T12:29+0000",
+          "sign" : "aquarius",
+          "date" : "2019-08-15T16:15+0000",
+          "moonPhaseDate" : "2019-08-16T12:29+0000",
+          "age" : 15,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-08-17T03:50+0000",
+          "sign" : "pisces",
+          "date" : "2019-08-16T16:46+0000",
+          "moonPhaseDate" : "2019-08-15T12:29+0000",
+          "age" : 16,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-08-17T03:50+0000",
+          "date" : "2019-08-17T17:13+0000",
+          "sign" : "pisces",
+          "moonPhaseDate" : "2019-08-15T12:29+0000",
+          "age" : 17,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-08-19T16:32+0000",
+          "sign" : "aries",
+          "date" : "2019-08-18T17:39+0000",
+          "moonPhaseDate" : "2019-08-15T12:29+0000",
+          "age" : 18,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-08-19T16:32+0000",
+          "date" : "2019-08-19T18:05+0000",
+          "sign" : "aries",
+          "age" : 19,
+          "moonPhaseDate" : "2019-08-15T12:29+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-08-19T16:32+0000",
+          "sign" : "aries",
+          "date" : "2019-08-20T18:30+0000",
+          "moonPhaseDate" : "2019-08-15T12:29+0000",
+          "age" : 20,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-08-22T04:36+0000",
+          "date" : "2019-08-21T18:57+0000",
+          "sign" : "taurus",
+          "age" : 21,
+          "moonPhaseDate" : "2019-08-15T12:29+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-08-22T04:36+0000",
+          "sign" : "taurus",
+          "date" : "2019-08-22T19:26+0000",
+          "age" : 22,
+          "moonPhaseDate" : "2019-08-15T12:29+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-08-22T04:36+0000",
+          "date" : "2019-08-23T20:00+0000",
+          "sign" : "gemini",
+          "moonPhaseDate" : "2019-08-23T14:56+0000",
+          "age" : 23,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-08-22T04:36+0000",
+          "date" : "2019-08-24T20:39+0000",
+          "sign" : "gemini",
+          "moonPhaseDate" : "2019-08-23T14:56+0000",
+          "age" : 24,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-08-26T21:05+0000",
+          "date" : "2019-08-25T21:28+0000",
+          "sign" : "cancer",
+          "moonPhaseDate" : "2019-08-23T14:56+0000",
+          "age" : 25,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-08-26T21:05+0000",
+          "date" : "2019-08-26T22:24+0000",
+          "sign" : "cancer",
+          "moonPhaseDate" : "2019-08-23T14:56+0000",
+          "age" : 26,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-08-28T23:51+0000",
+          "date" : "2019-08-27T23:30+0000",
+          "sign" : "leo",
+          "moonPhaseDate" : "2019-08-23T14:56+0000",
+          "age" : 27,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-08-28T23:51+0000",
+          "sign" : "leo",
+          "date" : "2019-08-29T00:42+0000",
+          "moonPhaseDate" : "2019-08-23T14:56+0000",
+          "age" : 28,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-08-30T23:57+0000",
+          "sign" : "virgo",
+          "date" : "2019-08-30T01:59+0000",
+          "moonPhaseDate" : "2019-08-31T10:37+0000",
+          "age" : 29,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-08-30T23:57+0000",
+          "date" : "2019-08-30T10:37+0000",
+          "sign" : "virgo",
+          "moonPhaseDate" : "2019-08-31T10:37+0000",
+          "age" : 1,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-08-30T23:57+0000",
+          "date" : "2019-08-31T03:15+0000",
+          "sign" : "virgo",
+          "moonPhaseDate" : "2019-08-30T10:37+0000",
+          "age" : 2,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-09-01T23:12+0000",
+          "date" : "2019-09-01T04:31+0000",
+          "sign" : "libra",
+          "moonPhaseDate" : null,
+          "age" : 3,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-09-01T23:12+0000",
+          "sign" : "libra",
+          "date" : "2019-09-02T05:45+0000",
+          "moonPhaseDate" : null,
+          "age" : 4,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-09-03T23:38+0000",
+          "date" : "2019-09-03T06:57+0000",
+          "sign" : "scorpio",
+          "moonPhaseDate" : null,
+          "age" : 5,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-09-03T23:38+0000",
+          "sign" : "scorpio",
+          "date" : "2019-09-04T08:08+0000",
+          "age" : 6,
+          "moonPhaseDate" : null,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-09-06T03:06+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-09-05T09:15+0000",
+          "age" : 7,
+          "moonPhaseDate" : null,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-09-07T03:10+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-09-06T10:19+0000",
+          "age" : 8,
+          "moonPhaseDate" : "2019-09-07T03:10+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-09-08T10:35+0000",
+          "sign" : "capricorn",
+          "date" : "2019-09-07T11:19+0000",
+          "moonPhaseDate" : "2019-09-06T03:10+0000",
+          "age" : 9,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-09-08T10:35+0000",
+          "date" : "2019-09-08T12:12+0000",
+          "sign" : "capricorn",
+          "age" : 10,
+          "moonPhaseDate" : "2019-09-06T03:10+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-09-08T10:35+0000",
+          "date" : "2019-09-09T13:00+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-09-06T03:10+0000",
+          "age" : 11,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-09-10T21:25+0000",
+          "sign" : "aquarius",
+          "date" : "2019-09-10T13:41+0000",
+          "age" : 12,
+          "moonPhaseDate" : "2019-09-06T03:10+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-09-10T21:25+0000",
+          "date" : "2019-09-11T14:17+0000",
+          "sign" : "aquarius",
+          "age" : 13,
+          "moonPhaseDate" : "2019-09-06T03:10+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-09-13T09:53+0000",
+          "sign" : "pisces",
+          "date" : "2019-09-12T14:49+0000",
+          "moonPhaseDate" : "2019-09-06T03:10+0000",
+          "age" : 14,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-09-13T09:53+0000",
+          "sign" : "pisces",
+          "date" : "2019-09-13T15:17+0000",
+          "age" : 15,
+          "moonPhaseDate" : "2019-09-06T03:10+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-09-15T04:33+0000",
+          "sign" : "pisces",
+          "date" : "2019-09-14T15:43+0000",
+          "age" : 16,
+          "moonPhaseDate" : "2019-09-15T04:33+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-09-15T22:32+0000",
+          "date" : "2019-09-15T16:08+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2019-09-14T04:33+0000",
+          "age" : 17,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-09-15T22:32+0000",
+          "sign" : "aries",
+          "date" : "2019-09-16T16:34+0000",
+          "moonPhaseDate" : "2019-09-14T04:33+0000",
+          "age" : 18,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-09-18T10:30+0000",
+          "sign" : "taurus",
+          "date" : "2019-09-17T17:00+0000",
+          "moonPhaseDate" : "2019-09-14T04:33+0000",
+          "age" : 19,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-09-18T10:30+0000",
+          "date" : "2019-09-18T17:28+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-09-14T04:33+0000",
+          "age" : 20,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-09-18T10:30+0000",
+          "date" : "2019-09-19T18:00+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-09-14T04:33+0000",
+          "age" : 21,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-09-20T20:58+0000",
+          "date" : "2019-09-20T18:36+0000",
+          "sign" : "gemini",
+          "age" : 22,
+          "moonPhaseDate" : "2019-09-14T04:33+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-09-20T20:58+0000",
+          "date" : "2019-09-21T19:20+0000",
+          "sign" : "gemini",
+          "age" : 23,
+          "moonPhaseDate" : "2019-09-14T04:33+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-09-20T20:58+0000",
+          "date" : "2019-09-22T20:11+0000",
+          "sign" : "cancer",
+          "age" : 24,
+          "moonPhaseDate" : "2019-09-22T02:41+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-09-25T09:19+0000",
+          "sign" : "leo",
+          "date" : "2019-09-23T21:11+0000",
+          "moonPhaseDate" : "2019-09-22T02:41+0000",
+          "age" : 25,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-09-25T09:19+0000",
+          "sign" : "leo",
+          "date" : "2019-09-24T22:18+0000",
+          "moonPhaseDate" : "2019-09-22T02:41+0000",
+          "age" : 26,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-09-27T10:35+0000",
+          "date" : "2019-09-25T23:30+0000",
+          "sign" : "virgo",
+          "moonPhaseDate" : "2019-09-22T02:41+0000",
+          "age" : 27,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-09-27T10:35+0000",
+          "date" : "2019-09-27T00:47+0000",
+          "sign" : "virgo",
+          "moonPhaseDate" : "2019-09-22T02:41+0000",
+          "age" : 28,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-09-29T10:04+0000",
+          "date" : "2019-09-28T02:03+0000",
+          "sign" : "libra",
+          "age" : 29,
+          "moonPhaseDate" : "2019-09-29T18:26+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-09-29T10:04+0000",
+          "sign" : "libra",
+          "date" : "2019-09-28T18:26+0000",
+          "age" : 1,
+          "moonPhaseDate" : "2019-09-29T18:26+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-09-29T10:04+0000",
+          "sign" : "libra",
+          "date" : "2019-09-29T03:19+0000",
+          "moonPhaseDate" : "2019-09-28T18:26+0000",
+          "age" : 2,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-10-01T09:45+0000",
+          "date" : "2019-09-30T04:34+0000",
+          "sign" : "scorpio",
+          "age" : 3,
+          "moonPhaseDate" : "2019-09-28T18:26+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-10-01T09:45+0000",
+          "sign" : "scorpio",
+          "date" : "2019-10-01T05:47+0000",
+          "age" : 4,
+          "moonPhaseDate" : null,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-10-03T11:45+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-10-02T06:58+0000",
+          "age" : 5,
+          "moonPhaseDate" : null,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-10-03T11:45+0000",
+          "date" : "2019-10-03T08:07+0000",
+          "sign" : "sagittarius",
+          "moonPhaseDate" : null,
+          "age" : 6,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-10-05T17:41+0000",
+          "date" : "2019-10-04T09:10+0000",
+          "sign" : "capricorn",
+          "age" : 7,
+          "moonPhaseDate" : null,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-10-06T16:47+0000",
+          "date" : "2019-10-05T10:08+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-10-06T16:47+0000",
+          "age" : 8,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-10-06T16:47+0000",
+          "date" : "2019-10-06T10:58+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-10-05T16:47+0000",
+          "age" : 9,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-10-08T03:43+0000",
+          "date" : "2019-10-07T11:42+0000",
+          "sign" : "aquarius",
+          "moonPhaseDate" : "2019-10-05T16:47+0000",
+          "age" : 10,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-10-08T03:43+0000",
+          "date" : "2019-10-08T12:19+0000",
+          "sign" : "aquarius",
+          "moonPhaseDate" : "2019-10-05T16:47+0000",
+          "age" : 11,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-10-10T16:08+0000",
+          "date" : "2019-10-09T12:52+0000",
+          "sign" : "pisces",
+          "moonPhaseDate" : "2019-10-05T16:47+0000",
+          "age" : 12,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-10-10T16:08+0000",
+          "date" : "2019-10-10T13:21+0000",
+          "sign" : "pisces",
+          "moonPhaseDate" : "2019-10-05T16:47+0000",
+          "age" : 13,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-10-10T16:08+0000",
+          "date" : "2019-10-11T13:47+0000",
+          "sign" : "pisces",
+          "moonPhaseDate" : "2019-10-05T16:47+0000",
+          "age" : 14,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-10-13T04:46+0000",
+          "date" : "2019-10-12T14:13+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2019-10-05T16:47+0000",
+          "age" : 15,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-10-13T04:46+0000",
+          "sign" : "aries",
+          "date" : "2019-10-13T14:38+0000",
+          "age" : 16,
+          "moonPhaseDate" : "2019-10-05T16:47+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-10-14T21:08+0000",
+          "date" : "2019-10-14T15:03+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-10-14T21:08+0000",
+          "age" : 17,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-10-14T21:08+0000",
+          "date" : "2019-10-15T15:31+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-10-13T21:08+0000",
+          "age" : 18,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-10-14T21:08+0000",
+          "sign" : "taurus",
+          "date" : "2019-10-16T16:01+0000",
+          "moonPhaseDate" : "2019-10-13T21:08+0000",
+          "age" : 19,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-10-18T02:29+0000",
+          "date" : "2019-10-17T16:36+0000",
+          "sign" : "gemini",
+          "age" : 20,
+          "moonPhaseDate" : "2019-10-13T21:08+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-10-18T02:29+0000",
+          "date" : "2019-10-18T17:17+0000",
+          "sign" : "gemini",
+          "age" : 21,
+          "moonPhaseDate" : "2019-10-13T21:08+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-10-20T10:42+0000",
+          "date" : "2019-10-19T18:05+0000",
+          "sign" : "cancer",
+          "age" : 22,
+          "moonPhaseDate" : "2019-10-13T21:08+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-10-20T10:42+0000",
+          "date" : "2019-10-20T19:01+0000",
+          "sign" : "cancer",
+          "age" : 23,
+          "moonPhaseDate" : "2019-10-13T21:08+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-10-20T10:42+0000",
+          "date" : "2019-10-21T20:03+0000",
+          "sign" : "leo",
+          "moonPhaseDate" : "2019-10-21T12:39+0000",
+          "age" : 24,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-10-24T19:30+0000",
+          "sign" : "virgo",
+          "date" : "2019-10-22T21:11+0000",
+          "moonPhaseDate" : "2019-10-21T12:39+0000",
+          "age" : 25,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-10-24T19:30+0000",
+          "date" : "2019-10-23T22:24+0000",
+          "sign" : "virgo",
+          "age" : 26,
+          "moonPhaseDate" : "2019-10-21T12:39+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-10-24T19:30+0000",
+          "sign" : "virgo",
+          "date" : "2019-10-24T23:38+0000",
+          "moonPhaseDate" : "2019-10-21T12:39+0000",
+          "age" : 27,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-10-26T20:20+0000",
+          "sign" : "libra",
+          "date" : "2019-10-26T00:52+0000",
+          "moonPhaseDate" : "2019-10-21T12:39+0000",
+          "age" : 28,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-10-26T20:20+0000",
+          "date" : "2019-10-27T02:06+0000",
+          "sign" : "libra",
+          "moonPhaseDate" : "2019-10-21T12:39+0000",
+          "age" : 29,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-10-28T20:31+0000",
+          "sign" : "scorpio",
+          "date" : "2019-10-28T03:21+0000",
+          "age" : 30,
+          "moonPhaseDate" : "2019-10-29T03:38+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-10-28T20:31+0000",
+          "date" : "2019-10-28T03:38+0000",
+          "sign" : "scorpio",
+          "moonPhaseDate" : "2019-10-29T03:38+0000",
+          "age" : 1,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-10-28T20:31+0000",
+          "sign" : "scorpio",
+          "date" : "2019-10-29T04:34+0000",
+          "age" : 2,
+          "moonPhaseDate" : "2019-10-28T03:38+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-10-30T22:00+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-10-30T05:46+0000",
+          "moonPhaseDate" : "2019-10-28T03:38+0000",
+          "age" : 3,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-10-30T22:00+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-10-31T06:54+0000",
+          "moonPhaseDate" : "2019-10-28T03:38+0000",
+          "age" : 4,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-11-02T02:38+0000",
+          "date" : "2019-11-01T07:56+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : null,
+          "age" : 5,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-11-02T02:38+0000",
+          "sign" : "capricorn",
+          "date" : "2019-11-02T08:51+0000",
+          "moonPhaseDate" : null,
+          "age" : 6,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-11-04T11:21+0000",
+          "date" : "2019-11-03T09:39+0000",
+          "sign" : "aquarius",
+          "age" : 7,
+          "moonPhaseDate" : null,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-11-05T10:23+0000",
+          "date" : "2019-11-04T10:19+0000",
+          "sign" : "aquarius",
+          "age" : 8,
+          "moonPhaseDate" : "2019-11-05T10:23+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-11-05T10:23+0000",
+          "date" : "2019-11-05T10:54+0000",
+          "sign" : "aquarius",
+          "moonPhaseDate" : "2019-11-04T10:23+0000",
+          "age" : 9,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-11-06T23:11+0000",
+          "date" : "2019-11-06T11:24+0000",
+          "sign" : "pisces",
+          "age" : 10,
+          "moonPhaseDate" : "2019-11-04T10:23+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-11-06T23:11+0000",
+          "sign" : "pisces",
+          "date" : "2019-11-07T11:51+0000",
+          "age" : 11,
+          "moonPhaseDate" : "2019-11-04T10:23+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-11-09T11:50+0000",
+          "date" : "2019-11-08T12:17+0000",
+          "sign" : "aries",
+          "age" : 12,
+          "moonPhaseDate" : "2019-11-04T10:23+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-11-09T11:50+0000",
+          "date" : "2019-11-09T12:41+0000",
+          "sign" : "aries",
+          "age" : 13,
+          "moonPhaseDate" : "2019-11-04T10:23+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-11-09T11:50+0000",
+          "sign" : "aries",
+          "date" : "2019-11-10T13:06+0000",
+          "moonPhaseDate" : "2019-11-04T10:23+0000",
+          "age" : 14,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-11-11T23:19+0000",
+          "sign" : "taurus",
+          "date" : "2019-11-11T13:33+0000",
+          "moonPhaseDate" : "2019-11-04T10:23+0000",
+          "age" : 15,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-11-13T13:35+0000",
+          "date" : "2019-11-12T14:02+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-11-13T13:35+0000",
+          "age" : 16,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-11-14T08:45+0000",
+          "date" : "2019-11-13T14:36+0000",
+          "sign" : "gemini",
+          "age" : 17,
+          "moonPhaseDate" : "2019-11-12T13:35+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-11-14T08:45+0000",
+          "date" : "2019-11-14T15:15+0000",
+          "sign" : "gemini",
+          "age" : 18,
+          "moonPhaseDate" : "2019-11-12T13:35+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-11-16T16:12+0000",
+          "sign" : "cancer",
+          "date" : "2019-11-15T16:01+0000",
+          "age" : 19,
+          "moonPhaseDate" : "2019-11-12T13:35+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-11-16T16:12+0000",
+          "sign" : "cancer",
+          "date" : "2019-11-16T16:55+0000",
+          "moonPhaseDate" : "2019-11-12T13:35+0000",
+          "age" : 20,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-11-16T16:12+0000",
+          "sign" : "cancer",
+          "date" : "2019-11-17T17:56+0000",
+          "age" : 21,
+          "moonPhaseDate" : "2019-11-12T13:35+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-11-18T21:54+0000",
+          "sign" : "leo",
+          "date" : "2019-11-18T19:02+0000",
+          "moonPhaseDate" : "2019-11-12T13:35+0000",
+          "age" : 22,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-11-19T21:11+0000",
+          "sign" : "virgo",
+          "date" : "2019-11-19T20:12+0000",
+          "age" : 23,
+          "moonPhaseDate" : "2019-11-19T21:11+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-11-19T21:11+0000",
+          "date" : "2019-11-20T21:23+0000",
+          "sign" : "virgo",
+          "moonPhaseDate" : "2019-11-19T21:11+0000",
+          "age" : 24,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-11-23T04:22+0000",
+          "sign" : "libra",
+          "date" : "2019-11-21T22:34+0000",
+          "age" : 25,
+          "moonPhaseDate" : "2019-11-19T21:11+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-11-23T04:22+0000",
+          "sign" : "libra",
+          "date" : "2019-11-22T23:46+0000",
+          "moonPhaseDate" : "2019-11-19T21:11+0000",
+          "age" : 26,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-11-25T06:01+0000",
+          "sign" : "scorpio",
+          "date" : "2019-11-24T00:58+0000",
+          "moonPhaseDate" : "2019-11-19T21:11+0000",
+          "age" : 27,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-11-25T06:01+0000",
+          "date" : "2019-11-25T02:10+0000",
+          "sign" : "scorpio",
+          "moonPhaseDate" : "2019-11-19T21:11+0000",
+          "age" : 28,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-11-27T08:12+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-11-26T03:22+0000",
+          "moonPhaseDate" : "2019-11-27T15:06+0000",
+          "age" : 29,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-11-27T08:12+0000",
+          "date" : "2019-11-26T15:06+0000",
+          "sign" : "sagittarius",
+          "moonPhaseDate" : "2019-11-27T15:06+0000",
+          "age" : 1,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-11-27T08:12+0000",
+          "sign" : "sagittarius",
+          "date" : "2019-11-27T04:33+0000",
+          "age" : 2,
+          "moonPhaseDate" : "2019-11-26T15:06+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-11-29T12:32+0000",
+          "date" : "2019-11-28T05:39+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-11-26T15:06+0000",
+          "age" : 3,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-11-29T12:32+0000",
+          "date" : "2019-11-29T06:39+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-11-26T15:06+0000",
+          "age" : 4,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-11-29T12:32+0000",
+          "sign" : "capricorn",
+          "date" : "2019-11-30T07:31+0000",
+          "moonPhaseDate" : "2019-11-26T15:06+0000",
+          "age" : 5,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-12-01T20:15+0000",
+          "date" : "2019-12-01T08:16+0000",
+          "sign" : "aquarius",
+          "age" : 6,
+          "moonPhaseDate" : null,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-12-01T20:15+0000",
+          "date" : "2019-12-02T08:53+0000",
+          "sign" : "aquarius",
+          "age" : 7,
+          "moonPhaseDate" : null,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-12-04T07:14+0000",
+          "date" : "2019-12-03T09:25+0000",
+          "sign" : "pisces",
+          "moonPhaseDate" : null,
+          "age" : 8,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-12-05T06:58+0000",
+          "date" : "2019-12-04T09:54+0000",
+          "sign" : "pisces",
+          "moonPhaseDate" : "2019-12-05T06:58+0000",
+          "age" : 9,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-12-06T19:46+0000",
+          "date" : "2019-12-05T10:19+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2019-12-04T06:58+0000",
+          "age" : 10,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-12-06T19:46+0000",
+          "date" : "2019-12-06T10:44+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2019-12-04T06:58+0000",
+          "age" : 11,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-12-06T19:46+0000",
+          "date" : "2019-12-07T11:09+0000",
+          "sign" : "aries",
+          "age" : 12,
+          "moonPhaseDate" : "2019-12-04T06:58+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-12-09T07:31+0000",
+          "date" : "2019-12-08T11:34+0000",
+          "sign" : "taurus",
+          "age" : 13,
+          "moonPhaseDate" : "2019-12-04T06:58+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-12-09T07:31+0000",
+          "date" : "2019-12-09T12:02+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2019-12-04T06:58+0000",
+          "age" : 14,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-12-11T16:49+0000",
+          "date" : "2019-12-10T12:34+0000",
+          "sign" : "gemini",
+          "age" : 15,
+          "moonPhaseDate" : "2019-12-04T06:58+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-12-11T16:49+0000",
+          "date" : "2019-12-11T13:11+0000",
+          "sign" : "gemini",
+          "age" : 16,
+          "moonPhaseDate" : "2019-12-04T06:58+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2019-12-13T05:12+0000",
+          "sign" : "gemini",
+          "date" : "2019-12-12T13:55+0000",
+          "age" : 17,
+          "moonPhaseDate" : "2019-12-13T05:12+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-12-13T23:24+0000",
+          "date" : "2019-12-13T14:47+0000",
+          "sign" : "cancer",
+          "moonPhaseDate" : "2019-12-12T05:12+0000",
+          "age" : 18,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-12-13T23:24+0000",
+          "date" : "2019-12-14T15:47+0000",
+          "sign" : "cancer",
+          "age" : 19,
+          "moonPhaseDate" : "2019-12-12T05:12+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-12-16T03:53+0000",
+          "date" : "2019-12-15T16:53+0000",
+          "sign" : "leo",
+          "age" : 20,
+          "moonPhaseDate" : "2019-12-12T05:12+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-12-16T03:53+0000",
+          "sign" : "leo",
+          "date" : "2019-12-16T18:03+0000",
+          "moonPhaseDate" : "2019-12-12T05:12+0000",
+          "age" : 21,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-12-18T07:13+0000",
+          "date" : "2019-12-17T19:14+0000",
+          "sign" : "virgo",
+          "moonPhaseDate" : "2019-12-12T05:12+0000",
+          "age" : 22,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2019-12-19T04:57+0000",
+          "date" : "2019-12-18T20:25+0000",
+          "sign" : "libra",
+          "moonPhaseDate" : "2019-12-19T04:57+0000",
+          "age" : 23,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-12-19T04:57+0000",
+          "date" : "2019-12-19T21:35+0000",
+          "sign" : "libra",
+          "moonPhaseDate" : "2019-12-19T04:57+0000",
+          "age" : 24,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-12-22T13:01+0000",
+          "date" : "2019-12-20T22:45+0000",
+          "sign" : "scorpio",
+          "moonPhaseDate" : "2019-12-19T04:57+0000",
+          "age" : 25,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-12-22T13:01+0000",
+          "date" : "2019-12-21T23:55+0000",
+          "sign" : "scorpio",
+          "age" : 26,
+          "moonPhaseDate" : "2019-12-19T04:57+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-12-24T16:37+0000",
+          "date" : "2019-12-23T01:05+0000",
+          "sign" : "sagittarius",
+          "age" : 27,
+          "moonPhaseDate" : "2019-12-19T04:57+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-12-24T16:37+0000",
+          "date" : "2019-12-24T02:15+0000",
+          "sign" : "sagittarius",
+          "moonPhaseDate" : "2019-12-19T04:57+0000",
+          "age" : 28,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-12-24T16:37+0000",
+          "date" : "2019-12-25T03:22+0000",
+          "sign" : "sagittarius",
+          "moonPhaseDate" : "2019-12-19T04:57+0000",
+          "age" : 29,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2019-12-26T21:46+0000",
+          "sign" : "capricorn",
+          "date" : "2019-12-26T04:24+0000",
+          "moonPhaseDate" : "2019-12-27T05:13+0000",
+          "age" : 30,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-12-26T21:46+0000",
+          "sign" : "capricorn",
+          "date" : "2019-12-26T05:13+0000",
+          "moonPhaseDate" : "2019-12-27T05:13+0000",
+          "age" : 1,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2019-12-26T21:46+0000",
+          "date" : "2019-12-27T05:20+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2019-12-26T05:13+0000",
+          "age" : 2,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-12-29T05:21+0000",
+          "date" : "2019-12-28T06:09+0000",
+          "sign" : "aquarius",
+          "age" : 3,
+          "moonPhaseDate" : "2019-12-26T05:13+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-12-29T05:21+0000",
+          "sign" : "aquarius",
+          "date" : "2019-12-29T06:49+0000",
+          "age" : 4,
+          "moonPhaseDate" : "2019-12-26T05:13+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-12-31T15:43+0000",
+          "date" : "2019-12-30T07:24+0000",
+          "sign" : "pisces",
+          "moonPhaseDate" : "2019-12-26T05:13+0000",
+          "age" : 5,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-12-31T15:43+0000",
+          "date" : "2019-12-31T07:54+0000",
+          "sign" : "pisces",
+          "moonPhaseDate" : "2019-12-26T05:13+0000",
+          "age" : 6,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2019-12-31T15:43+0000",
+          "sign" : "pisces",
+          "date" : "2020-01-01T08:21+0000",
+          "moonPhaseDate" : null,
+          "age" : 7,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2020-01-03T04:01+0000",
+          "date" : "2020-01-02T08:46+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : null,
+          "age" : 8,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2020-01-04T04:45+0000",
+          "date" : "2020-01-03T09:11+0000",
+          "sign" : "aries",
+          "age" : 9,
+          "moonPhaseDate" : "2020-01-04T04:45+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2020-01-05T16:15+0000",
+          "date" : "2020-01-04T09:35+0000",
+          "sign" : "taurus",
+          "age" : 10,
+          "moonPhaseDate" : "2020-01-03T04:45+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2020-01-05T16:15+0000",
+          "date" : "2020-01-05T10:02+0000",
+          "sign" : "taurus",
+          "moonPhaseDate" : "2020-01-03T04:45+0000",
+          "age" : 11,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2020-01-05T16:15+0000",
+          "sign" : "taurus",
+          "date" : "2020-01-06T10:30+0000",
+          "moonPhaseDate" : "2020-01-03T04:45+0000",
+          "age" : 12,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2020-01-08T02:13+0000",
+          "date" : "2020-01-07T11:05+0000",
+          "sign" : "gemini",
+          "age" : 13,
+          "moonPhaseDate" : "2020-01-03T04:45+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2020-01-08T02:13+0000",
+          "sign" : "gemini",
+          "date" : "2020-01-08T11:45+0000",
+          "age" : 14,
+          "moonPhaseDate" : "2020-01-03T04:45+0000",
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2020-01-10T08:45+0000",
+          "sign" : "cancer",
+          "date" : "2020-01-09T12:34+0000",
+          "moonPhaseDate" : "2020-01-03T04:45+0000",
+          "age" : 15,
+          "moonPhase" : "phase2"
+        },
+        {
+          "signDate" : "2020-01-11T19:21+0000",
+          "date" : "2020-01-10T13:31+0000",
+          "sign" : "cancer",
+          "age" : 16,
+          "moonPhaseDate" : "2020-01-11T19:21+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2020-01-12T12:16+0000",
+          "sign" : "leo",
+          "date" : "2020-01-11T14:37+0000",
+          "age" : 17,
+          "moonPhaseDate" : "2020-01-10T19:21+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2020-01-12T12:16+0000",
+          "date" : "2020-01-12T15:48+0000",
+          "sign" : "leo",
+          "moonPhaseDate" : "2020-01-10T19:21+0000",
+          "age" : 18,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2020-01-14T14:05+0000",
+          "date" : "2020-01-13T17:01+0000",
+          "sign" : "virgo",
+          "age" : 19,
+          "moonPhaseDate" : "2020-01-10T19:21+0000",
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2020-01-14T14:05+0000",
+          "date" : "2020-01-14T18:14+0000",
+          "sign" : "virgo",
+          "moonPhaseDate" : "2020-01-10T19:21+0000",
+          "age" : 20,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2020-01-16T15:42+0000",
+          "date" : "2020-01-15T19:26+0000",
+          "sign" : "libra",
+          "moonPhaseDate" : "2020-01-10T19:21+0000",
+          "age" : 21,
+          "moonPhase" : "phase3"
+        },
+        {
+          "signDate" : "2020-01-17T12:58+0000",
+          "sign" : "scorpio",
+          "date" : "2020-01-16T20:37+0000",
+          "moonPhaseDate" : "2020-01-17T12:58+0000",
+          "age" : 22,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2020-01-17T12:58+0000",
+          "sign" : "scorpio",
+          "date" : "2020-01-17T21:47+0000",
+          "moonPhaseDate" : "2020-01-17T12:58+0000",
+          "age" : 23,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2020-01-17T12:58+0000",
+          "date" : "2020-01-18T22:56+0000",
+          "sign" : "scorpio",
+          "age" : 24,
+          "moonPhaseDate" : "2020-01-17T12:58+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2020-01-20T22:43+0000",
+          "date" : "2020-01-20T00:04+0000",
+          "sign" : "sagittarius",
+          "moonPhaseDate" : "2020-01-17T12:58+0000",
+          "age" : 25,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2020-01-20T22:43+0000",
+          "date" : "2020-01-21T01:11+0000",
+          "sign" : "sagittarius",
+          "moonPhaseDate" : "2020-01-17T12:58+0000",
+          "age" : 26,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2020-01-23T05:02+0000",
+          "date" : "2020-01-22T02:14+0000",
+          "sign" : "capricorn",
+          "age" : 27,
+          "moonPhaseDate" : "2020-01-17T12:58+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2020-01-23T05:02+0000",
+          "date" : "2020-01-23T03:11+0000",
+          "sign" : "capricorn",
+          "moonPhaseDate" : "2020-01-17T12:58+0000",
+          "age" : 28,
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2020-01-25T13:22+0000",
+          "sign" : "aquarius",
+          "date" : "2020-01-24T04:02+0000",
+          "age" : 29,
+          "moonPhaseDate" : "2020-01-17T12:58+0000",
+          "moonPhase" : "phase4"
+        },
+        {
+          "signDate" : "2020-01-25T13:22+0000",
+          "sign" : "aquarius",
+          "date" : "2020-01-24T21:42+0000",
+          "moonPhaseDate" : "2020-01-25T21:42+0000",
+          "age" : 1,
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2020-01-25T13:22+0000",
+          "date" : "2020-01-25T04:46+0000",
+          "sign" : "aquarius",
+          "age" : 2,
+          "moonPhaseDate" : "2020-01-25T21:42+0000",
+          "moonPhase" : "fullMoon"
+        },
+        {
+          "signDate" : "2020-01-25T13:22+0000",
+          "sign" : "aquarius",
+          "date" : "2020-01-26T05:23+0000",
+          "age" : 3,
+          "moonPhaseDate" : "2020-01-24T21:42+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2020-01-27T23:45+0000",
+          "date" : "2020-01-27T05:55+0000",
+          "sign" : "pisces",
+          "age" : 4,
+          "moonPhaseDate" : "2020-01-24T21:42+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2020-01-27T23:45+0000",
+          "sign" : "pisces",
+          "date" : "2020-01-28T06:23+0000",
+          "moonPhaseDate" : "2020-01-24T21:42+0000",
+          "age" : 5,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2020-01-30T11:51+0000",
+          "date" : "2020-01-29T06:48+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2020-01-24T21:42+0000",
+          "age" : 6,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2020-01-30T11:51+0000",
+          "date" : "2020-01-30T07:13+0000",
+          "sign" : "aries",
+          "moonPhaseDate" : "2020-01-24T21:42+0000",
+          "age" : 7,
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2020-01-30T11:51+0000",
+          "date" : "2020-01-31T07:37+0000",
+          "sign" : "aries",
+          "age" : 8,
+          "moonPhaseDate" : "2020-01-24T21:42+0000",
+          "moonPhase" : "phase1"
+        },
+        {
+          "signDate" : "2020-01-30T11:51+0000",
+          "sign" : "aries",
+          "date" : "2020-01-31T07:37+0000",
+          "moonPhaseDate" : "2020-01-24T21:42+0000",
+          "age" : 8,
+          "moonPhase" : "phase1"
+        }
+      ]
+    }
+  ]
+}

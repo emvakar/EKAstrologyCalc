@@ -3,11 +3,82 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0460F5EF30D6AFF229041060 /* Pods_AstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F30C604999DC6B28D77967B /* Pods_AstrologyCalc.framework */; };
+		204B3F2322B6FE6100F62DB7 /* ParsedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204B3F2222B6FE6100F62DB7 /* ParsedModel.swift */; };
+		204B3F2522B6FFA500F62DB7 /* parsing.json in Resources */ = {isa = PBXBuildFile; fileRef = 204B3F2422B6FFA500F62DB7 /* parsing.json */; };
 		208F402B2296976800C5CF98 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F402A2296976800C5CF98 /* Date+Extension.swift */; };
+		20EB0FD922C98A0800FBD0DA /* db_17.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9522C98A0000FBD0DA /* db_17.json */; };
+		20EB0FDA22C98A0800FBD0DA /* db_49.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9622C98A0000FBD0DA /* db_49.json */; };
+		20EB0FDB22C98A0800FBD0DA /* db_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9722C98A0000FBD0DA /* db_1.json */; };
+		20EB0FDC22C98A0800FBD0DA /* db_20.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9822C98A0000FBD0DA /* db_20.json */; };
+		20EB0FDD22C98A0800FBD0DA /* db_5.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9922C98A0000FBD0DA /* db_5.json */; };
+		20EB0FDE22C98A0800FBD0DA /* db_52.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9A22C98A0000FBD0DA /* db_52.json */; };
+		20EB0FDF22C98A0800FBD0DA /* db_38.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9B22C98A0000FBD0DA /* db_38.json */; };
+		20EB0FE022C98A0800FBD0DA /* db_47.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9C22C98A0000FBD0DA /* db_47.json */; };
+		20EB0FE122C98A0800FBD0DA /* db_34.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9D22C98A0100FBD0DA /* db_34.json */; };
+		20EB0FE222C98A0800FBD0DA /* db_43.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9E22C98A0100FBD0DA /* db_43.json */; };
+		20EB0FE322C98A0800FBD0DA /* db_13.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0F9F22C98A0100FBD0DA /* db_13.json */; };
+		20EB0FE422C98A0800FBD0DA /* db_6.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA022C98A0100FBD0DA /* db_6.json */; };
+		20EB0FE522C98A0800FBD0DA /* db_44.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA122C98A0100FBD0DA /* db_44.json */; };
+		20EB0FE622C98A0800FBD0DA /* db_30.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA222C98A0100FBD0DA /* db_30.json */; };
+		20EB0FE722C98A0800FBD0DA /* db_55.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA322C98A0100FBD0DA /* db_55.json */; };
+		20EB0FE822C98A0800FBD0DA /* db_58.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA422C98A0200FBD0DA /* db_58.json */; };
+		20EB0FE922C98A0800FBD0DA /* db_61.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA522C98A0200FBD0DA /* db_61.json */; };
+		20EB0FEA22C98A0800FBD0DA /* db_24.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA622C98A0200FBD0DA /* db_24.json */; };
+		20EB0FEB22C98A0800FBD0DA /* db_11.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA722C98A0200FBD0DA /* db_11.json */; };
+		20EB0FEC22C98A0800FBD0DA /* db_14.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA822C98A0200FBD0DA /* db_14.json */; };
+		20EB0FED22C98A0800FBD0DA /* db_46.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FA922C98A0200FBD0DA /* db_46.json */; };
+		20EB0FEE22C98A0800FBD0DA /* db_56.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FAA22C98A0200FBD0DA /* db_56.json */; };
+		20EB0FEF22C98A0800FBD0DA /* db_29.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FAB22C98A0200FBD0DA /* db_29.json */; };
+		20EB0FF022C98A0800FBD0DA /* db_57.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FAC22C98A0200FBD0DA /* db_57.json */; };
+		20EB0FF122C98A0800FBD0DA /* db_40.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FAD22C98A0200FBD0DA /* db_40.json */; };
+		20EB0FF222C98A0800FBD0DA /* db_59.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FAE22C98A0300FBD0DA /* db_59.json */; };
+		20EB0FF322C98A0800FBD0DA /* db_48.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FAF22C98A0300FBD0DA /* db_48.json */; };
+		20EB0FF422C98A0800FBD0DA /* db_15.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB022C98A0300FBD0DA /* db_15.json */; };
+		20EB0FF522C98A0800FBD0DA /* db_27.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB122C98A0300FBD0DA /* db_27.json */; };
+		20EB0FF622C98A0800FBD0DA /* db_9.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB222C98A0300FBD0DA /* db_9.json */; };
+		20EB0FF722C98A0800FBD0DA /* db_37.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB322C98A0300FBD0DA /* db_37.json */; };
+		20EB0FF822C98A0800FBD0DA /* db_50.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB422C98A0300FBD0DA /* db_50.json */; };
+		20EB0FF922C98A0800FBD0DA /* db_53.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB522C98A0300FBD0DA /* db_53.json */; };
+		20EB0FFA22C98A0800FBD0DA /* db_18.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB622C98A0400FBD0DA /* db_18.json */; };
+		20EB0FFB22C98A0800FBD0DA /* db_35.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB722C98A0400FBD0DA /* db_35.json */; };
+		20EB0FFC22C98A0800FBD0DA /* db_64.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB822C98A0400FBD0DA /* db_64.json */; };
+		20EB0FFD22C98A0800FBD0DA /* db_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FB922C98A0400FBD0DA /* db_3.json */; };
+		20EB0FFE22C98A0800FBD0DA /* db_33.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FBA22C98A0400FBD0DA /* db_33.json */; };
+		20EB0FFF22C98A0800FBD0DA /* db_7.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FBB22C98A0400FBD0DA /* db_7.json */; };
+		20EB100022C98A0800FBD0DA /* db_26.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FBC22C98A0400FBD0DA /* db_26.json */; };
+		20EB100122C98A0800FBD0DA /* db_42.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FBD22C98A0500FBD0DA /* db_42.json */; };
+		20EB100222C98A0800FBD0DA /* db_63.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FBE22C98A0500FBD0DA /* db_63.json */; };
+		20EB100322C98A0800FBD0DA /* db_25.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FBF22C98A0500FBD0DA /* db_25.json */; };
+		20EB100422C98A0800FBD0DA /* db_16.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC022C98A0500FBD0DA /* db_16.json */; };
+		20EB100522C98A0800FBD0DA /* db_0.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC122C98A0500FBD0DA /* db_0.json */; };
+		20EB100622C98A0800FBD0DA /* db_36.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC222C98A0500FBD0DA /* db_36.json */; };
+		20EB100722C98A0800FBD0DA /* db_45.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC322C98A0500FBD0DA /* db_45.json */; };
+		20EB100822C98A0800FBD0DA /* db_10.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC422C98A0600FBD0DA /* db_10.json */; };
+		20EB100922C98A0800FBD0DA /* db_66.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC522C98A0600FBD0DA /* db_66.json */; };
+		20EB100A22C98A0800FBD0DA /* db_41.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC622C98A0600FBD0DA /* db_41.json */; };
+		20EB100B22C98A0800FBD0DA /* db_60.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC722C98A0600FBD0DA /* db_60.json */; };
+		20EB100C22C98A0800FBD0DA /* db_32.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC822C98A0600FBD0DA /* db_32.json */; };
+		20EB100D22C98A0800FBD0DA /* db_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FC922C98A0600FBD0DA /* db_2.json */; };
+		20EB100E22C98A0800FBD0DA /* db_62.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FCA22C98A0600FBD0DA /* db_62.json */; };
+		20EB100F22C98A0800FBD0DA /* db_39.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FCB22C98A0600FBD0DA /* db_39.json */; };
+		20EB101022C98A0800FBD0DA /* db_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FCC22C98A0700FBD0DA /* db_4.json */; };
+		20EB101122C98A0800FBD0DA /* db_21.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FCD22C98A0700FBD0DA /* db_21.json */; };
+		20EB101222C98A0800FBD0DA /* db_22.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FCE22C98A0700FBD0DA /* db_22.json */; };
+		20EB101322C98A0800FBD0DA /* db_12.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FCF22C98A0700FBD0DA /* db_12.json */; };
+		20EB101422C98A0800FBD0DA /* db_28.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FD022C98A0700FBD0DA /* db_28.json */; };
+		20EB101522C98A0800FBD0DA /* db_19.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FD122C98A0700FBD0DA /* db_19.json */; };
+		20EB101622C98A0800FBD0DA /* db_51.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FD222C98A0700FBD0DA /* db_51.json */; };
+		20EB101722C98A0800FBD0DA /* db_8.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FD322C98A0800FBD0DA /* db_8.json */; };
+		20EB101822C98A0800FBD0DA /* db_31.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FD422C98A0800FBD0DA /* db_31.json */; };
+		20EB101922C98A0800FBD0DA /* db_65.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FD522C98A0800FBD0DA /* db_65.json */; };
+		20EB101A22C98A0800FBD0DA /* db_67.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FD622C98A0800FBD0DA /* db_67.json */; };
+		20EB101B22C98A0800FBD0DA /* db_23.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FD722C98A0800FBD0DA /* db_23.json */; };
+		20EB101C22C98A0800FBD0DA /* db_54.json in Resources */ = {isa = PBXBuildFile; fileRef = 20EB0FD822C98A0800FBD0DA /* db_54.json */; };
 		20EBC73E224B958C0054E6E5 /* AstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EBC734224B958C0054E6E5 /* AstrologyCalc.framework */; };
 		20EBC743224B958C0054E6E5 /* AstrologyCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EBC742224B958C0054E6E5 /* AstrologyCalcTests.swift */; };
 		20EBC745224B958C0054E6E5 /* AstrologyCalc.h in Headers */ = {isa = PBXBuildFile; fileRef = 20EBC737224B958C0054E6E5 /* AstrologyCalc.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,13 +96,15 @@
 		20EBC791224B985D0054E6E5 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC790224B985D0054E6E5 /* .travis.yml */; };
 		20EBC794224B986E0054E6E5 /* AstrologyCalc.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */; };
 		20EBC795224B986E0054E6E5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 20EBC793224B986E0054E6E5 /* README.md */; };
-		A32C0C45A959E3A04B992895 /* Pods_Example_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477876DF6A30A17F2536E864 /* Pods_Example_App.framework */; };
+		2F68F45A7173B89F9656D392 /* Pods_AstrologyCalcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D7D23C9E5A981E556DA1B70 /* Pods_AstrologyCalcTests.framework */; };
+		A072ED0E67393CF9F9303D0B /* Pods_Example_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF82974B3499682CC223A5F4 /* Pods_Example_App.framework */; };
+		CE5A943F22C60A7300AF8280 /* DataBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A943E22C60A7300AF8280 /* DataBaseModels.swift */; };
+		CE5A944122C60AA100AF8280 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A944022C60AA100AF8280 /* DataBaseManager.swift */; };
+		CE5A944422C6309D00AF8280 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A944322C6309D00AF8280 /* String+Extension.swift */; };
 		DA6456F92253FE570031867D /* Eclipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456F82253FE570031867D /* Eclipse.swift */; };
 		DA6456FB2254030D0031867D /* EclipseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456FA2254030D0031867D /* EclipseCalculator.swift */; };
 		DA6456FD225405560031867D /* AstroUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6456FC225405560031867D /* AstroUtils.swift */; };
 		DA6456FF2254F48F0031867D /* AstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EBC734224B958C0054E6E5 /* AstrologyCalc.framework */; };
-		F389940F32EDC0A762A1D3E2 /* Pods_AstrologyCalcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D411F6004E98FF62ABBBEA /* Pods_AstrologyCalcTests.framework */; };
-		F85AC6816C2B732AC93D7F89 /* Pods_AstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203ECD472F3BE256BE1815A9 /* Pods_AstrologyCalc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +118,78 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18D411F6004E98FF62ABBBEA /* Pods_AstrologyCalcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		203ECD472F3BE256BE1815A9 /* Pods_AstrologyCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0616024A03BE1380F82D0C0A /* Pods-AstrologyCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalc.release.xcconfig"; path = "Target Support Files/Pods-AstrologyCalc/Pods-AstrologyCalc.release.xcconfig"; sourceTree = "<group>"; };
+		204B3F2222B6FE6100F62DB7 /* ParsedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedModel.swift; sourceTree = "<group>"; };
+		204B3F2422B6FFA500F62DB7 /* parsing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parsing.json; sourceTree = "<group>"; };
 		208F402A2296976800C5CF98 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		20EB0F9522C98A0000FBD0DA /* db_17.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_17.json; sourceTree = "<group>"; };
+		20EB0F9622C98A0000FBD0DA /* db_49.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_49.json; sourceTree = "<group>"; };
+		20EB0F9722C98A0000FBD0DA /* db_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_1.json; sourceTree = "<group>"; };
+		20EB0F9822C98A0000FBD0DA /* db_20.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_20.json; sourceTree = "<group>"; };
+		20EB0F9922C98A0000FBD0DA /* db_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_5.json; sourceTree = "<group>"; };
+		20EB0F9A22C98A0000FBD0DA /* db_52.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_52.json; sourceTree = "<group>"; };
+		20EB0F9B22C98A0000FBD0DA /* db_38.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_38.json; sourceTree = "<group>"; };
+		20EB0F9C22C98A0000FBD0DA /* db_47.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_47.json; sourceTree = "<group>"; };
+		20EB0F9D22C98A0100FBD0DA /* db_34.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_34.json; sourceTree = "<group>"; };
+		20EB0F9E22C98A0100FBD0DA /* db_43.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_43.json; sourceTree = "<group>"; };
+		20EB0F9F22C98A0100FBD0DA /* db_13.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_13.json; sourceTree = "<group>"; };
+		20EB0FA022C98A0100FBD0DA /* db_6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_6.json; sourceTree = "<group>"; };
+		20EB0FA122C98A0100FBD0DA /* db_44.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_44.json; sourceTree = "<group>"; };
+		20EB0FA222C98A0100FBD0DA /* db_30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_30.json; sourceTree = "<group>"; };
+		20EB0FA322C98A0100FBD0DA /* db_55.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_55.json; sourceTree = "<group>"; };
+		20EB0FA422C98A0200FBD0DA /* db_58.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_58.json; sourceTree = "<group>"; };
+		20EB0FA522C98A0200FBD0DA /* db_61.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_61.json; sourceTree = "<group>"; };
+		20EB0FA622C98A0200FBD0DA /* db_24.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_24.json; sourceTree = "<group>"; };
+		20EB0FA722C98A0200FBD0DA /* db_11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_11.json; sourceTree = "<group>"; };
+		20EB0FA822C98A0200FBD0DA /* db_14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_14.json; sourceTree = "<group>"; };
+		20EB0FA922C98A0200FBD0DA /* db_46.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_46.json; sourceTree = "<group>"; };
+		20EB0FAA22C98A0200FBD0DA /* db_56.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_56.json; sourceTree = "<group>"; };
+		20EB0FAB22C98A0200FBD0DA /* db_29.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_29.json; sourceTree = "<group>"; };
+		20EB0FAC22C98A0200FBD0DA /* db_57.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_57.json; sourceTree = "<group>"; };
+		20EB0FAD22C98A0200FBD0DA /* db_40.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_40.json; sourceTree = "<group>"; };
+		20EB0FAE22C98A0300FBD0DA /* db_59.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_59.json; sourceTree = "<group>"; };
+		20EB0FAF22C98A0300FBD0DA /* db_48.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_48.json; sourceTree = "<group>"; };
+		20EB0FB022C98A0300FBD0DA /* db_15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_15.json; sourceTree = "<group>"; };
+		20EB0FB122C98A0300FBD0DA /* db_27.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_27.json; sourceTree = "<group>"; };
+		20EB0FB222C98A0300FBD0DA /* db_9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_9.json; sourceTree = "<group>"; };
+		20EB0FB322C98A0300FBD0DA /* db_37.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_37.json; sourceTree = "<group>"; };
+		20EB0FB422C98A0300FBD0DA /* db_50.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_50.json; sourceTree = "<group>"; };
+		20EB0FB522C98A0300FBD0DA /* db_53.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_53.json; sourceTree = "<group>"; };
+		20EB0FB622C98A0400FBD0DA /* db_18.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_18.json; sourceTree = "<group>"; };
+		20EB0FB722C98A0400FBD0DA /* db_35.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_35.json; sourceTree = "<group>"; };
+		20EB0FB822C98A0400FBD0DA /* db_64.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_64.json; sourceTree = "<group>"; };
+		20EB0FB922C98A0400FBD0DA /* db_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_3.json; sourceTree = "<group>"; };
+		20EB0FBA22C98A0400FBD0DA /* db_33.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_33.json; sourceTree = "<group>"; };
+		20EB0FBB22C98A0400FBD0DA /* db_7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_7.json; sourceTree = "<group>"; };
+		20EB0FBC22C98A0400FBD0DA /* db_26.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_26.json; sourceTree = "<group>"; };
+		20EB0FBD22C98A0500FBD0DA /* db_42.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_42.json; sourceTree = "<group>"; };
+		20EB0FBE22C98A0500FBD0DA /* db_63.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_63.json; sourceTree = "<group>"; };
+		20EB0FBF22C98A0500FBD0DA /* db_25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_25.json; sourceTree = "<group>"; };
+		20EB0FC022C98A0500FBD0DA /* db_16.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_16.json; sourceTree = "<group>"; };
+		20EB0FC122C98A0500FBD0DA /* db_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_0.json; sourceTree = "<group>"; };
+		20EB0FC222C98A0500FBD0DA /* db_36.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_36.json; sourceTree = "<group>"; };
+		20EB0FC322C98A0500FBD0DA /* db_45.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_45.json; sourceTree = "<group>"; };
+		20EB0FC422C98A0600FBD0DA /* db_10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_10.json; sourceTree = "<group>"; };
+		20EB0FC522C98A0600FBD0DA /* db_66.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_66.json; sourceTree = "<group>"; };
+		20EB0FC622C98A0600FBD0DA /* db_41.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_41.json; sourceTree = "<group>"; };
+		20EB0FC722C98A0600FBD0DA /* db_60.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_60.json; sourceTree = "<group>"; };
+		20EB0FC822C98A0600FBD0DA /* db_32.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_32.json; sourceTree = "<group>"; };
+		20EB0FC922C98A0600FBD0DA /* db_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_2.json; sourceTree = "<group>"; };
+		20EB0FCA22C98A0600FBD0DA /* db_62.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_62.json; sourceTree = "<group>"; };
+		20EB0FCB22C98A0600FBD0DA /* db_39.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_39.json; sourceTree = "<group>"; };
+		20EB0FCC22C98A0700FBD0DA /* db_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_4.json; sourceTree = "<group>"; };
+		20EB0FCD22C98A0700FBD0DA /* db_21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_21.json; sourceTree = "<group>"; };
+		20EB0FCE22C98A0700FBD0DA /* db_22.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_22.json; sourceTree = "<group>"; };
+		20EB0FCF22C98A0700FBD0DA /* db_12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_12.json; sourceTree = "<group>"; };
+		20EB0FD022C98A0700FBD0DA /* db_28.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_28.json; sourceTree = "<group>"; };
+		20EB0FD122C98A0700FBD0DA /* db_19.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_19.json; sourceTree = "<group>"; };
+		20EB0FD222C98A0700FBD0DA /* db_51.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_51.json; sourceTree = "<group>"; };
+		20EB0FD322C98A0800FBD0DA /* db_8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_8.json; sourceTree = "<group>"; };
+		20EB0FD422C98A0800FBD0DA /* db_31.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_31.json; sourceTree = "<group>"; };
+		20EB0FD522C98A0800FBD0DA /* db_65.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_65.json; sourceTree = "<group>"; };
+		20EB0FD622C98A0800FBD0DA /* db_67.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_67.json; sourceTree = "<group>"; };
+		20EB0FD722C98A0800FBD0DA /* db_23.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_23.json; sourceTree = "<group>"; };
+		20EB0FD822C98A0800FBD0DA /* db_54.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db_54.json; sourceTree = "<group>"; };
 		20EBC734224B958C0054E6E5 /* AstrologyCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AstrologyCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EBC737224B958C0054E6E5 /* AstrologyCalc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AstrologyCalc.h; sourceTree = "<group>"; };
 		20EBC738224B958C0054E6E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,16 +212,20 @@
 		20EBC790224B985D0054E6E5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AstrologyCalc.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		20EBC793224B986E0054E6E5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		2D900E6B069FF35073EFFE4C /* Pods-AstrologyCalcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalcTests.release.xcconfig"; path = "Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests.release.xcconfig"; sourceTree = "<group>"; };
-		36C5DB6A849630696E12E4D5 /* Pods-AstrologyCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalc.release.xcconfig"; path = "Target Support Files/Pods-AstrologyCalc/Pods-AstrologyCalc.release.xcconfig"; sourceTree = "<group>"; };
-		477876DF6A30A17F2536E864 /* Pods_Example_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55879174E2BCD59F291F8281 /* Pods-AstrologyCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalc.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyCalc/Pods-AstrologyCalc.debug.xcconfig"; sourceTree = "<group>"; };
-		767E4DDBD47A64B386C1EA83 /* Pods-AstrologyCalcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalcTests.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8570A83D9C39C43EC090A2D2 /* Pods-Example App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example App.release.xcconfig"; path = "Target Support Files/Pods-Example App/Pods-Example App.release.xcconfig"; sourceTree = "<group>"; };
-		912D2F06AE7AAADDA0E169CD /* Pods-Example App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example App.debug.xcconfig"; path = "Target Support Files/Pods-Example App/Pods-Example App.debug.xcconfig"; sourceTree = "<group>"; };
+		286AB5AC2AD8371476BCDA9E /* Pods-AstrologyCalcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalcTests.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D7D23C9E5A981E556DA1B70 /* Pods_AstrologyCalcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		587FDFBE2ED5875BB4AC89A1 /* Pods-AstrologyCalcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalcTests.release.xcconfig"; path = "Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests.release.xcconfig"; sourceTree = "<group>"; };
+		9B8DC7EBE385168627D0EFF6 /* Pods-Example App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example App.debug.xcconfig"; path = "Target Support Files/Pods-Example App/Pods-Example App.debug.xcconfig"; sourceTree = "<group>"; };
+		9F30C604999DC6B28D77967B /* Pods_AstrologyCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B980AA1ACEA9838635FACF85 /* Pods-Example App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example App.release.xcconfig"; path = "Target Support Files/Pods-Example App/Pods-Example App.release.xcconfig"; sourceTree = "<group>"; };
+		CE5A943E22C60A7300AF8280 /* DataBaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseModels.swift; sourceTree = "<group>"; };
+		CE5A944022C60AA100AF8280 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		CE5A944322C6309D00AF8280 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D3E842279DFEF0214A9E97FA /* Pods-AstrologyCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyCalc.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyCalc/Pods-AstrologyCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		DA6456F82253FE570031867D /* Eclipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eclipse.swift; sourceTree = "<group>"; };
 		DA6456FA2254030D0031867D /* EclipseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EclipseCalculator.swift; sourceTree = "<group>"; };
 		DA6456FC225405560031867D /* AstroUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroUtils.swift; sourceTree = "<group>"; };
+		EF82974B3499682CC223A5F4 /* Pods_Example_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F85AC6816C2B732AC93D7F89 /* Pods_AstrologyCalc.framework in Frameworks */,
+				0460F5EF30D6AFF229041060 /* Pods_AstrologyCalc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20EBC73E224B958C0054E6E5 /* AstrologyCalc.framework in Frameworks */,
-				F389940F32EDC0A762A1D3E2 /* Pods_AstrologyCalcTests.framework in Frameworks */,
+				2F68F45A7173B89F9656D392 /* Pods_AstrologyCalcTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,25 +251,101 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA6456FF2254F48F0031867D /* AstrologyCalc.framework in Frameworks */,
-				A32C0C45A959E3A04B992895 /* Pods_Example_App.framework in Frameworks */,
+				A072ED0E67393CF9F9303D0B /* Pods_Example_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20EB0F0C22C97EB400FBD0DA /* jsons */ = {
+			isa = PBXGroup;
+			children = (
+				20EB0FC122C98A0500FBD0DA /* db_0.json */,
+				20EB0F9722C98A0000FBD0DA /* db_1.json */,
+				20EB0FC922C98A0600FBD0DA /* db_2.json */,
+				20EB0FB922C98A0400FBD0DA /* db_3.json */,
+				20EB0FCC22C98A0700FBD0DA /* db_4.json */,
+				20EB0F9922C98A0000FBD0DA /* db_5.json */,
+				20EB0FA022C98A0100FBD0DA /* db_6.json */,
+				20EB0FBB22C98A0400FBD0DA /* db_7.json */,
+				20EB0FD322C98A0800FBD0DA /* db_8.json */,
+				20EB0FB222C98A0300FBD0DA /* db_9.json */,
+				20EB0FC422C98A0600FBD0DA /* db_10.json */,
+				20EB0FA722C98A0200FBD0DA /* db_11.json */,
+				20EB0FCF22C98A0700FBD0DA /* db_12.json */,
+				20EB0F9F22C98A0100FBD0DA /* db_13.json */,
+				20EB0FA822C98A0200FBD0DA /* db_14.json */,
+				20EB0FB022C98A0300FBD0DA /* db_15.json */,
+				20EB0FC022C98A0500FBD0DA /* db_16.json */,
+				20EB0F9522C98A0000FBD0DA /* db_17.json */,
+				20EB0FB622C98A0400FBD0DA /* db_18.json */,
+				20EB0FD122C98A0700FBD0DA /* db_19.json */,
+				20EB0F9822C98A0000FBD0DA /* db_20.json */,
+				20EB0FCD22C98A0700FBD0DA /* db_21.json */,
+				20EB0FCE22C98A0700FBD0DA /* db_22.json */,
+				20EB0FD722C98A0800FBD0DA /* db_23.json */,
+				20EB0FA622C98A0200FBD0DA /* db_24.json */,
+				20EB0FBF22C98A0500FBD0DA /* db_25.json */,
+				20EB0FBC22C98A0400FBD0DA /* db_26.json */,
+				20EB0FB122C98A0300FBD0DA /* db_27.json */,
+				20EB0FD022C98A0700FBD0DA /* db_28.json */,
+				20EB0FAB22C98A0200FBD0DA /* db_29.json */,
+				20EB0FA222C98A0100FBD0DA /* db_30.json */,
+				20EB0FD422C98A0800FBD0DA /* db_31.json */,
+				20EB0FC822C98A0600FBD0DA /* db_32.json */,
+				20EB0FBA22C98A0400FBD0DA /* db_33.json */,
+				20EB0F9D22C98A0100FBD0DA /* db_34.json */,
+				20EB0FB722C98A0400FBD0DA /* db_35.json */,
+				20EB0FC222C98A0500FBD0DA /* db_36.json */,
+				20EB0FB322C98A0300FBD0DA /* db_37.json */,
+				20EB0F9B22C98A0000FBD0DA /* db_38.json */,
+				20EB0FCB22C98A0600FBD0DA /* db_39.json */,
+				20EB0FAD22C98A0200FBD0DA /* db_40.json */,
+				20EB0FC622C98A0600FBD0DA /* db_41.json */,
+				20EB0FBD22C98A0500FBD0DA /* db_42.json */,
+				20EB0F9E22C98A0100FBD0DA /* db_43.json */,
+				20EB0FA122C98A0100FBD0DA /* db_44.json */,
+				20EB0FC322C98A0500FBD0DA /* db_45.json */,
+				20EB0FA922C98A0200FBD0DA /* db_46.json */,
+				20EB0F9C22C98A0000FBD0DA /* db_47.json */,
+				20EB0FAF22C98A0300FBD0DA /* db_48.json */,
+				20EB0F9622C98A0000FBD0DA /* db_49.json */,
+				20EB0FB422C98A0300FBD0DA /* db_50.json */,
+				20EB0FD222C98A0700FBD0DA /* db_51.json */,
+				20EB0F9A22C98A0000FBD0DA /* db_52.json */,
+				20EB0FB522C98A0300FBD0DA /* db_53.json */,
+				20EB0FD822C98A0800FBD0DA /* db_54.json */,
+				20EB0FA322C98A0100FBD0DA /* db_55.json */,
+				20EB0FAA22C98A0200FBD0DA /* db_56.json */,
+				20EB0FAC22C98A0200FBD0DA /* db_57.json */,
+				20EB0FA422C98A0200FBD0DA /* db_58.json */,
+				20EB0FAE22C98A0300FBD0DA /* db_59.json */,
+				20EB0FC722C98A0600FBD0DA /* db_60.json */,
+				20EB0FA522C98A0200FBD0DA /* db_61.json */,
+				20EB0FCA22C98A0600FBD0DA /* db_62.json */,
+				20EB0FBE22C98A0500FBD0DA /* db_63.json */,
+				20EB0FB822C98A0400FBD0DA /* db_64.json */,
+				20EB0FD522C98A0800FBD0DA /* db_65.json */,
+				20EB0FC522C98A0600FBD0DA /* db_66.json */,
+				20EB0FD622C98A0800FBD0DA /* db_67.json */,
+			);
+			path = jsons;
+			sourceTree = "<group>";
+		};
 		20EBC72A224B958C0054E6E5 = {
 			isa = PBXGroup;
 			children = (
 				20EBC790224B985D0054E6E5 /* .travis.yml */,
 				20EBC792224B986E0054E6E5 /* AstrologyCalc.podspec */,
 				20EBC793224B986E0054E6E5 /* README.md */,
+				204B3F2422B6FFA500F62DB7 /* parsing.json */,
 				20EBC736224B958C0054E6E5 /* AstrologyCalc */,
 				20EBC741224B958C0054E6E5 /* AstrologyCalcTests */,
 				20EBC763224B96960054E6E5 /* Example App */,
 				20EBC735224B958C0054E6E5 /* Products */,
-				DA6456FE2254F48F0031867D /* Frameworks */,
 				6B264221D88DD0B36BF3B334 /* Pods */,
+				2B26D85AFD37E91B56B861C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +362,8 @@
 		20EBC736224B958C0054E6E5 /* AstrologyCalc */ = {
 			isa = PBXGroup;
 			children = (
+				CE5A944222C6308700AF8280 /* Extensions */,
+				CE5A943B22C60A4300AF8280 /* DataBase */,
 				20EBC74E224B96400054E6E5 /* Moon */,
 				20EBC737224B958C0054E6E5 /* AstrologyCalc.h */,
 				20EBC738224B958C0054E6E5 /* Info.plist */,
@@ -161,7 +385,6 @@
 			children = (
 				20EBC756224B96400054E6E5 /* SunMoonCalculator.swift */,
 				20EBC74F224B96400054E6E5 /* MoonCalculatorManager.swift */,
-				208F402A2296976800C5CF98 /* Date+Extension.swift */,
 				20EBC750224B96400054E6E5 /* Models */,
 				DA6456FA2254030D0031867D /* EclipseCalculator.swift */,
 				DA6456FC225405560031867D /* AstroUtils.swift */,
@@ -178,6 +401,7 @@
 				20EBC754224B96400054E6E5 /* MoonTrajectory.swift */,
 				20EBC755224B96400054E6E5 /* MoonPhase.swift */,
 				DA6456F82253FE570031867D /* Eclipse.swift */,
+				204B3F2222B6FE6100F62DB7 /* ParsedModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,27 +418,46 @@
 			path = "Example App";
 			sourceTree = "<group>";
 		};
+		2B26D85AFD37E91B56B861C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F30C604999DC6B28D77967B /* Pods_AstrologyCalc.framework */,
+				2D7D23C9E5A981E556DA1B70 /* Pods_AstrologyCalcTests.framework */,
+				EF82974B3499682CC223A5F4 /* Pods_Example_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B264221D88DD0B36BF3B334 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				55879174E2BCD59F291F8281 /* Pods-AstrologyCalc.debug.xcconfig */,
-				36C5DB6A849630696E12E4D5 /* Pods-AstrologyCalc.release.xcconfig */,
-				767E4DDBD47A64B386C1EA83 /* Pods-AstrologyCalcTests.debug.xcconfig */,
-				2D900E6B069FF35073EFFE4C /* Pods-AstrologyCalcTests.release.xcconfig */,
-				912D2F06AE7AAADDA0E169CD /* Pods-Example App.debug.xcconfig */,
-				8570A83D9C39C43EC090A2D2 /* Pods-Example App.release.xcconfig */,
+				D3E842279DFEF0214A9E97FA /* Pods-AstrologyCalc.debug.xcconfig */,
+				0616024A03BE1380F82D0C0A /* Pods-AstrologyCalc.release.xcconfig */,
+				286AB5AC2AD8371476BCDA9E /* Pods-AstrologyCalcTests.debug.xcconfig */,
+				587FDFBE2ED5875BB4AC89A1 /* Pods-AstrologyCalcTests.release.xcconfig */,
+				9B8DC7EBE385168627D0EFF6 /* Pods-Example App.debug.xcconfig */,
+				B980AA1ACEA9838635FACF85 /* Pods-Example App.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		DA6456FE2254F48F0031867D /* Frameworks */ = {
+		CE5A943B22C60A4300AF8280 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				203ECD472F3BE256BE1815A9 /* Pods_AstrologyCalc.framework */,
-				18D411F6004E98FF62ABBBEA /* Pods_AstrologyCalcTests.framework */,
-				477876DF6A30A17F2536E864 /* Pods_Example_App.framework */,
+				CE5A943E22C60A7300AF8280 /* DataBaseModels.swift */,
+				20EB0F0C22C97EB400FBD0DA /* jsons */,
+				CE5A944022C60AA100AF8280 /* DataBaseManager.swift */,
 			);
-			name = Frameworks;
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		CE5A944222C6308700AF8280 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				208F402A2296976800C5CF98 /* Date+Extension.swift */,
+				CE5A944322C6309D00AF8280 /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +478,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EBC748224B958C0054E6E5 /* Build configuration list for PBXNativeTarget "AstrologyCalc" */;
 			buildPhases = (
-				2AE435468954D4E6E24A38E7 /* [CP] Check Pods Manifest.lock */,
+				ED7D384E20E01867BEB2FC86 /* [CP] Check Pods Manifest.lock */,
 				20EBC72F224B958C0054E6E5 /* Headers */,
 				20EBC730224B958C0054E6E5 /* Sources */,
 				20EBC731224B958C0054E6E5 /* Frameworks */,
@@ -254,11 +497,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EBC74B224B958C0054E6E5 /* Build configuration list for PBXNativeTarget "AstrologyCalcTests" */;
 			buildPhases = (
-				AE5276FE6578874F9052DB3F /* [CP] Check Pods Manifest.lock */,
+				3D656D6FD8BAC8BC99DE6414 /* [CP] Check Pods Manifest.lock */,
 				20EBC739224B958C0054E6E5 /* Sources */,
 				20EBC73A224B958C0054E6E5 /* Frameworks */,
 				20EBC73B224B958C0054E6E5 /* Resources */,
-				324745A3F417ECC8DA3DD9C8 /* [CP] Embed Pods Frameworks */,
+				64EE0C23ABA630CF72B5A564 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,11 +517,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EBC77C224B96980054E6E5 /* Build configuration list for PBXNativeTarget "Example App" */;
 			buildPhases = (
-				95EF8AF07E0FC0B20DEDFE1E /* [CP] Check Pods Manifest.lock */,
+				A26E65A9EA0594D5A0174D9C /* [CP] Check Pods Manifest.lock */,
 				20EBC75E224B96960054E6E5 /* Sources */,
 				20EBC75F224B96960054E6E5 /* Frameworks */,
 				20EBC760224B96960054E6E5 /* Resources */,
-				A766E5B48094DAC4E33B3463 /* [CP] Embed Pods Frameworks */,
+				B6D6BBCC029C4E88AF63EC1A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,9 +578,78 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204B3F2522B6FFA500F62DB7 /* parsing.json in Resources */,
+				20EB101422C98A0800FBD0DA /* db_28.json in Resources */,
+				20EB0FFE22C98A0800FBD0DA /* db_33.json in Resources */,
+				20EB0FF322C98A0800FBD0DA /* db_48.json in Resources */,
+				20EB100E22C98A0800FBD0DA /* db_62.json in Resources */,
+				20EB101622C98A0800FBD0DA /* db_51.json in Resources */,
+				20EB100122C98A0800FBD0DA /* db_42.json in Resources */,
+				20EB0FF122C98A0800FBD0DA /* db_40.json in Resources */,
+				20EB101C22C98A0800FBD0DA /* db_54.json in Resources */,
+				20EB0FDC22C98A0800FBD0DA /* db_20.json in Resources */,
+				20EB0FE922C98A0800FBD0DA /* db_61.json in Resources */,
+				20EB100D22C98A0800FBD0DA /* db_2.json in Resources */,
+				20EB101822C98A0800FBD0DA /* db_31.json in Resources */,
+				20EB0FF022C98A0800FBD0DA /* db_57.json in Resources */,
+				20EB100322C98A0800FBD0DA /* db_25.json in Resources */,
+				20EB0FED22C98A0800FBD0DA /* db_46.json in Resources */,
+				20EB101322C98A0800FBD0DA /* db_12.json in Resources */,
+				20EB0FE022C98A0800FBD0DA /* db_47.json in Resources */,
+				20EB100922C98A0800FBD0DA /* db_66.json in Resources */,
 				20EBC795224B986E0054E6E5 /* README.md in Resources */,
 				20EBC794224B986E0054E6E5 /* AstrologyCalc.podspec in Resources */,
+				20EB0FD922C98A0800FBD0DA /* db_17.json in Resources */,
+				20EB0FF622C98A0800FBD0DA /* db_9.json in Resources */,
+				20EB0FFB22C98A0800FBD0DA /* db_35.json in Resources */,
+				20EB0FFF22C98A0800FBD0DA /* db_7.json in Resources */,
+				20EB0FE722C98A0800FBD0DA /* db_55.json in Resources */,
+				20EB0FDA22C98A0800FBD0DA /* db_49.json in Resources */,
+				20EB100C22C98A0800FBD0DA /* db_32.json in Resources */,
+				20EB0FE822C98A0800FBD0DA /* db_58.json in Resources */,
+				20EB101A22C98A0800FBD0DA /* db_67.json in Resources */,
+				20EB0FF522C98A0800FBD0DA /* db_27.json in Resources */,
+				20EB0FFA22C98A0800FBD0DA /* db_18.json in Resources */,
+				20EB0FF822C98A0800FBD0DA /* db_50.json in Resources */,
+				20EB0FF222C98A0800FBD0DA /* db_59.json in Resources */,
+				20EB101B22C98A0800FBD0DA /* db_23.json in Resources */,
+				20EB0FEB22C98A0800FBD0DA /* db_11.json in Resources */,
+				20EB100222C98A0800FBD0DA /* db_63.json in Resources */,
+				20EB100022C98A0800FBD0DA /* db_26.json in Resources */,
+				20EB0FEE22C98A0800FBD0DA /* db_56.json in Resources */,
+				20EB100622C98A0800FBD0DA /* db_36.json in Resources */,
+				20EB0FE122C98A0800FBD0DA /* db_34.json in Resources */,
+				20EB0FDF22C98A0800FBD0DA /* db_38.json in Resources */,
+				20EB101222C98A0800FBD0DA /* db_22.json in Resources */,
+				20EB100A22C98A0800FBD0DA /* db_41.json in Resources */,
+				20EB0FE522C98A0800FBD0DA /* db_44.json in Resources */,
+				20EB101122C98A0800FBD0DA /* db_21.json in Resources */,
 				20EBC791224B985D0054E6E5 /* .travis.yml in Resources */,
+				20EB100722C98A0800FBD0DA /* db_45.json in Resources */,
+				20EB0FF722C98A0800FBD0DA /* db_37.json in Resources */,
+				20EB0FDD22C98A0800FBD0DA /* db_5.json in Resources */,
+				20EB0FF922C98A0800FBD0DA /* db_53.json in Resources */,
+				20EB0FDE22C98A0800FBD0DA /* db_52.json in Resources */,
+				20EB0FE422C98A0800FBD0DA /* db_6.json in Resources */,
+				20EB0FFD22C98A0800FBD0DA /* db_3.json in Resources */,
+				20EB101722C98A0800FBD0DA /* db_8.json in Resources */,
+				20EB0FE222C98A0800FBD0DA /* db_43.json in Resources */,
+				20EB0FE322C98A0800FBD0DA /* db_13.json in Resources */,
+				20EB100522C98A0800FBD0DA /* db_0.json in Resources */,
+				20EB0FFC22C98A0800FBD0DA /* db_64.json in Resources */,
+				20EB100822C98A0800FBD0DA /* db_10.json in Resources */,
+				20EB0FEC22C98A0800FBD0DA /* db_14.json in Resources */,
+				20EB100F22C98A0800FBD0DA /* db_39.json in Resources */,
+				20EB100B22C98A0800FBD0DA /* db_60.json in Resources */,
+				20EB101922C98A0800FBD0DA /* db_65.json in Resources */,
+				20EB0FEA22C98A0800FBD0DA /* db_24.json in Resources */,
+				20EB0FE622C98A0800FBD0DA /* db_30.json in Resources */,
+				20EB0FF422C98A0800FBD0DA /* db_15.json in Resources */,
+				20EB0FEF22C98A0800FBD0DA /* db_29.json in Resources */,
+				20EB100422C98A0800FBD0DA /* db_16.json in Resources */,
+				20EB101022C98A0800FBD0DA /* db_4.json in Resources */,
+				20EB101522C98A0800FBD0DA /* db_19.json in Resources */,
+				20EB0FDB22C98A0800FBD0DA /* db_1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,107 +672,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2AE435468954D4E6E24A38E7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AstrologyCalc-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		324745A3F417ECC8DA3DD9C8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DevHelper/DevHelper.framework",
-				"${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DevHelper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		95EF8AF07E0FC0B20DEDFE1E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Example App-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A766E5B48094DAC4E33B3463 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Example App/Pods-Example App-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DevHelper/DevHelper.framework",
-				"${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DevHelper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example App/Pods-Example App-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AE5276FE6578874F9052DB3F /* [CP] Check Pods Manifest.lock */ = {
+		3D656D6FD8BAC8BC99DE6414 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -482,6 +694,84 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		64EE0C23ABA630CF72B5A564 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AstrologyCalcTests/Pods-AstrologyCalcTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A26E65A9EA0594D5A0174D9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Example App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6D6BBCC029C4E88AF63EC1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example App/Pods-Example App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example App/Pods-Example App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example App/Pods-Example App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED7D384E20E01867BEB2FC86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AstrologyCalc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -493,12 +783,16 @@
 				208F402B2296976800C5CF98 /* Date+Extension.swift in Sources */,
 				20EBC758224B96400054E6E5 /* MoonModel.swift in Sources */,
 				20EBC757224B96400054E6E5 /* MoonCalculatorManager.swift in Sources */,
+				CE5A944122C60AA100AF8280 /* DataBaseManager.swift in Sources */,
+				204B3F2322B6FE6100F62DB7 /* ParsedModel.swift in Sources */,
 				20EBC759224B96400054E6E5 /* AstrologyModel.swift in Sources */,
 				20EBC75A224B96400054E6E5 /* MoonZodiacSign.swift in Sources */,
 				DA6456FD225405560031867D /* AstroUtils.swift in Sources */,
+				CE5A943F22C60A7300AF8280 /* DataBaseModels.swift in Sources */,
 				20EBC75D224B96400054E6E5 /* SunMoonCalculator.swift in Sources */,
 				DA6456F92253FE570031867D /* Eclipse.swift in Sources */,
 				20EBC75C224B96400054E6E5 /* MoonPhase.swift in Sources */,
+				CE5A944422C6309D00AF8280 /* String+Extension.swift in Sources */,
 				20EBC75B224B96400054E6E5 /* MoonTrajectory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,7 +962,7 @@
 		};
 		20EBC749224B958C0054E6E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55879174E2BCD59F291F8281 /* Pods-AstrologyCalc.debug.xcconfig */;
+			baseConfigurationReference = D3E842279DFEF0214A9E97FA /* Pods-AstrologyCalc.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -694,7 +988,7 @@
 		};
 		20EBC74A224B958C0054E6E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36C5DB6A849630696E12E4D5 /* Pods-AstrologyCalc.release.xcconfig */;
+			baseConfigurationReference = 0616024A03BE1380F82D0C0A /* Pods-AstrologyCalc.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -720,9 +1014,9 @@
 		};
 		20EBC74C224B958C0054E6E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 767E4DDBD47A64B386C1EA83 /* Pods-AstrologyCalcTests.debug.xcconfig */;
+			baseConfigurationReference = 286AB5AC2AD8371476BCDA9E /* Pods-AstrologyCalcTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V93MRMNEKV;
 				INFOPLIST_FILE = AstrologyCalcTests/Info.plist;
@@ -740,9 +1034,9 @@
 		};
 		20EBC74D224B958C0054E6E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D900E6B069FF35073EFFE4C /* Pods-AstrologyCalcTests.release.xcconfig */;
+			baseConfigurationReference = 587FDFBE2ED5875BB4AC89A1 /* Pods-AstrologyCalcTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V93MRMNEKV;
 				INFOPLIST_FILE = AstrologyCalcTests/Info.plist;
@@ -760,7 +1054,7 @@
 		};
 		20EBC77D224B96980054E6E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 912D2F06AE7AAADDA0E169CD /* Pods-Example App.debug.xcconfig */;
+			baseConfigurationReference = 9B8DC7EBE385168627D0EFF6 /* Pods-Example App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -780,7 +1074,7 @@
 		};
 		20EBC77E224B96980054E6E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8570A83D9C39C43EC090A2D2 /* Pods-Example App.release.xcconfig */;
+			baseConfigurationReference = B980AA1ACEA9838635FACF85 /* Pods-Example App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
