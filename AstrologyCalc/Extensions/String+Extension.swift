@@ -13,6 +13,7 @@ extension String {
     var toDate: Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mmZ"
+        formatter.timeZone = TimeZone.current
         let date = formatter.date(from: self)
         return date
     }

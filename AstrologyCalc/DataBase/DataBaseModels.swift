@@ -65,7 +65,7 @@ public enum DBMoonPhase: String, Codable {
 public struct DBMoonDayModel: Codable {
     
     public let age: Int
-    public let date: Date?
+    public let moonStartDate: Date?
     public let signDate: String
     public let sign: String
     public var moonPhase: DBMoonPhase?
@@ -74,7 +74,7 @@ public struct DBMoonDayModel: Codable {
     enum CodingKeys: String, CodingKey {
         
         case age = "age"
-        case date = "date"
+        case moonStartDate = "date"
         case signDate = "signDate"
         case sign = "sign"
         case moonPhase = "moonPhase"
@@ -84,8 +84,8 @@ public struct DBMoonDayModel: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         age = try values.decode(Int.self, forKey: .age)
-        let stringDate = try values.decode(String.self, forKey: .date)
-        date = stringDate.toDate
+        let stringDate = try values.decode(String.self, forKey: .moonStartDate)
+        moonStartDate = stringDate.toDate
         signDate = try values.decode(String.self, forKey: .signDate)
         sign = try values.decode(String.self, forKey: .sign)
         if let phase = try values.decodeIfPresent(String.self, forKey: .moonPhase) {
@@ -98,7 +98,7 @@ public struct DBMoonDayModel: Codable {
     
     public init(age: Int, date: Date?, signDate: String, sign: String, moonPhase: DBMoonPhase?, moonPhaseDate: Date?) {
         self.age = age
-        self.date = date
+        self.moonStartDate = date
         self.signDate = signDate
         self.sign = sign
         self.moonPhase = moonPhase
