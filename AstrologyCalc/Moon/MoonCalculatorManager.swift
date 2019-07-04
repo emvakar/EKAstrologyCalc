@@ -132,18 +132,18 @@ extension MoonCalculatorManager {
         
         //возможен случай с 3мя лунными днями в один календарный день (тогда в цикле 2 раза найдется подходящее условие), но для последующей логики мы берем именно первый попавшийся лунный день
         for (index, model) in allMoonDays.enumerated() {
-            if let date = model.date, dayInterval.contains(date) {
+            if let date = model.moonStartDate, dayInterval.contains(date) {
                 correctMoonDay = (index, model)
                 break
             }
             
             //для случая с 1 лунным днем, чтобы второй раз не ходить по циклу
-            if let modelDate = model.date, modelDate < startOfDay {
+            if let modelDate = model.moonStartDate, modelDate < startOfDay {
                 moonDayForExtraCase = (index, model)
             }
             
             //если лунный день начинается после конца календарного дня, то обрываем цикл
-            if let modelDate = model.date, modelDate > endOfDay {
+            if let modelDate = model.moonStartDate, modelDate > endOfDay {
                 break
             }
         }
@@ -158,15 +158,15 @@ extension MoonCalculatorManager {
             let prevIndex = ((correctMoonDay.index - 1) >= 0) ? (correctMoonDay.index - 1) : 0
             let previousMoonDay = allMoonDays[prevIndex]
             
-            let firstMoonDay = self.makeMoonModel(age: currentMoonDay.age, zodiacSign: currentMoonDay.sign, zodiacSignDate: currentMoonDay.signDate.toDate, moonRise: currentMoonDay.date, moonSet: nextMoonDay.date)
+            let firstMoonDay = self.makeMoonModel(age: currentMoonDay.age, zodiacSign: currentMoonDay.sign, zodiacSignDate: currentMoonDay.signDate.toDate, moonRise: currentMoonDay.moonStartDate, moonSet: nextMoonDay.moonStartDate)
             
-            let secondMoonDay = self.makeMoonModel(age: previousMoonDay.age, zodiacSign: previousMoonDay.sign, zodiacSignDate: previousMoonDay.signDate.toDate, moonRise: previousMoonDay.date, moonSet: currentMoonDay.date)
+            let secondMoonDay = self.makeMoonModel(age: previousMoonDay.age, zodiacSign: previousMoonDay.sign, zodiacSignDate: previousMoonDay.signDate.toDate, moonRise: previousMoonDay.moonStartDate, moonSet: currentMoonDay.moonStartDate)
             
             filteredMoonDays = [secondMoonDay, firstMoonDay]
             
             //случай с 3 днями
-            if ((correctMoonDay.index + 2) < allMoonDays.count), let nextMoonDayStart = allMoonDays[correctMoonDay.index + 1].date, dayInterval.contains(nextMoonDayStart) {
-                let thirdMoonDay = self.makeMoonModel(age: nextMoonDay.age, zodiacSign: nextMoonDay.sign, zodiacSignDate: nextMoonDay.signDate.toDate, moonRise: nextMoonDay.date, moonSet: allMoonDays[correctMoonDay.index + 2].date)
+            if ((correctMoonDay.index + 2) < allMoonDays.count), let nextMoonDayStart = allMoonDays[correctMoonDay.index + 1].moonStartDate, dayInterval.contains(nextMoonDayStart) {
+                let thirdMoonDay = self.makeMoonModel(age: nextMoonDay.age, zodiacSign: nextMoonDay.sign, zodiacSignDate: nextMoonDay.signDate.toDate, moonRise: nextMoonDay.moonStartDate, moonSet: allMoonDays[correctMoonDay.index + 2].moonStartDate)
                 
                 filteredMoonDays.append(thirdMoonDay)
             }
@@ -184,7 +184,7 @@ extension MoonCalculatorManager {
         
         //если лунный день не попал в переданный календарный день, то тут 1 вариант: в этот календарный день содержит 1 лунный день (он начался раньше календарного дня и закончится позже календарного дня)
         if let moonDayTuple = moonDayForExtraCase, ((moonDayTuple.index + 1) < allMoonDays.count) {
-            let moonDay = self.makeMoonModel(age: moonDayTuple.moonDay.age, zodiacSign: moonDayTuple.moonDay.sign, zodiacSignDate: moonDayTuple.moonDay.signDate.toDate, moonRise: moonDayTuple.moonDay.date, moonSet: allMoonDays[moonDayTuple.index + 1].date)
+            let moonDay = self.makeMoonModel(age: moonDayTuple.moonDay.age, zodiacSign: moonDayTuple.moonDay.sign, zodiacSignDate: moonDayTuple.moonDay.signDate.toDate, moonRise: moonDayTuple.moonDay.moonStartDate, moonSet: allMoonDays[moonDayTuple.index + 1].moonStartDate)
             filteredMoonDays = [moonDay]
             return filteredMoonDays
         }
@@ -410,13 +410,13 @@ extension MoonCalculatorManager {
         
         let moonDays = city.moonDays
         
-        let ms = moonDays.filter({ $0.date?.isSameDate(date, timeZone: timeZone) ?? false })
+        let ms = moonDays.filter({ $0.moonStartDate?.isSameDate(date, timeZone: timeZone) ?? false })
         
         var phase = ms.first?.moonPhase ?? .newMoon
         if let p = ms.first?.moonPhase {
             phase = p
         } else {
-            phase = moonDays.filter({ $0.date?.isSameDate(date.adjust(.day, offset: -1)) ?? false }).last?.moonPhase ?? .newMoon
+            phase = moonDays.filter({ $0.moonStartDate?.isSameDate(date.adjust(.day, offset: -1)) ?? false }).last?.moonPhase ?? .newMoon
         }
         
         if ms.contains(where: { ($0.age == 1 && $0.moonPhase == .fullMoon) }) {
@@ -427,6 +427,8 @@ extension MoonCalculatorManager {
             if m.moonPhase == DBMoonPhase.newMoon || m.moonPhase == DBMoonPhase.fullMoon {
                 if (m.age == 1) && m.moonPhase == DBMoonPhase.fullMoon {
                     return .newMoon
+                } else if (m.age > 27) && m.moonPhase == DBMoonPhase.fullMoon {
+                    return .phase4
                 }
                 return m.moonPhase!
             }
