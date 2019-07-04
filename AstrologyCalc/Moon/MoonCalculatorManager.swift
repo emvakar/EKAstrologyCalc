@@ -427,6 +427,8 @@ extension MoonCalculatorManager {
             if m.moonPhase == DBMoonPhase.newMoon || m.moonPhase == DBMoonPhase.fullMoon {
                 if (m.age == 1) && m.moonPhase == DBMoonPhase.fullMoon {
                     return .newMoon
+                } else if (m.age > 27) && m.moonPhase == DBMoonPhase.fullMoon {
+                    return .phase4
                 }
                 return m.moonPhase!
             }

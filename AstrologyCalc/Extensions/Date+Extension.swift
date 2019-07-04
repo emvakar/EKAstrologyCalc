@@ -29,7 +29,6 @@ extension Date {
         
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar.current
-        dateFormatter.timeZone = Calendar.current.timeZone
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: self)
     }
