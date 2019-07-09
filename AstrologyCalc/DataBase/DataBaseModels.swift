@@ -34,22 +34,26 @@ public struct DBCityModel: Codable {
     
     public let cityName: String
     public let moonDays: [DBMoonDayModel]
+    public let timeZone: Int
     
     enum CodingKeys: String, CodingKey {
         
         case moonDays = "moonDays"
         case cityName = "cityName"
+        case timeZone = "timeZone"
     }
     
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         moonDays = try values.decode([DBMoonDayModel].self, forKey: .moonDays)
         cityName = try values.decode(String.self, forKey: .cityName)
+        timeZone = try values.decode(Int.self, forKey: .timeZone)
     }
     
-    public init(cityName: String, moonDays: [DBMoonDayModel]) {
+    public init(cityName: String, moonDays: [DBMoonDayModel], timeZone: Int) {
         self.cityName = cityName
         self.moonDays = moonDays
+        self.timeZone = timeZone
     }
 }
 
@@ -65,6 +69,7 @@ public enum DBMoonPhase: String, Codable {
 public struct DBMoonDayModel: Codable {
     
     public let age: Int
+    public let timeZone: Int
     public let moonStartDate: Date?
     public let signDate: String
     public let sign: String
@@ -74,6 +79,7 @@ public struct DBMoonDayModel: Codable {
     enum CodingKeys: String, CodingKey {
         
         case age = "age"
+        case timeZone = "timeZone"
         case moonStartDate = "date"
         case signDate = "signDate"
         case sign = "sign"
@@ -84,20 +90,22 @@ public struct DBMoonDayModel: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         age = try values.decode(Int.self, forKey: .age)
+        timeZone = try values.decode(Int.self, forKey: .timeZone)
         let stringDate = try values.decode(String.self, forKey: .moonStartDate)
-        moonStartDate = stringDate.toDate
+        moonStartDate = stringDate.toDate(timeZone: TimeZone(secondsFromGMT: 3600 * self.timeZone)!)
         signDate = try values.decode(String.self, forKey: .signDate)
         sign = try values.decode(String.self, forKey: .sign)
         if let phase = try values.decodeIfPresent(String.self, forKey: .moonPhase) {
             moonPhase = DBMoonPhase(rawValue: phase)
         }
         if let stringDatePhase = try values.decodeIfPresent(String.self, forKey: .moonPhaseDate) {
-            moonPhaseDate = stringDatePhase.toDate
+            moonPhaseDate = stringDatePhase.toDate(timeZone: TimeZone(secondsFromGMT: 3600 * self.timeZone)!)
         }
     }
     
-    public init(age: Int, date: Date?, signDate: String, sign: String, moonPhase: DBMoonPhase?, moonPhaseDate: Date?) {
+    public init(age: Int, timeZone: Int, date: Date?, signDate: String, sign: String, moonPhase: DBMoonPhase?, moonPhaseDate: Date?) {
         self.age = age
+        self.timeZone = timeZone
         self.moonStartDate = date
         self.signDate = signDate
         self.sign = sign

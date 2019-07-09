@@ -9,7 +9,13 @@ import Foundation
 import UIKit
 import DevHelper
 
+
+
 extension Date {
+    
+    public var timeZone: Int {
+        return UserDefaults.standard.integer(forKey: "timeZone")
+    }
     
     public var addDay: Date? {
         var components = DateComponents()
@@ -25,36 +31,41 @@ extension Date {
         return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
     }
     
-    public var toHHmm: String {
+    public func toHHmm(timeZone: TimeZone) -> String {
         
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar.current
+        dateFormatter.timeZone = timeZone
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: self)
     }
     
-    public var day: String {
+    public func day(timeZone: TimeZone) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d"
+        dateFormatter.timeZone = timeZone
         return dateFormatter.string(from: self)
     }
     
-    public var month: String {
+    public func month(timeZone: TimeZone) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar.current
+        dateFormatter.timeZone = timeZone
         dateFormatter.dateFormat = "LLLL"
         return dateFormatter.string(from: self)
     }
-    public var year: String {
+    public func year(timeZone: TimeZone) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar.current
+        dateFormatter.timeZone = timeZone
         dateFormatter.dateFormat = "yyyy"
         return dateFormatter.string(from: self)
     }
     
-    public var startOfYear: Date? {
+    public func startOfYear(timeZone: TimeZone) -> Date? {
         
-        let userCalendar = Calendar.current // user calendar
+        var userCalendar = Calendar.current // user calendar
+        userCalendar.timeZone = timeZone
         let year = userCalendar.component(.year, from: self)
         
         
@@ -69,24 +80,24 @@ extension Date {
         return someDateTime
     }
     
-    public var startNextYear: Date? {
-        return self.startOfYear?.adjust(.year, offset: 1)
+    public func startNextYear(timeZone: TimeZone) -> Date? {
+        return self.startOfYear(timeZone: timeZone)?.adjust(.year, offset: 1)
     }
     
-    public var previusYearStart: Date? {
-        return self.startOfYear?.adjust(.year, offset: -1)
+    public func previusYearStart(timeZone: TimeZone) -> Date? {
+        return self.startOfYear(timeZone: timeZone)?.adjust(.year, offset: -1)
     }
     
-    public var dayBefore: Date {
-        return self.adjust(.day, offset: -1)
+    public func dayBefore(timeZone: TimeZone) -> Date {
+        return self.adjust(.day, offset: -1, timeZone: timeZone)
     }
-    public var dayAfter: Date {
-        return self.adjust(.day, offset: 1)
+    public func dayAfter(timeZone: TimeZone) -> Date {
+        return self.adjust(.day, offset: 1, timeZone: timeZone)
     }
     
-    static func from(year: Int, month: Int, day: Int) -> Date {
-        let gregorianCalendar = Calendar.current
-        
+    static func from(year: Int, month: Int, day: Int, timeZone: TimeZone) -> Date {
+        var gregorianCalendar = Calendar.current
+        gregorianCalendar.timeZone = timeZone
         var dateComponents = DateComponents()
         dateComponents.year = year
         dateComponents.month = month

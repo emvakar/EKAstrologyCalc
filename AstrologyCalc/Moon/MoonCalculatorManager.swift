@@ -38,7 +38,7 @@ public class MoonCalculatorManager {
     }
     
     //Получить необходимую инфу
-    public func getInfo(date: Date, city: DBCityModel?, timeZone: TimeZone = .current) -> AstrologyModel {
+    public func getInfo(date: Date, city: DBCityModel?, timeZone: TimeZone) -> AstrologyModel {
         var currentCity: DBCityModel
         if let nonOptional = city {
             currentCity = nonOptional
@@ -48,7 +48,7 @@ public class MoonCalculatorManager {
         
         let trajectory = self.getMoonTrajectory(date: date)
         
-        let moonModels = self.getMoonModels(date: date, city: currentCity)
+        let moonModels = self.getMoonModels(date: date, city: currentCity, timeZone: timeZone)
         
         let phase = self.getMoonPhase(date: date, city: currentCity, timeZone: timeZone)
         
@@ -119,9 +119,10 @@ extension MoonCalculatorManager {
 //        return dateMoonModels
 //    }
     
-    public func getMoonModels(date: Date, city: DBCityModel) -> [MoonModel] {
-        let startOfDay = date.startOfDay
-        guard let endOfDay = date.endOfDay else {return []}
+    public func getMoonModels(date: Date, city: DBCityModel, timeZone: TimeZone) -> [MoonModel] {
+        
+        let startOfDay = date.startOfDay.addingTimeInterval(TimeInterval(timeZone.secondsFromGMT()))
+        guard let endOfDay = date.endOfDay?.addingTimeInterval(TimeInterval(timeZone.secondsFromGMT())) else { return [] }
         let dayInterval = DateInterval(start: startOfDay, end: endOfDay)
         
         let allMoonDays = city.moonDays
@@ -132,18 +133,20 @@ extension MoonCalculatorManager {
         
         //возможен случай с 3мя лунными днями в один календарный день (тогда в цикле 2 раза найдется подходящее условие), но для последующей логики мы берем именно первый попавшийся лунный день
         for (index, model) in allMoonDays.enumerated() {
-            if let date = model.moonStartDate, dayInterval.contains(date) {
+            
+            guard let modelDate = model.moonStartDate?.addingTimeInterval(TimeInterval(timeZone.secondsFromGMT())) else { break }
+            if dayInterval.contains(modelDate) {
                 correctMoonDay = (index, model)
                 break
             }
             
             //для случая с 1 лунным днем, чтобы второй раз не ходить по циклу
-            if let modelDate = model.moonStartDate, modelDate < startOfDay {
+            if modelDate < startOfDay {
                 moonDayForExtraCase = (index, model)
             }
             
             //если лунный день начинается после конца календарного дня, то обрываем цикл
-            if let modelDate = model.moonStartDate, modelDate > endOfDay {
+            if modelDate > endOfDay {
                 break
             }
         }
@@ -158,15 +161,16 @@ extension MoonCalculatorManager {
             let prevIndex = ((correctMoonDay.index - 1) >= 0) ? (correctMoonDay.index - 1) : 0
             let previousMoonDay = allMoonDays[prevIndex]
             
-            let firstMoonDay = self.makeMoonModel(age: currentMoonDay.age, zodiacSign: currentMoonDay.sign, zodiacSignDate: currentMoonDay.signDate.toDate, moonRise: currentMoonDay.moonStartDate, moonSet: nextMoonDay.moonStartDate)
+            let firstMoonDay = self.makeMoonModel(age: currentMoonDay.age, zodiacSign: currentMoonDay.sign, zodiacSignDate: currentMoonDay.signDate.toDate(timeZone: timeZone), moonRise: currentMoonDay.moonStartDate, moonSet: nextMoonDay.moonStartDate)
             
-            let secondMoonDay = self.makeMoonModel(age: previousMoonDay.age, zodiacSign: previousMoonDay.sign, zodiacSignDate: previousMoonDay.signDate.toDate, moonRise: previousMoonDay.moonStartDate, moonSet: currentMoonDay.moonStartDate)
+            let secondMoonDay = self.makeMoonModel(age: previousMoonDay.age, zodiacSign: previousMoonDay.sign, zodiacSignDate: previousMoonDay.signDate.toDate(timeZone: timeZone), moonRise: previousMoonDay.moonStartDate, moonSet: currentMoonDay.moonStartDate)
             
             filteredMoonDays = [secondMoonDay, firstMoonDay]
             
             //случай с 3 днями
             if ((correctMoonDay.index + 2) < allMoonDays.count), let nextMoonDayStart = allMoonDays[correctMoonDay.index + 1].moonStartDate, dayInterval.contains(nextMoonDayStart) {
-                let thirdMoonDay = self.makeMoonModel(age: nextMoonDay.age, zodiacSign: nextMoonDay.sign, zodiacSignDate: nextMoonDay.signDate.toDate, moonRise: nextMoonDay.moonStartDate, moonSet: allMoonDays[correctMoonDay.index + 2].moonStartDate)
+                let tz = TimeZone(secondsFromGMT: 3600 * nextMoonDay.timeZone)!
+                let thirdMoonDay = self.makeMoonModel(age: nextMoonDay.age, zodiacSign: nextMoonDay.sign, zodiacSignDate: nextMoonDay.signDate.toDate(timeZone: tz), moonRise: nextMoonDay.moonStartDate, moonSet: allMoonDays[correctMoonDay.index + 2].moonStartDate)
                 
                 filteredMoonDays.append(thirdMoonDay)
             }
@@ -184,7 +188,7 @@ extension MoonCalculatorManager {
         
         //если лунный день не попал в переданный календарный день, то тут 1 вариант: в этот календарный день содержит 1 лунный день (он начался раньше календарного дня и закончится позже календарного дня)
         if let moonDayTuple = moonDayForExtraCase, ((moonDayTuple.index + 1) < allMoonDays.count) {
-            let moonDay = self.makeMoonModel(age: moonDayTuple.moonDay.age, zodiacSign: moonDayTuple.moonDay.sign, zodiacSignDate: moonDayTuple.moonDay.signDate.toDate, moonRise: moonDayTuple.moonDay.moonStartDate, moonSet: allMoonDays[moonDayTuple.index + 1].moonStartDate)
+            let moonDay = self.makeMoonModel(age: moonDayTuple.moonDay.age, zodiacSign: moonDayTuple.moonDay.sign, zodiacSignDate: moonDayTuple.moonDay.signDate.toDate(timeZone: TimeZone(secondsFromGMT: 3600 * moonDayTuple.moonDay.timeZone)!), moonRise: moonDayTuple.moonDay.moonStartDate, moonSet: allMoonDays[moonDayTuple.index + 1].moonStartDate)
             filteredMoonDays = [moonDay]
             return filteredMoonDays
         }
