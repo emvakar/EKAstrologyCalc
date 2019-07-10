@@ -135,18 +135,23 @@ extension MoonCalculatorManager {
         for (index, model) in allMoonDays.enumerated() {
             
             guard let modelDate = model.moonStartDate else { break }
-            if dayInterval.contains(modelDate) {
+            
+            //переводим время начала лунного дня из utc в таймзону города, иначе лунный день может не попасть в передаваемый календарный
+            var timeZoneModelDate = modelDate
+            timeZoneModelDate.addTimeInterval(TimeInterval(3600*model.timeZone))
+            
+            if dayInterval.contains(timeZoneModelDate) {
                 correctMoonDay = (index, model)
                 break
             }
             
             //для случая с 1 лунным днем, чтобы второй раз не ходить по циклу
-            if modelDate < startOfDay {
+            if timeZoneModelDate < startOfDay {
                 moonDayForExtraCase = (index, model)
             }
             
             //если лунный день начинается после конца календарного дня, то обрываем цикл
-            if modelDate > endOfDay {
+            if timeZoneModelDate > endOfDay {
                 break
             }
         }
@@ -168,10 +173,14 @@ extension MoonCalculatorManager {
             filteredMoonDays = [secondMoonDay, firstMoonDay]
             
             //случай с 3 днями
-            if ((correctMoonDay.index + 2) < allMoonDays.count), let nextMoonDayStart = allMoonDays[correctMoonDay.index + 1].moonStartDate, dayInterval.contains(nextMoonDayStart) {
+            if ((correctMoonDay.index + 2) < allMoonDays.count), let nextMoonDayStart = allMoonDays[correctMoonDay.index + 1].moonStartDate {
+                var nextMoonDayStartGMT = nextMoonDayStart
+                nextMoonDayStartGMT.addTimeInterval(TimeInterval(3600*correctMoonDay.moonDay.timeZone))
+                if dayInterval.contains(nextMoonDayStartGMT) {
                 let thirdMoonDay = self.makeMoonModel(age: nextMoonDay.age, zodiacSign: nextMoonDay.sign, zodiacSignDate: nextMoonDay.signDate.toDate, moonRise: nextMoonDay.moonStartDate, moonSet: allMoonDays[correctMoonDay.index + 2].moonStartDate)
                 
                 filteredMoonDays.append(thirdMoonDay)
+                }
             }
             
             var models = [MoonModel]()
