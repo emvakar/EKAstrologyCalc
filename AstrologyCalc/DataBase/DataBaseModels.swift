@@ -92,14 +92,14 @@ public struct DBMoonDayModel: Codable {
         age = try values.decode(Int.self, forKey: .age)
         timeZone = try values.decode(Int.self, forKey: .timeZone)
         let stringDate = try values.decode(String.self, forKey: .moonStartDate)
-        moonStartDate = stringDate.toDate(timeZone: TimeZone(secondsFromGMT: 3600 * self.timeZone)!)
+        moonStartDate = stringDate.toDate
         signDate = try values.decode(String.self, forKey: .signDate)
         sign = try values.decode(String.self, forKey: .sign)
         if let phase = try values.decodeIfPresent(String.self, forKey: .moonPhase) {
             moonPhase = DBMoonPhase(rawValue: phase)
         }
         if let stringDatePhase = try values.decodeIfPresent(String.self, forKey: .moonPhaseDate) {
-            moonPhaseDate = stringDatePhase.toDate(timeZone: TimeZone(secondsFromGMT: 3600 * self.timeZone)!)
+            moonPhaseDate = stringDatePhase.toDate
         }
     }
     
