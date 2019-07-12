@@ -28,7 +28,17 @@ public class AstrologyModel {
     public var trajectory: MoonTrajectory
 
     /// фаза луны
-    public var phase: DBMoonPhase
+    public var phase: DBMoonPhase {
+        if let phase = self.moonModels.filter({ $0.moonRise?.isSameDate(date, timeZone: TimeZone(identifier: "UTC")!) ?? false}).sorted(by: { ($0.moonPhase?.priority ?? 0) < ($1.moonPhase?.priority ?? 0) }).first?.moonPhase {
+            return phase
+        }
+        for m in self.moonModels {
+            if let p = m.moonPhase {
+                return p
+            }
+        }
+        return self.moonModels.first?.moonPhase ?? .newMoon
+    }
 
     /// модель лунных дней для даты
     public var moonModels: [MoonModel]
@@ -37,11 +47,10 @@ public class AstrologyModel {
     
     public let previousLunarEclipse: Eclipse
 
-    init(date: Date, location: CLLocation, trajectory: MoonTrajectory, phase: DBMoonPhase, moonModels: [MoonModel], lunarEclipses: [Eclipse]) {
+    init(date: Date, location: CLLocation, trajectory: MoonTrajectory, moonModels: [MoonModel], lunarEclipses: [Eclipse]) {
         self.date = date
         self.location = location
         self.trajectory = trajectory
-        self.phase = phase
         self.moonModels = moonModels
         self.previousLunarEclipse = lunarEclipses[0]
         self.nextLunarEclipse = lunarEclipses[1]

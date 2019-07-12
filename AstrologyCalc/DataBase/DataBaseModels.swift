@@ -64,6 +64,23 @@ public enum DBMoonPhase: String, Codable {
     case fullMoon
     case phase3
     case phase4
+    
+    public var priority: Int {
+        switch self {
+        case .newMoon:
+            return 1
+        case .phase1:
+            return 2
+        case .phase2:
+            return 3
+        case .fullMoon:
+            return 4
+        case .phase3:
+            return 5
+        case .phase4:
+            return 6
+        }
+    }
 }
 
 public struct DBMoonDayModel: Codable {

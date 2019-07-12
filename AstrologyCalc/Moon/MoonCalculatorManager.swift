@@ -50,7 +50,7 @@ public class MoonCalculatorManager {
         
         let moonModels = self.getMoonModels(date: date, city: currentCity, timeZone: timeZone)
         
-        let phase = self.getMoonPhase(date: date, city: currentCity, timeZone: timeZone)
+//        let phase = self.getMoonPhase(date: date, city: currentCity, timeZone: timeZone)
         
         let eclipses = [
             EclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: false),
@@ -61,7 +61,6 @@ public class MoonCalculatorManager {
             date: date,
             location: self.location,
             trajectory: trajectory,
-            phase: phase,
             moonModels: moonModels,
             lunarEclipses: eclipses
         )
