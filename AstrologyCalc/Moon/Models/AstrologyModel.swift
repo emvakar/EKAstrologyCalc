@@ -29,22 +29,14 @@ public class AstrologyModel {
 
     /// фаза луны
     public var phase: DBMoonPhase {
-        if let phase = self.moonModels.filter({ $0.moonRise?.isSameDate(date, timeZone: TimeZone(identifier: "UTC")!) ?? false}).sorted(by: { ($0.moonPhase?.priority ?? 0) < ($1.moonPhase?.priority ?? 0) }).first?.moonPhase {
-            return phase
-        }
-        for m in self.moonModels {
-            if let p = m.moonPhase {
-                return p
-            }
-        }
-        return self.moonModels.first?.moonPhase ?? .newMoon
+        return self.moonModels.last?.moonPhase ?? .newMoon
     }
 
     /// модель лунных дней для даты
     public var moonModels: [MoonModel]
-    
+
     public let nextLunarEclipse: Eclipse
-    
+
     public let previousLunarEclipse: Eclipse
 
     init(date: Date, location: CLLocation, trajectory: MoonTrajectory, moonModels: [MoonModel], lunarEclipses: [Eclipse]) {
