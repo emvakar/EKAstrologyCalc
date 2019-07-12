@@ -22,6 +22,12 @@ public class MoonModel {
     /// лунный знак зодиака
     public var zodiacSign: MoonZodiacSign
     
+    /// фаза луны
+    public var moonPhase: DBMoonPhase?
+    
+    /// Время наступления фазы луны
+    public var moonPhaseDate: Date?
+    
     ///начало знака зодиака
     public var zodiacSignDate: Date?
 
@@ -31,11 +37,13 @@ public class MoonModel {
     /// заход луны (конец лунного дня)
     public var moonSet: Date?
 
-    public init(age: Int, zodiacSign: MoonZodiacSign, zodiacSignDate: Date?, moonRise: Date?, moonSet: Date?) {
+    public init(age: Int, zodiacSign: MoonZodiacSign, zodiacSignDate: Date?, moonRise: Date?, moonSet: Date?, moonPhase: DBMoonPhase?, moonPhaseDate: Date?) {
         self.age = age
         self.zodiacSign = zodiacSign
         self.zodiacSignDate = zodiacSignDate
         self.moonRise = moonRise
         self.moonSet = moonSet
+        self.moonPhase = moonPhase
+        self.moonPhaseDate = moonPhaseDate
     }
 }
