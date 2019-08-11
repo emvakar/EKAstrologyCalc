@@ -17,7 +17,10 @@ class AstrologyCalcTests: XCTestCase {
     
     var manager: MoonCalculatorManager!
     var date: Date!
-    let losAngeleTZ = TimeZoneType.custom(3600*(-7))
+    let losAngelesTimeZone = TimeZone(identifier: "America/Los_Angeles")!
+    var losAngeleTZ: TimeZoneType {
+      return TimeZoneType.custom(losAngelesTimeZone.secondsFromGMT())
+    }
     let city = DataBaseManager().getCountry(n: 19)?.cities.first(where: { $0.cityName.contains("Лос-Ан") })
     
     override func setUp() {
@@ -65,7 +68,7 @@ class AstrologyCalcTests: XCTestCase {
         XCTAssert(models.count == 3, "moonModels is failed, must be \(3)")
     }
     
-    func test_02july() {
+    func test_02july2019() {
         let dateString = "02.07.2019"
         guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy"), timeZone: self.losAngeleTZ, locale: Locale(identifier: "En_us")) else {
             fatalError("cant get date from string!")
@@ -76,4 +79,70 @@ class AstrologyCalcTests: XCTestCase {
         XCTAssert(info.moonModels.last?.age == 1, "day must be first")
     }
 
+    func test_21october2019() {
+        let dateString = "21.10.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy"), timeZone: self.losAngeleTZ, locale: Locale(identifier: "En_us")) else {
+            fatalError("cant get date from string!")
+        }
+        let info = manager.getInfo(date: date, city: city, timeZone: losAngeleTZ.timeZone)
+        
+        XCTAssert(info.moonModels.last?.age == 23, "day must be 23")
+    }
+    
+    func test_17july2019() {
+        let dateString = "17.07.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy"), timeZone: self.losAngeleTZ, locale: Locale(identifier: "En_us")) else {
+            fatalError("cant get date from string!")
+        }
+        let info = manager.getInfo(date: date, city: city, timeZone: losAngeleTZ.timeZone)
+        
+                XCTAssert(info.phase == .phase3, "must be \(DBMoonPhase.phase3)")
+        XCTAssert(info.moonModels.last?.age == 16, "day must be 16")
+    }
+    
+    func test_25august2019() {
+        let dateString = "25.08.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy"), timeZone: self.losAngeleTZ, locale: Locale(identifier: "En_us")) else {
+            fatalError("cant get date from string!")
+        }
+        let info = manager.getInfo(date: date, city: city, timeZone: losAngeleTZ.timeZone)
+        
+        XCTAssert(info.phase == .phase4, "must be \(DBMoonPhase.phase4)")
+        XCTAssert(info.moonModels.last?.age == 25, "day must be 25")
+    }
+    
+    func test_23august2019() {
+        let dateString = "23.08.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy"), timeZone: self.losAngeleTZ, locale: Locale(identifier: "En_us")) else {
+            fatalError("cant get date from string!")
+        }
+        let info = manager.getInfo(date: date, city: city, timeZone: losAngeleTZ.timeZone)
+        
+        XCTAssert(info.phase == .phase3, "must be \(DBMoonPhase.phase3.rawValue)")
+        XCTAssert(info.moonModels.last?.age == 23, "day must be 23")
+    }
+    
+    func test_23july2019() {
+        let dateString = "23.07.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy"), timeZone: self.losAngeleTZ, locale: Locale(identifier: "En_us"))?.startOfDay else {
+            fatalError("cant get date from string!")
+        }
+        let info = manager.getInfo(date: date, city: city, timeZone: losAngeleTZ.timeZone)
+        
+        XCTAssert(info.phase == .phase3, "must be \(DBMoonPhase.phase3)")
+        XCTAssert(info.moonModels.last?.age == 21, "day must be 21")
+        XCTAssert(info.moonModels.last?.zodiacSign == .aries, "sign must be \(MoonZodiacSign.aries.rawValue)")
+    }
+    
+    func test_18july2019() {
+        let dateString = "18.07.2019"
+        guard let date = Date(fromString: dateString, format: .custom("dd.MM.yyyy"), timeZone: self.losAngeleTZ, locale: Locale(identifier: "En_us")) else {
+            fatalError("cant get date from string!")
+        }
+        let info = manager.getInfo(date: date, city: city, timeZone: losAngeleTZ.timeZone)
+        
+        XCTAssert(info.phase == .phase3, "phase is \(info.phase) must be \(DBMoonPhase.phase3)")
+        XCTAssert(info.moonModels.last?.age == 17, "day is \(info.moonModels.last?.age ?? 0) must be 17")
+        XCTAssert(info.moonModels.last?.zodiacSign == .aquarius, "sign is \(info.moonModels.last?.zodiacSign.rawValue ?? "") must be \(MoonZodiacSign.aquarius)")
+    }
 }
