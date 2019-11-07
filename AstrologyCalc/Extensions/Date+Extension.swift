@@ -20,21 +20,21 @@ extension Date {
     public var addDay: Date? {
         var components = DateComponents()
         components.day = 1
-        return Calendar.current.date(byAdding: components, to: self)
+        return Calendar(identifier: .gregorian).date(byAdding: components, to: self)
     }
     
     public func startOfMonth() -> Date {
-        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+        return Calendar(identifier: .gregorian).date(from: Calendar(identifier: .gregorian).dateComponents([.year, .month], from: Calendar(identifier: .gregorian).startOfDay(for: self)))!
     }
     
     public func endOfMonth() -> Date {
-        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+        return Calendar(identifier: .gregorian).date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
     }
     
     public func toHHmm(timeZone: TimeZone) -> String {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar.current
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.timeZone = timeZone
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: self)
@@ -49,14 +49,14 @@ extension Date {
     
     public func month(timeZone: TimeZone) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar.current
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.timeZone = timeZone
         dateFormatter.dateFormat = "LLLL"
         return dateFormatter.string(from: self)
     }
     public func year(timeZone: TimeZone) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar.current
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.timeZone = timeZone
         dateFormatter.dateFormat = "yyyy"
         return dateFormatter.string(from: self)
@@ -64,7 +64,7 @@ extension Date {
     
     public func startOfYear(timeZone: TimeZone) -> Date? {
         
-        var userCalendar = Calendar.current // user calendar
+        var userCalendar = Calendar(identifier: .gregorian) // user calendar
         userCalendar.timeZone = timeZone
         let year = userCalendar.component(.year, from: self)
         
@@ -96,7 +96,7 @@ extension Date {
     }
     
     static func from(year: Int, month: Int, day: Int, timeZone: TimeZone) -> Date {
-        var gregorianCalendar = Calendar.current
+        var gregorianCalendar = Calendar(identifier: .gregorian)
         gregorianCalendar.timeZone = timeZone
         var dateComponents = DateComponents()
         dateComponents.year = year
@@ -112,38 +112,38 @@ extension Date {
         var array: [Date] = []
         while date <= endDate {
             array.append(date)
-            date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+            date = Calendar(identifier: .gregorian).date(byAdding: .day, value: 1, to: date)!
         }
         return array
     }
     
     /// Returns the amount of years from another date
     public func years(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
+        return Calendar(identifier: .gregorian).dateComponents([.year], from: date, to: self).year ?? 0
     }
     /// Returns the amount of months from another date
     public func months(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.month], from: date, to: self).month ?? 0
+        return Calendar(identifier: .gregorian).dateComponents([.month], from: date, to: self).month ?? 0
     }
     /// Returns the amount of weeks from another date
     public func weeks(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.weekOfMonth], from: date, to: self).weekOfMonth ?? 0
+        return Calendar(identifier: .gregorian).dateComponents([.weekOfMonth], from: date, to: self).weekOfMonth ?? 0
     }
     /// Returns the amount of days from another date
     public func days(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0
+        return Calendar(identifier: .gregorian).dateComponents([.day], from: date, to: self).day ?? 0
     }
     /// Returns the amount of hours from another date
     public func hours(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.hour], from: date, to: self).hour ?? 0
+        return Calendar(identifier: .gregorian).dateComponents([.hour], from: date, to: self).hour ?? 0
     }
     /// Returns the amount of minutes from another date
     public func minutes(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.minute], from: date, to: self).minute ?? 0
+        return Calendar(identifier: .gregorian).dateComponents([.minute], from: date, to: self).minute ?? 0
     }
     /// Returns the amount of seconds from another date
     public func seconds(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.second], from: date, to: self).second ?? 0
+        return Calendar(identifier: .gregorian).dateComponents([.second], from: date, to: self).second ?? 0
     }
     /// Returns the a custom time interval description from another date
     public func offset(from date: Date) -> Int {

@@ -10,7 +10,7 @@ import Foundation
 public extension Date {
     
     static func dateFromString(string: String) -> Date? {
-        let calendar = Calendar.current
+        let calendar = Calendar(identifier: .gregorian)
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = calendar
         dateFormatter.timeZone = calendar.timeZone
@@ -19,7 +19,7 @@ public extension Date {
     }
     
     func stringFromDate() -> String {
-        let calendar = Calendar.current
+        let calendar = Calendar(identifier: .gregorian)
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = calendar
         dateFormatter.timeZone = calendar.timeZone

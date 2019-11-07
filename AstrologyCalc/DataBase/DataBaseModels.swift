@@ -35,12 +35,14 @@ public struct DBCityModel: Codable {
     public let cityName: String
     public let moonDays: [DBMoonDayModel]
     public let timeZone: Int
+    public let countryName: String?
     
     enum CodingKeys: String, CodingKey {
         
         case moonDays = "moonDays"
         case cityName = "cityName"
         case timeZone = "timeZone"
+        case countryName = "countryName"
     }
     
     public init(from decoder: Decoder) throws {
@@ -48,16 +50,18 @@ public struct DBCityModel: Codable {
         moonDays = try values.decode([DBMoonDayModel].self, forKey: .moonDays)
         cityName = try values.decode(String.self, forKey: .cityName)
         timeZone = try values.decode(Int.self, forKey: .timeZone)
+        countryName = try values.decodeIfPresent(String.self, forKey: .countryName)
     }
     
-    public init(cityName: String, moonDays: [DBMoonDayModel], timeZone: Int) {
+    public init(cityName: String, moonDays: [DBMoonDayModel], timeZone: Int, countryName: String?) {
         self.cityName = cityName
         self.moonDays = moonDays
         self.timeZone = timeZone
+        self.countryName = countryName
     }
 }
 
-public enum DBMoonPhase: String, Codable {
+public enum DBMoonPhase: String, Codable, Equatable {
     case newMoon
     case phase1
     case phase2
@@ -83,7 +87,7 @@ public enum DBMoonPhase: String, Codable {
     }
 }
 
-public struct DBMoonDayModel: Codable {
+public struct DBMoonDayModel: Codable, Hashable {
     
     public let age: Int
     public let timeZone: Int
@@ -130,3 +134,4 @@ public struct DBMoonDayModel: Codable {
         self.moonPhaseDate = moonPhaseDate
     }
 }
+

@@ -34,7 +34,7 @@ class AstroUtils {
 
     /// Converts date to year with fractions
     static func dayToYear(_ date: Date) -> Double {
-        let calendar = Calendar.current
+        let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents([.day, .month, .year], from: date)
 
         guard let year = components.year, let month = components.month, let day = components.day else {

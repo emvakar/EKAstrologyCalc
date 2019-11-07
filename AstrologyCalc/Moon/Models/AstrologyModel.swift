@@ -38,6 +38,8 @@ public class AstrologyModel {
     public let nextLunarEclipse: Eclipse
 
     public let previousLunarEclipse: Eclipse
+    
+    public var models: [MoonModel] = []
 
     init(date: Date, location: CLLocation, trajectory: MoonTrajectory, moonModels: [MoonModel], lunarEclipses: [Eclipse]) {
         self.date = date
