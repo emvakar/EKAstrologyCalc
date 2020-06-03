@@ -3,8 +3,8 @@ Pod::Spec.new do |s|
     # 1
     s.platform = :ios
     s.ios.deployment_target = '10.0'
-    s.name = "AstrologyCalc"
-    s.summary = "AstrologyCalc swift 4.2 framework for simple development amazing apps."
+    s.name = "EKAstrologyCalc"
+    s.summary = "EKAstrologyCalc swift 4.2 framework for simple development amazing apps."
     s.requires_arc = true
     # s.swift_version = '4.2'
     
