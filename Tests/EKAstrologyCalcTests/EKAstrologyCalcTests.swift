@@ -9,7 +9,7 @@ final class EKAstrologyCalcTests: XCTestCase {
     func test_case_1() {
 
         let location = CLLocation(latitude: 55.751244, longitude: 37.618423) // Moscow location
-        let manager = EKMoonCalculatorManager(location: location)
+        let manager = EKAstrologyCalc(location: location)
 
         guard let date = Date(fromString: "2020-06-21T09:18+03:00", format: .isoDateTime) else { return }
         let astroModel = manager.getInfo(date: date)
