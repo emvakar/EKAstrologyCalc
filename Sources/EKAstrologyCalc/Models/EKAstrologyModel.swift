@@ -1,6 +1,6 @@
 //
-//  AstrologyModel.swift
-//  AstrologyCalc
+//  EKAstrologyModel.swift
+//  EKAstrologyCalc
 //
 //  Created by Emil Karimov on 06/03/2019.
 //  Copyright © 2019 Emil Karimov. All rights reserved.
@@ -13,10 +13,10 @@ import CoreLocation
 ///
 /// - date: Date - дата обычная, например 01.01.1970
 /// - location: CLLocation - гео позиция
-/// - trajectory: MoonTrajectory - траектория луны
-/// - phase: MoonPhase - фаза луны
+/// - trajectory: EKMoonTrajectory - траектория луны
+/// - phase: EKMoonPhase - фаза луны
 /// - moonModels: [MoonModel] - модель лунных дней для даты
-public class AstrologyModel {
+public class EKAstrologyModel {
 
     /// дата обычная, например 01.01.1970
     public var date: Date = Date()
@@ -25,19 +25,19 @@ public class AstrologyModel {
     public var location: CLLocation
 
     /// траектория луны
-    public var trajectory: MoonTrajectory
+    public var trajectory: EKMoonTrajectory
 
     /// фаза луны
-    public var phase: MoonPhase
+    public var phase: EKMoonPhase
 
     /// модель лунных дней для даты
-    public var moonModels: [MoonModel]
+    public var moonModels: [EKMoonModel]
     
-    public let nextLunarEclipse: Eclipse
+    public let nextLunarEclipse: EKEclipse
     
-    public let previousLunarEclipse: Eclipse
+    public let previousLunarEclipse: EKEclipse
 
-    init(date: Date, location: CLLocation, trajectory: MoonTrajectory, phase: MoonPhase, moonModels: [MoonModel], lunarEclipses: [Eclipse]) {
+    init(date: Date, location: CLLocation, trajectory: EKMoonTrajectory, phase: EKMoonPhase, moonModels: [EKMoonModel], lunarEclipses: [EKEclipse]) {
         self.date = date
         self.location = location
         self.trajectory = trajectory

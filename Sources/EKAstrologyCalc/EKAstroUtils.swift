@@ -1,6 +1,6 @@
 //
-//  AstroUtils.swift
-//  AstrologyCalc
+//  EKAstroUtils.swift
+//  EKAstrologyCalc
 //
 //  Created by  Yuri on 03/04/2019.
 //  Copyright © 2019 Emil Karimov. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AstroUtils {
+class EKAstroUtils {
 
     public static func isLeap(year: Int) -> Bool {
         if year < 1582 && year % 4 == 0 {
@@ -28,7 +28,7 @@ class AstroUtils {
 
     /// get day number in year
     static func dayOfYear(year: Int, month: Int, day: Int) -> Int {
-        let K = AstroUtils.isLeap(year: year) ? 1 : 2
+        let K = EKAstroUtils.isLeap(year: year) ? 1 : 2
         return ((275 * month) / 9) - K * ((month + 9) / 12) + day - 30
     }
 
@@ -41,7 +41,7 @@ class AstroUtils {
             fatalError("Can't unwrap date components")
         }
 
-        let dayOfYear = AstroUtils.dayOfYear(
+        let dayOfYear = EKAstroUtils.dayOfYear(
             year: year,
             month: month,
             day: day

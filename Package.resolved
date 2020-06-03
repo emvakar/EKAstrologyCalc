@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DevHelper",
+        "repositoryURL": "https://github.com/emvakar/DevHelper.git",
+        "state": {
+          "branch": null,
+          "revision": "22019caff6001f1d1c9d1db9d6da53c84a83ef40",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "KRActivityIndicatorView",
+        "repositoryURL": "https://github.com/krimpedance/KRActivityIndicatorView.git",
+        "state": {
+          "branch": null,
+          "revision": "0a0ae6bc05647f414a7bfc53ffeaf6248aad29dd",
+          "version": "3.0.5"
+        }
+      },
+      {
+        "package": "KRProgressHUD",
+        "repositoryURL": "https://github.com/krimpedance/KRProgressHUD.git",
+        "state": {
+          "branch": null,
+          "revision": "05be7ebafca7e4068e14e9381ec56ab6201ee857",
+          "version": "3.4.5"
+        }
+      },
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
+        "state": {
+          "branch": null,
+          "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
+          "version": "5.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

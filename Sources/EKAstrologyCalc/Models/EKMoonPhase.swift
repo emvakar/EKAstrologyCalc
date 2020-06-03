@@ -1,6 +1,6 @@
 //
-//  MoonPhase.swift
-//  AstrologyCalc
+//  EKMoonPhase.swift
+//  EKAstrologyCalc
 //
 //  Created by Emil Karimov on 06/03/2019.
 //  Copyright © 2019 Emil Karimov. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// Фазы луны
-public enum MoonPhase: String {
+public enum EKMoonPhase: String {
     case newMoon
     case waxingCrescent
     case firstQuarter
