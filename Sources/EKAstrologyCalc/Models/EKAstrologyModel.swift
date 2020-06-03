@@ -9,13 +9,15 @@
 import UIKit
 import CoreLocation
 
-/// Модель со всей инфой
+/// Model with all information
 ///
-/// - date: Date - дата обычная, например 01.01.1970
-/// - location: CLLocation - гео позиция
-/// - trajectory: EKMoonTrajectory - траектория луны
-/// - phase: EKMoonPhase - фаза луны
-/// - moonModels: [MoonModel] - модель лунных дней для даты
+/// - date: Date, ect 01.01.1970
+/// - location: CLLocation
+/// - trajectory: EKMoonTrajectory
+/// - phase: EKMoonPhase
+/// - moonModels: [EKMoonModel]
+/// - nextLunarEclipse
+/// - previousLunarEclipse
 public class EKAstrologyModel {
 
     /// дата обычная, например 01.01.1970

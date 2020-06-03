@@ -10,18 +10,21 @@ import UIKit
 import CoreLocation
 import DevHelper
 
-// Тут все расчеты
+/// Calculator
 public class EKAstrologyCalc {
 
-    // Геопозиция
+    /// Location
     private var location: CLLocation
 
-    // Вызвать этот коснтруктор
+    // MARK: - Init
+    
     public init(location: CLLocation) {
         self.location = location
     }
 
-    /// Получить необходимую инфу
+    /// get information by date
+    /// - Parameter date: current date
+    /// - Returns: Astrology model
     public func getInfo(date: Date) -> EKAstrologyModel {
         let phase = getMoonPhase(date: date)
 
@@ -43,6 +46,8 @@ public class EKAstrologyCalc {
         return astrologyModel
     }
 }
+
+// MARK: - Private
 
 extension EKAstrologyCalc {
 

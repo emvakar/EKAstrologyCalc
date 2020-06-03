@@ -2,26 +2,27 @@
 //  EKEclipseCalculator.swift
 //  EKAstrologyCalc
 //
-//  Created by  Yuri on 02/04/2019.
-//  Copyright © 2019 Emil Karimov. All rights reserved.
+//  Created by Emil Karimov on 03/06/2020.
+//  Copyright © 2020 Emil Karimov. All rights reserved.
 //
 
 import Foundation
 
-public class EKEclipseCalculator {
+/// Eclipse Calculator
+class EKEclipseCalculator {
     
-    public enum EKEclispeType: Int {
+    enum EKEclispeType: Int {
         case Solar = 0
         case Lunar = 1
     }
     
     /**
      * Gets next or previous eclipse info nearest to the reference julian day
-     * @param jd julian day
-     * @param eclipseType type of eclipse: Eclipse.SOLAR or Eclipse.LUNAR
-     * @param next true to get next eclipse, false to get previous
+     * - param jd julian day
+     * - param eclipseType type of eclipse: Eclipse.SOLAR or Eclipse.LUNAR
+     * - param next true to get next eclipse, false to get previous
      */
-    public static func getEclipseFor(date: Date, eclipseType:EKEclispeType, next: Bool) -> EKEclipse
+    static func getEclipseFor(date: Date, eclipseType:EKEclispeType, next: Bool) -> EKEclipse
     {
         let e = EKEclipse()
         

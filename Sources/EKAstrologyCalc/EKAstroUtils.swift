@@ -10,7 +10,7 @@ import Foundation
 
 class EKAstroUtils {
 
-    public static func isLeap(year: Int) -> Bool {
+    static func isLeap(year: Int) -> Bool {
         if year < 1582 && year % 4 == 0 {
             return true
         }
@@ -50,13 +50,13 @@ class EKAstroUtils {
         return Double(year) + Double(dayOfYear) / 365.2425;
     }
 
-    // returns julian date timestamp from date by gregorian calendar
+    /// returns julian date timestamp from date by gregorian calendar
     static func jdFromDate(date: Date) -> Double {
         let JD_JAN_1_1970_0000GMT = 2440587.5
         return JD_JAN_1_1970_0000GMT + date.timeIntervalSince1970 / 86400
     }
 
-    // returns gregorian date from julian calendar date timestamp
+    /// returns gregorian date from julian calendar date timestamp
     static func gregorianDateFrom(julianTime: Double) -> Date {
         let JD_JAN_1_1970_0000GMT = 2440587.5
         return Date(timeIntervalSince1970: (julianTime - JD_JAN_1_1970_0000GMT) * 86400)
@@ -66,7 +66,7 @@ class EKAstroUtils {
         return angle.truncatingRemainder(dividingBy: 360.0) + (angle < 0 ? 360 : 0)
     }
 
-    // convert angle to radians
+    /// convert angle to radians
     static func toRadians(_ angle: Double) -> Double {
         return angle * .pi / 180
     }
