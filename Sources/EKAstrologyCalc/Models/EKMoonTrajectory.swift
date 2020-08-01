@@ -6,8 +6,6 @@
 //  Copyright © 2019 Emil Karimov. All rights reserved.
 //
 
-import UIKit
-
 /// Траектория луны
 public enum EKMoonTrajectory {
     case ascendent

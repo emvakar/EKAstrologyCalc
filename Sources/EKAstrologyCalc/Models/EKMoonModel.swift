@@ -6,7 +6,7 @@
 //  Copyright © 2019 Emil Karimov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /// Модель лунного дня
 ///

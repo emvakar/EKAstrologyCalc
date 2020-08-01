@@ -6,9 +6,8 @@
 //  Copyright © 2020 Emil Karimov. All rights reserved.
 //
 
-import UIKit
 import CoreLocation
-import DevHelper
+import ESDateHelper
 
 /// Calculator
 public class EKAstrologyCalc {
@@ -202,7 +201,7 @@ extension EKAstrologyCalc {
         if (longitude < 33.18) {
             zodiac = .aries
         } else if (longitude < 51.16) {
-            zodiac = .cancer
+            zodiac = .taurus
         } else if (longitude < 93.44) {
             zodiac = .gemini
         } else if (longitude < 119.48) {

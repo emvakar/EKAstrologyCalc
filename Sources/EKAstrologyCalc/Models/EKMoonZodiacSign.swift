@@ -6,8 +6,6 @@
 //  Copyright © 2019 Emil Karimov. All rights reserved.
 //
 
-import UIKit
-
 /// Лунный знак зодиака
 public enum EKMoonZodiacSign: String {
     case aries

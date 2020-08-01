@@ -6,7 +6,6 @@
 //  Copyright © 2019 Emil Karimov. All rights reserved.
 //
 
-import UIKit
 import CoreLocation
 
 /// Model with all information

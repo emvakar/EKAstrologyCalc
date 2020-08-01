@@ -6,16 +6,16 @@ import PackageDescription
 let package = Package(
     name: "EKAstrologyCalc",
     platforms: [
-        .iOS(.v11),
+        .iOS(.v11), .macOS(.v10_11),
     ],
     products: [
         .library(name: "EKAstrologyCalc", targets: ["EKAstrologyCalc"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/emvakar/DevHelper.git", from: "1.0.0")
+        .package(url: "https://github.com/ESKARIA/ESDateHelper.git", from: "1.0.0")
     ],
     targets: [
-        .target(name: "EKAstrologyCalc", dependencies: ["DevHelper"]),
+        .target(name: "EKAstrologyCalc", dependencies: ["ESDateHelper"]),
         .testTarget(name: "EKAstrologyCalcTests", dependencies: ["EKAstrologyCalc"]),
     ]
 )

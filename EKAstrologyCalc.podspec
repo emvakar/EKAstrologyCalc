@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
     s.social_media_url = 'https://twitter.com/e_karimov'
     s.source = { :git => "https://github.com/emvakar/EKAstrologyCalc.git", :tag => "v" + s.version.to_s }
     
-    s.framework = "UIKit"
     s.framework = "Foundation"
     s.framework = "CoreLocation"
     

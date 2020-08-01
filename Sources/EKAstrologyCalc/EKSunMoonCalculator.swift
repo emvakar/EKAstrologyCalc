@@ -6,7 +6,7 @@
 //  Copyright © 2019 Emil Karimov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /**
  * http://conga.oan.es/~alonso/doku.php?id=blog:sun_moon_position
