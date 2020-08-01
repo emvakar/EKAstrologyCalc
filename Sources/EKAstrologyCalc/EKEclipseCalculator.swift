@@ -1,31 +1,32 @@
 //
-//  EclipseCalculator.swift
-//  AstrologyCalc
+//  EKEclipseCalculator.swift
+//  EKAstrologyCalc
 //
-//  Created by  Yuri on 02/04/2019.
-//  Copyright © 2019 Emil Karimov. All rights reserved.
+//  Created by Emil Karimov on 03/06/2020.
+//  Copyright © 2020 Emil Karimov. All rights reserved.
 //
 
 import Foundation
 
-public class EclipseCalculator {
+/// Eclipse Calculator
+class EKEclipseCalculator {
     
-    public enum EclispeType: Int {
+    enum EKEclispeType: Int {
         case Solar = 0
         case Lunar = 1
     }
     
     /**
      * Gets next or previous eclipse info nearest to the reference julian day
-     * @param jd julian day
-     * @param eclipseType type of eclipse: Eclipse.SOLAR or Eclipse.LUNAR
-     * @param next true to get next eclipse, false to get previous
+     * - param jd julian day
+     * - param eclipseType type of eclipse: Eclipse.SOLAR or Eclipse.LUNAR
+     * - param next true to get next eclipse, false to get previous
      */
-    public static func getEclipseFor(date: Date, eclipseType:EclispeType, next: Bool) -> Eclipse
+    static func getEclipseFor(date: Date, eclipseType:EKEclispeType, next: Bool) -> EKEclipse
     {
-        let e = Eclipse()
+        let e = EKEclipse()
         
-        let year = AstroUtils.dayToYear(date)
+        let year = EKAstroUtils.dayToYear(date)
         var k = Double(0), T = Double(0), TT = Double(0), TTT = Double(0),
         F = Double(0), S = Double(0), C = Double(0), M = Double(0),
         M_ = Double(0), P = Double(0), Tau = Double(0), n = Double(0)
@@ -50,7 +51,7 @@ public class EclipseCalculator {
                 - 0.0016528 * TT
                 - 0.00000239 * TTT;
             
-            F = AstroUtils.toRadians(AstroUtils.to360(F))
+            F = EKAstroUtils.toRadians(EKAstroUtils.to360(F))
             
             // AFFC, p. 132
             eclipseFound = fabs(sin(F)) < 0.36
@@ -73,14 +74,14 @@ public class EclipseCalculator {
             M = 359.2242 + 29.10535608 * k
             - 0.0000333 * TT
             - 0.00000347 * TTT;
-            M = AstroUtils.toRadians(AstroUtils.to360(M))
+            M = EKAstroUtils.toRadians(EKAstroUtils.to360(M))
             
             // mean anomaly of the Moon
             // AFFC, p. 129
             M_ = 306.0253 + 385.81691806 * k
             + 0.0107306 * TT
             + 0.00001236 * TTT;
-            M_ = AstroUtils.toRadians(AstroUtils.to360(M_))
+            M_ = EKAstroUtils.toRadians(EKAstroUtils.to360(M_))
             
             // time of mean phase
             // AFFC, p. 128, f. 32.1
@@ -88,7 +89,7 @@ public class EclipseCalculator {
             + 0.0001178 * TT
             - 0.000000155 * TTT
             + 0.00033 *
-            sin(AstroUtils.toRadians(166.56 + 132.87 * T - 0.009173 * TT))
+            sin(EKAstroUtils.toRadians(166.56 + 132.87 * T - 0.009173 * TT))
             
             // time of maximum eclipse
             timeByJulianDate += (0.1734 - 0.000393 * T) * sin(M)
@@ -99,7 +100,7 @@ public class EclipseCalculator {
             - 0.0074 * sin(M - M_)
             - 0.0104 * sin(F + F);
             
-            e.maxPhaseDate = AstroUtils.gregorianDateFrom(julianTime: timeByJulianDate)
+            e.maxPhaseDate = EKAstroUtils.gregorianDateFrom(julianTime: timeByJulianDate)
             
             // AFFC, p. 133
             S = 5.19595

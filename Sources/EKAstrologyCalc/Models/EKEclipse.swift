@@ -1,6 +1,6 @@
 //
-//  Eclipse.swift
-//  AstrologyCalc
+//  EKEclipse.swift
+//  EKAstrologyCalc
 //
 //  Created by  Yuri on 02/04/2019.
 //  Copyright © 2019 Emil Karimov. All rights reserved.
@@ -10,7 +10,7 @@ import Foundation
 
 
 /// Provides detailed info about eclipse (lunar or solar).
-public class Eclipse {
+public class EKEclipse {
     
     public enum EclipseType {
         case undefined

@@ -1,12 +1,12 @@
 //
-//  SunMoonCalculator.swift
-//  AstrologyCalc
+//  EKSunMoonCalculator.swift
+//  EKAstrologyCalc
 //
 //  Created by Emil Karimov on 05/03/2019.
 //  Copyright © 2019 Emil Karimov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /**
  * http://conga.oan.es/~alonso/doku.php?id=blog:sun_moon_position
@@ -18,7 +18,7 @@ import UIKit
  * @author T. Alonso Albi - OAN (Spain), email t.alonso@oan.es
  * @version May 25, 2017 (fixed nutation correction and moon age, better accuracy in Moon)
  */
-class SunMoonCalculator {
+class EKSunMoonCalculator {
 
     /** Radians to degrees. */
     static let RAD_TO_DEG: Double = 180.0 / Double.pi
@@ -126,21 +126,21 @@ class SunMoonCalculator {
     ///   - obsLat: Latitude for the observer.
     /// - Throws: Exception If the date does not exists.
     internal init(year: Int, month: Int, day: Int, h: Int, m: Int, s: Int, obsLon: Double, obsLat: Double) throws {
-        self.sunAz = Double.nan
-        self.sunEl = Double.nan
-        self.sunRise = Double.nan
-        self.sunSet = Double.nan
-        self.sunTransit = Double.nan
-        self.sunTransitElev = Double.nan
-        self.sunDist = Double.nan
-        self.moonAz = Double.nan
-        self.moonEl = Double.nan
-        self.moonRise = Double.nan
-        self.moonSet = Double.nan
-        self.moonTransit = Double.nan
-        self.moonAge = Double.nan
-        self.moonTransitElev = Double.nan
-        self.moonDist = Double.nan
+        sunAz = Double.nan
+        sunEl = Double.nan
+        sunRise = Double.nan
+        sunSet = Double.nan
+        sunTransit = Double.nan
+        sunTransitElev = Double.nan
+        sunDist = Double.nan
+        moonAz = Double.nan
+        moonEl = Double.nan
+        moonRise = Double.nan
+        moonSet = Double.nan
+        moonTransit = Double.nan
+        moonAge = Double.nan
+        moonTransitElev = Double.nan
+        moonDist = Double.nan
 
         // The conversion formulas are from Meeus, chapter 7.
         var julian: Bool = false
@@ -162,7 +162,7 @@ class SunMoonCalculator {
         let jd: Double = dayFraction + Double(Int(365.25 * Double(Y + 4716)) + Int(30.6001 * Double(M + 1))) + Double(D + B) - 1524.5
 
         if (jd < 2299160.0 && jd >= 2299150.0) {
-            throw SunMoonCalculator.Errors.invalidJulianDay(jd: jd)
+            throw EKSunMoonCalculator.Errors.invalidJulianDay(jd: jd)
         }
 
         TTminusUT = 0
@@ -186,17 +186,17 @@ class SunMoonCalculator {
     ///
     /// - Parameter t: The Twilight.
     private func setTwilight(_ t: TWILIGHT) {
-        self.twilight = t
+        twilight = t
     }
 
     private func setUTDate(_ jd: Double) {
-        self.jd_UT = jd
-        self.t = (jd + TTminusUT / SunMoonCalculator.SECONDS_PER_DAY - SunMoonCalculator.J2000) / SunMoonCalculator.JULIAN_DAYS_PER_CENTURY
+        jd_UT = jd
+        t = (jd + TTminusUT / EKSunMoonCalculator.SECONDS_PER_DAY - EKSunMoonCalculator.J2000) / EKSunMoonCalculator.JULIAN_DAYS_PER_CENTURY
     }
 
     /** Calculates everything for the Sun and the Moon. */
     internal func calcSunAndMoon() {
-        let jd: Double = self.jd_UT
+        let jd: Double = jd_UT
 
         // First the Sun
         var out: [Double] = doCalc(getSun())
@@ -259,36 +259,36 @@ class SunMoonCalculator {
         // SUN PARAMETERS (Formulae from "Calendrical Calculations")
         let lon: Double = (280.46645 + 36000.76983 * t + 0.0003032 * t * t)
         let anom: Double = (357.5291 + 35999.0503 * t - 0.0001559 * t * t - 4.8E-07 * t * t * t)
-        sanomaly = anom * SunMoonCalculator.DEG_TO_RAD
+        sanomaly = anom * EKSunMoonCalculator.DEG_TO_RAD
         var c: Double = (1.9146 - 0.004817 * t - 0.000014 * t * t) * sin(sanomaly)
         c = c + (0.019993 - 0.000101 * t) * sin(2 * sanomaly)
         c = c + 0.00029 * sin(3.0 * sanomaly) // Correction to the mean ecliptic longitude
 
         // Now, let calculate nutation and aberration
-        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * SunMoonCalculator.DEG_TO_RAD
-        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * SunMoonCalculator.DEG_TO_RAD
+        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
+        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
         let d: Double = -0.00569 - 0.0047785 * sin(M1) - 0.0003667 * sin(M2)
 
         slongitude = lon + c + d // apparent longitude (error<0.003 deg)
         let slatitude: Double = 0 // Sun's ecliptic latitude is always negligible
         let ecc: Double = 0.016708617 - 4.2037E-05 * t - 1.236E-07 * t * t // Eccentricity
-        let v: Double = sanomaly + c * SunMoonCalculator.DEG_TO_RAD // True anomaly
+        let v: Double = sanomaly + c * EKSunMoonCalculator.DEG_TO_RAD // True anomaly
         let sdistance: Double = 1.000001018 * (1.0 - ecc * ecc) / (1.0 + ecc * cos(v)) // In UA
 
-        return [slongitude, slatitude, sdistance, atan(696000 / (SunMoonCalculator.AU * sdistance))]
+        return [slongitude, slatitude, sdistance, atan(696000 / (EKSunMoonCalculator.AU * sdistance))]
     }
 
     private func getMoon() -> [Double] {
         // MOON PARAMETERS (Formulae from "Calendrical Calculations")
-        let phase: Double = SunMoonCalculator.normalizeRadians((297.8502042 + 445267.1115168 * t - 0.00163 * t * t + t * t * t / 538841 - t * t * t * t / 65194000) * SunMoonCalculator.DEG_TO_RAD)
+        let phase: Double = EKSunMoonCalculator.normalizeRadians((297.8502042 + 445267.1115168 * t - 0.00163 * t * t + t * t * t / 538841 - t * t * t * t / 65194000) * EKSunMoonCalculator.DEG_TO_RAD)
 
         // Anomalistic phase
         var anomaly: Double = (134.9634114 + 477198.8676313 * t + 0.008997 * t * t + t * t * t / 69699 - t * t * t * t / 14712000)
-        anomaly = anomaly * SunMoonCalculator.DEG_TO_RAD
+        anomaly = anomaly * EKSunMoonCalculator.DEG_TO_RAD
 
         // Degrees from ascending node
         var node: Double = (93.2720993 + 483202.0175273 * t - 0.0034029 * t * t - t * t * t / 3526000 + t * t * t * t / 863310000)
-        node = node * SunMoonCalculator.DEG_TO_RAD
+        node = node * EKSunMoonCalculator.DEG_TO_RAD
 
         let E: Double = 1.0 - (0.002495 + 7.52E-06 * (t + 1.0)) * (t + 1.0)
 
@@ -313,14 +313,14 @@ class SunMoonCalculator {
         var longitude: Double = l
 
         // Let's add nutation here also
-        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * SunMoonCalculator.DEG_TO_RAD
-        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * SunMoonCalculator.DEG_TO_RAD
+        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
+        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
         let d: Double = -0.0047785 * sin(M1) - 0.0003667 * sin(M2)
         longitude += d
 
         // Get accurate Moon age
         let Psin: Double = 29.530588853
-        moonAge = SunMoonCalculator.normalizeRadians((longitude - slongitude) * SunMoonCalculator.DEG_TO_RAD) * Psin / SunMoonCalculator.TWO_PI
+        moonAge = EKSunMoonCalculator.normalizeRadians((longitude - slongitude) * EKSunMoonCalculator.DEG_TO_RAD) * Psin / EKSunMoonCalculator.TWO_PI
 
         // Now Moon parallax
         var parallax: Double = 0.950724 + 0.051818 * cos(anomaly) + 0.009531 * cos(2 * phase - anomaly)
@@ -331,7 +331,7 @@ class SunMoonCalculator {
         parallax += 1.73E-4 * cos(3 * anomaly) + 1.67E-4 * cos(4*phase-anomaly)
 
         // So Moon distance in Earth radii is, more or less,
-        let distance: Double = 1.0 / sin(parallax * SunMoonCalculator.DEG_TO_RAD)
+        let distance: Double = 1.0 / sin(parallax * EKSunMoonCalculator.DEG_TO_RAD)
 
         // Ecliptic latitude with nodal phase (error<0.01 deg)
         l = 5.128189 * sin(node) + 0.280606 * sin(node + anomaly) + 0.277693 * sin(anomaly - node)
@@ -345,27 +345,27 @@ class SunMoonCalculator {
         l += E * 2.072E-3 * sin(2 * phase - node - sanomaly - anomaly)
         let latitude: Double = l
 
-        return [longitude, latitude, distance * SunMoonCalculator.EARTH_RADIUS / SunMoonCalculator.AU, atan(1737.4 / (distance * SunMoonCalculator.EARTH_RADIUS))]
+        return [longitude, latitude, distance * EKSunMoonCalculator.EARTH_RADIUS / EKSunMoonCalculator.AU, atan(1737.4 / (distance * EKSunMoonCalculator.EARTH_RADIUS))]
     }
 
     private func doCalc(_ pos: [Double]) -> [Double] {
         var pos: [Double] = pos
         // Ecliptic to equatorial coordinates
-        let t2: Double = self.t / 100.0
+        let t2: Double = t / 100.0
         var tmp: Double = t2 * (27.87 + t2 * (5.79 + t2 * 2.45))
         tmp = t2 * (-249.67 + t2 * (-39.05 + t2 * (7.12 + tmp)))
         tmp = t2 * (-1.55 + t2 * (1999.25 + t2 * (-51.38 + tmp)))
         tmp = (t2 * (-4680.93 + tmp)) / 3600.0
-        var angle: Double = (23.4392911111111 + tmp) * SunMoonCalculator.DEG_TO_RAD // obliquity
+        var angle: Double = (23.4392911111111 + tmp) * EKSunMoonCalculator.DEG_TO_RAD // obliquity
 
         // Add nutation in obliquity
-        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * SunMoonCalculator.DEG_TO_RAD
-        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * SunMoonCalculator.DEG_TO_RAD
+        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
+        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
         let d: Double = 0.002558 * cos(M1) - 0.00015339 * cos(M2)
-        angle += d * SunMoonCalculator.DEG_TO_RAD
+        angle += d * EKSunMoonCalculator.DEG_TO_RAD
 
-        pos[0] *= SunMoonCalculator.DEG_TO_RAD
-        pos[1] *= SunMoonCalculator.DEG_TO_RAD
+        pos[0] *= EKSunMoonCalculator.DEG_TO_RAD
+        pos[1] *= EKSunMoonCalculator.DEG_TO_RAD
         let cl: Double = cos(pos[1])
         let x: Double = pos[2] * cos(pos[0]) * cl
         var y: Double = pos[2] * sin(pos[0]) * cl
@@ -376,18 +376,18 @@ class SunMoonCalculator {
 
         // Obtain local apparent sidereal time
         let jd0: Double = floor(jd_UT - 0.5) + 0.5
-        let T0: Double = (jd0 - SunMoonCalculator.J2000) / SunMoonCalculator.JULIAN_DAYS_PER_CENTURY
-        let secs: Double = (jd_UT - jd0) * SunMoonCalculator.SECONDS_PER_DAY
+        let T0: Double = (jd0 - EKSunMoonCalculator.J2000) / EKSunMoonCalculator.JULIAN_DAYS_PER_CENTURY
+        let secs: Double = (jd_UT - jd0) * EKSunMoonCalculator.SECONDS_PER_DAY
         var gmst: Double = (((((-6.2e-6 * T0) + 9.3104e-2) * T0) + 8640184.812866) * T0) + 24110.54841
-        let msday: Double = 1.0 + (((((-1.86e-5 * T0) + 0.186208) * T0) + 8640184.812866) / (SunMoonCalculator.SECONDS_PER_DAY * SunMoonCalculator.JULIAN_DAYS_PER_CENTURY))
-        gmst = (gmst + msday * secs) * (15.0 / 3600.0) * SunMoonCalculator.DEG_TO_RAD
+        let msday: Double = 1.0 + (((((-1.86e-5 * T0) + 0.186208) * T0) + 8640184.812866) / (EKSunMoonCalculator.SECONDS_PER_DAY * EKSunMoonCalculator.JULIAN_DAYS_PER_CENTURY))
+        gmst = (gmst + msday * secs) * (15.0 / 3600.0) * EKSunMoonCalculator.DEG_TO_RAD
         let lst: Double = gmst + obsLon
 
         // Obtain topocentric rectangular coordinates
         // Set radiusAU = 0 for geocentric calculations
         // (rise/set/transit will have no sense in this case)
-        let radiusAU: Double = SunMoonCalculator.EARTH_RADIUS / SunMoonCalculator.AU
-        var correction: [Double] = [
+        let radiusAU: Double = EKSunMoonCalculator.EARTH_RADIUS / EKSunMoonCalculator.AU
+        let correction: [Double] = [
             radiusAU * cos(obsLat) * cos(lst),
             radiusAU * cos(obsLat) * sin(lst),
             radiusAU * sin(obsLat)]
@@ -397,7 +397,7 @@ class SunMoonCalculator {
 
         // Obtain topocentric equatorial coordinates
         var ra: Double = 0.0
-        var dec: Double = SunMoonCalculator.PI_OVER_TWO
+        var dec: Double = EKSunMoonCalculator.PI_OVER_TWO
         if (ztopo < 0.0) {
             dec = -dec
         }
@@ -421,10 +421,10 @@ class SunMoonCalculator {
         let azi: Double = Double.pi + atan2(azy, azx) // 0 = north
 
         // Get apparent elevation
-        if (alt > -3 * SunMoonCalculator.DEG_TO_RAD) {
-            let r: Double = 0.016667 * SunMoonCalculator.DEG_TO_RAD * abs(tan(SunMoonCalculator.PI_OVER_TWO - (alt * SunMoonCalculator.RAD_TO_DEG +  7.31 / (alt * SunMoonCalculator.RAD_TO_DEG + 4.4)) * SunMoonCalculator.DEG_TO_RAD))
+        if (alt > -3 * EKSunMoonCalculator.DEG_TO_RAD) {
+            let r: Double = 0.016667 * EKSunMoonCalculator.DEG_TO_RAD * abs(tan(EKSunMoonCalculator.PI_OVER_TWO - (alt * EKSunMoonCalculator.RAD_TO_DEG +  7.31 / (alt * EKSunMoonCalculator.RAD_TO_DEG + 4.4)) * EKSunMoonCalculator.DEG_TO_RAD))
             let refr: Double = r * ( 0.28 * 1010 / (10 + 273.0)) // Assuming pressure of 1010 mb and T = 10 C
-            alt = min(alt + refr, SunMoonCalculator.PI_OVER_TWO) // This is not accurate, but acceptable
+            alt = min(alt + refr, EKSunMoonCalculator.PI_OVER_TWO) // This is not accurate, but acceptable
         }
 
         switch twilight {
@@ -433,27 +433,27 @@ class SunMoonCalculator {
             // The 34' factor is the standard refraction at horizon.
             // Removing angular radius will do calculations for the center of the disk instead
             // of the upper limb.
-            tmp = -(34.0 / 60.0) * SunMoonCalculator.DEG_TO_RAD - pos[3]
+            tmp = -(34.0 / 60.0) * EKSunMoonCalculator.DEG_TO_RAD - pos[3]
         case .TWILIGHT_CIVIL:
-            tmp = -6 * SunMoonCalculator.DEG_TO_RAD
+            tmp = -6 * EKSunMoonCalculator.DEG_TO_RAD
         case .TWILIGHT_NAUTICAL:
-            tmp = -12 * SunMoonCalculator.DEG_TO_RAD
+            tmp = -12 * EKSunMoonCalculator.DEG_TO_RAD
         case .TWILIGHT_ASTRONOMICAL:
-            tmp = -18 * SunMoonCalculator.DEG_TO_RAD
+            tmp = -18 * EKSunMoonCalculator.DEG_TO_RAD
         }
 
         // Compute cosine of hour angle
         tmp = (sin(tmp) - sin(obsLat) * sin(dec)) / (cos(obsLat) * cos(dec))
-        let celestialHoursToEarthTime: Double = SunMoonCalculator.RAD_TO_DAY / SunMoonCalculator.SIDEREAL_DAY_LENGTH
+        let celestialHoursToEarthTime: Double = EKSunMoonCalculator.RAD_TO_DAY / EKSunMoonCalculator.SIDEREAL_DAY_LENGTH
 
         // Make calculations for the meridian
-        let transit_time1: Double = celestialHoursToEarthTime * SunMoonCalculator.normalizeRadians(ra - lst)
-        let transit_time2: Double = celestialHoursToEarthTime * (SunMoonCalculator.normalizeRadians(ra - lst) - SunMoonCalculator.TWO_PI)
+        let transit_time1: Double = celestialHoursToEarthTime * EKSunMoonCalculator.normalizeRadians(ra - lst)
+        let transit_time2: Double = celestialHoursToEarthTime * (EKSunMoonCalculator.normalizeRadians(ra - lst) - EKSunMoonCalculator.TWO_PI)
         var transit_alt: Double = asin(sin(dec) * sin(obsLat) + cos(dec) * cos(obsLat))
-        if (transit_alt > -3 * SunMoonCalculator.DEG_TO_RAD) {
-            let r: Double = 0.016667 * SunMoonCalculator.DEG_TO_RAD * abs(tan(SunMoonCalculator.PI_OVER_TWO - (transit_alt * SunMoonCalculator.RAD_TO_DEG +  7.31 / (transit_alt * SunMoonCalculator.RAD_TO_DEG + 4.4)) * SunMoonCalculator.DEG_TO_RAD))
+        if (transit_alt > -3 * EKSunMoonCalculator.DEG_TO_RAD) {
+            let r: Double = 0.016667 * EKSunMoonCalculator.DEG_TO_RAD * abs(tan(EKSunMoonCalculator.PI_OVER_TWO - (transit_alt * EKSunMoonCalculator.RAD_TO_DEG +  7.31 / (transit_alt * EKSunMoonCalculator.RAD_TO_DEG + 4.4)) * EKSunMoonCalculator.DEG_TO_RAD))
             let refr: Double = r * ( 0.28 * 1010 / (10 + 273.0)) // Assuming pressure of 1010 mb and T = 10 C
-            transit_alt = min(transit_alt + refr, SunMoonCalculator.PI_OVER_TWO) // This is not accurate, but acceptable
+            transit_alt = min(transit_alt + refr, EKSunMoonCalculator.PI_OVER_TWO) // This is not accurate, but acceptable
         }
 
         // Obtain the current event in time
@@ -471,10 +471,10 @@ class SunMoonCalculator {
         var rise: Double = -1, set: Double = -1
         if (abs(tmp) <= 1.0) {
             let ang_hor: Double = abs(acos(tmp))
-            let rise_time1: Double = celestialHoursToEarthTime * SunMoonCalculator.normalizeRadians(ra - ang_hor - lst)
-            let set_time1: Double = celestialHoursToEarthTime * SunMoonCalculator.normalizeRadians(ra + ang_hor - lst)
-            let rise_time2: Double = celestialHoursToEarthTime * (SunMoonCalculator.normalizeRadians(ra - ang_hor - lst) - SunMoonCalculator.TWO_PI)
-            let set_time2: Double = celestialHoursToEarthTime * (SunMoonCalculator.normalizeRadians(ra + ang_hor - lst) - SunMoonCalculator.TWO_PI)
+            let rise_time1: Double = celestialHoursToEarthTime * EKSunMoonCalculator.normalizeRadians(ra - ang_hor - lst)
+            let set_time1: Double = celestialHoursToEarthTime * EKSunMoonCalculator.normalizeRadians(ra + ang_hor - lst)
+            let rise_time2: Double = celestialHoursToEarthTime * (EKSunMoonCalculator.normalizeRadians(ra - ang_hor - lst) - EKSunMoonCalculator.TWO_PI)
+            let set_time2: Double = celestialHoursToEarthTime * (EKSunMoonCalculator.normalizeRadians(ra + ang_hor - lst) - EKSunMoonCalculator.TWO_PI)
 
             // Obtain the current events in time. Preference should be given to the closest event
             // in time to the current calculation time (so that iteration in other method will converge)
@@ -504,7 +504,7 @@ class SunMoonCalculator {
      */
     class func getDate(_ jd: Double) throws -> [Int] {
         if (jd < 2299160.0 && jd >= 2299150.0) {
-            throw SunMoonCalculator.Errors.invalidJulianDay(jd: jd)
+            throw EKSunMoonCalculator.Errors.invalidJulianDay(jd: jd)
         }
 
         // The conversion formulas are from Meeus,
@@ -528,7 +528,7 @@ class SunMoonCalculator {
         if (month > 2) {
             year -= 1
         }
-        let h: Double = ((exactDay - Double(day)) * SunMoonCalculator.SECONDS_PER_DAY) / 3600.0
+        let h: Double = ((exactDay - Double(day)) * EKSunMoonCalculator.SECONDS_PER_DAY) / 3600.0
 
         let hour: Int = Int(h)
         let m: Double = (h - Double(hour)) * 60.0
@@ -549,7 +549,7 @@ class SunMoonCalculator {
             return "NO RISE/SET/TRANSIT FOR THIS OBSERVER/DATE"
         }
 
-        var date: [Int] = try SunMoonCalculator.getDate(jd)
+        let date: [Int] = try EKSunMoonCalculator.getDate(jd)
         return "\(date[0])/\(date[1])/\(date[2]) \(date[3]):\(date[4]):\(date[5]) UT"
     }
 
@@ -561,19 +561,19 @@ class SunMoonCalculator {
      */
     class func normalizeRadians(_ r: Double) -> Double {
         var r: Double = r
-        if (r < 0 && r >= -SunMoonCalculator.TWO_PI) {
-            return r + SunMoonCalculator.TWO_PI
+        if (r < 0 && r >= -EKSunMoonCalculator.TWO_PI) {
+            return r + EKSunMoonCalculator.TWO_PI
         }
-        if (r >= SunMoonCalculator.TWO_PI && r < SunMoonCalculator.FOUR_PI) {
-            return r - SunMoonCalculator.TWO_PI
+        if (r >= EKSunMoonCalculator.TWO_PI && r < EKSunMoonCalculator.FOUR_PI) {
+            return r - EKSunMoonCalculator.TWO_PI
         }
-        if (r >= 0 && r < SunMoonCalculator.TWO_PI) {
+        if (r >= 0 && r < EKSunMoonCalculator.TWO_PI) {
             return r
         }
 
-        r -= SunMoonCalculator.TWO_PI * floor(r * SunMoonCalculator.TWO_PI_INVERSE)
+        r -= EKSunMoonCalculator.TWO_PI * floor(r * EKSunMoonCalculator.TWO_PI_INVERSE)
         if (r < 0) {
-            r += SunMoonCalculator.TWO_PI
+            r += EKSunMoonCalculator.TWO_PI
         }
 
         return r
@@ -597,7 +597,7 @@ class SunMoonCalculator {
             step = abs(riseSetJD - out[index])
             riseSetJD = out[index]
         }
-        if (step > 1.0 / SunMoonCalculator.SECONDS_PER_DAY) {
+        if (step > 1.0 / EKSunMoonCalculator.SECONDS_PER_DAY) {
             return -1 // did not converge => without rise/set/transit in this date
         }
         return riseSetJD

@@ -1,13 +1,12 @@
 //
 //  Date+Extension.swift
-//  AstrologyCalc
+//  EKAstrologyCalc
 //
 //  Created by Emil Karimov on 21/05/2019.
 //
 
 import Foundation
-import UIKit
-import DevHelper
+import ESDateHelper
 
 extension Date {
     
@@ -22,7 +21,7 @@ extension Date {
     }
     
     public func endOfMonth() -> Date {
-        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: startOfMonth())!
     }
     
     public var toHHmm: String {
@@ -70,18 +69,18 @@ extension Date {
     }
     
     public var startNextYear: Date? {
-        return self.startOfYear?.adjust(.year, offset: 1)
+        return startOfYear?.adjust(.year, offset: 1)
     }
     
     public var previusYearStart: Date? {
-        return self.startOfYear?.adjust(.year, offset: -1)
+        return startOfYear?.adjust(.year, offset: -1)
     }
     
     public var dayBefore: Date {
-        return self.adjust(.day, offset: -1)
+        return adjust(.day, offset: -1)
     }
     public var dayAfter: Date {
-        return self.adjust(.day, offset: 1)
+        return adjust(.day, offset: 1)
     }
     
     static func from(year: Int, month: Int, day: Int) -> Date {
@@ -144,6 +143,6 @@ extension Date {
         //        if minutes(from: date) > 0 { return "\(minutes(from: date))m" }
         //        if seconds(from: date) > 0 { return "\(seconds(from: date))s" }
         //        return ""
-        return self.months(from: date)
+        return months(from: date)
     }
 }
