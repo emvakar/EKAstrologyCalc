@@ -25,10 +25,12 @@ final class EKAstrologyCalcTests: XCTestCase {
     
     func test_case_2() {
         print("tested date :", testedDate)
-        print("model begin :", astroModel.moonModels[0].begin ?? Date())
-        print("model finish:", astroModel.moonModels[0].finish ?? Date())
-        print("model sign  :", astroModel.moonModels[0].sign)
-        print("model age   :", astroModel.moonModels[0].age)
+        astroModel.moonModels.enumerated().forEach {
+            print("\($0.offset) model begin :", $0.element.begin ?? Date())
+            print("\($0.offset) model finish:", $0.element.finish ?? Date())
+            print("\($0.offset) model sign  :", $0.element.sign)
+            print("\($0.offset) model age   :", $0.element.age)
+        }
         XCTAssertTrue(astroModel.moonModels[0].age == 29)
     }
     
