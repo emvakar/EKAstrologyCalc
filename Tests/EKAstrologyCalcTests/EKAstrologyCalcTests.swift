@@ -24,7 +24,11 @@ final class EKAstrologyCalcTests: XCTestCase {
     }
     
     func test_case_2() {
-        print(astroModel.moonModels[0].age)
+        print("tested date :", testedDate)
+        print("model begin :", astroModel.moonModels[0].begin ?? Date())
+        print("model finish:", astroModel.moonModels[0].finish ?? Date())
+        print("model sign  :", astroModel.moonModels[0].sign)
+        print("model age   :", astroModel.moonModels[0].age)
         XCTAssertTrue(astroModel.moonModels[0].age == 29)
     }
     
