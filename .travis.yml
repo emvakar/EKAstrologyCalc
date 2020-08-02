@@ -1,7 +1,7 @@
-osx_image: xcode11.4
 language: swift
-xcode_sdk: iphonesimulator13.6
+osx_image: xcode11.4
 notifications:
   slack: eskaria:RRTsJOW40z95SajyTLBy7lxy
 script:
-  - swift build --fetch && swift test
+  - swift build
+  - swift test
