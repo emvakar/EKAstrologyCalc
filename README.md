@@ -1,7 +1,7 @@
-[![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org) ![Cocoapods](https://img.shields.io/cocoapods/v/AstrologyCalc.svg) [![Build Status](https://travis-ci.com/emvakar/AstrologyCalc.svg?branch=master)](https://travis-ci.com/emvakar/AstrologyCalc)
+[![Swift Version](https://img.shields.io/badge/Swift-5.2-green.svg)](https://swift.org) ![Cocoapods](https://img.shields.io/cocoapods/v/EKAstrologyCalc.svg) [![Build Status](https://travis-ci.com/emvakar/AstrologyCalc.svg?branch=master)](https://travis-ci.com/emvakar/EKAstrologyCalc)
 
 # Astrology Calculator
-This is Moon Calc Framework
+This is Moon Calc Framework written on Swift
 Get moon phase by Date and Location
 
 ## What we can do right now:
@@ -20,14 +20,14 @@ Get moon phase by Date and Location
 - [ ] get mercury status and times
 - [x] get eclipse times (begin, duration, finish)
 
-### Support AstrologyCalc development by giving a ⭐️
+### Support EKAstrologyCalc development by giving a ⭐️
 
 ## Installation
 
-### via Cocapods
+### via Swift Package Manager
 
-```ruby
-pod 'AstrologyCalc'
+```swift
+    .package(url: "https://github.com/emvakar/EKAstrologyCalc.git", from: "1.0.3")
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ pod 'AstrologyCalc'
 ```swift
 import UIKit
 import CoreLocation
-import AstrologyCalc
+import EKAstrologyCalc
 
 class ViewController: UIViewController {
 
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.moonPhaseManager = MoonCalculatorManager(location: location)
+        self.moonPhaseManager = EKAstrologyCalc(location: location)
 
         let info = self.moonPhaseManager.getInfo(date: Date())
 
@@ -64,9 +64,3 @@ class ViewController: UIViewController {
     }
 }
 ```
-
-We have also an application example in which you can see clearly how it use.
-
-1. Just clone the repository
-2. Select run target "Example"
-3. Now just run App
