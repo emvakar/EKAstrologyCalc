@@ -40,7 +40,7 @@ import EKAstrologyCalc
 class ViewController: UIViewController {
 
     let location = CLLocation(latitude: 55.751244, longitude: 37.618423) // Moscow
-    var moonPhaseManager: MoonCalculatorManager!
+    var moonPhaseManager: EKAstrologyCalc!
 
     override func viewDidLoad() {
         super.viewDidLoad()
