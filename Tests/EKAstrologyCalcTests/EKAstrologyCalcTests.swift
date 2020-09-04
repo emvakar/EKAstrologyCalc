@@ -35,4 +35,7 @@ final class EKAstrologyCalcTests: XCTestCase {
         XCTAssertTrue(astroModel.phase == .newMoon)
     }
 
+    func test_case_5() {
+        XCTAssertTrue(astroModel.illumination != nil)
+    }
 }

@@ -170,10 +170,9 @@ class EKEclipseCalculator {
                     e.type = .SolarPartial
                     e.phase = (1.5432 + e.u - fabs(e.gamma)) / (0.5461 + e.u + e.u);
                 }
-            }
+            
                 // LUNAR ECLIPSE
-            else
-            {
+            } else {
                 e.rho = 1.2847 + e.u;
                 e.sigma = 0.7494 - e.u;
                 
@@ -201,7 +200,7 @@ class EKEclipseCalculator {
                 if e.phase < 0 {
                     eclipseFound = false;
                     
-                    k = k + (next ? 1: -1)
+                    k = k + (next ? 1 : -1)
                     continue;
                 }
                 

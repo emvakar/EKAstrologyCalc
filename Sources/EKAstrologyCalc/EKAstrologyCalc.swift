@@ -33,14 +33,16 @@ public class EKAstrologyCalc {
             EKEclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: false),
             EKEclipseCalculator.getEclipseFor(date: date, eclipseType: .Lunar, next: true)
         ]
-
+        let (y, month, d, h, m, s, lat, lon) = getCurrentDate(date: date)
+        let illumination = try? EKSunMoonCalculator(year: y, month: month, day: d, h: h, m: m, s: s, obsLon: lon, obsLat: lat).getMoonIllumination(date: date)
         let astrologyModel = EKAstrologyModel(
             date: date,
             location: location,
             trajectory: trajectory,
             phase: phase,
             moonModels: moonModels,
-            lunarEclipses: eclipses
+            lunarEclipses: eclipses,
+            illumination: illumination
         )
         return astrologyModel
     }

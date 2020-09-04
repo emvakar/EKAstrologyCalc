@@ -10,6 +10,17 @@ import ESDateHelper
 
 extension Date {
     
+    // Extended functionality to get milliseconds from 1970 to present time
+    public var millisecondsSince1970: Int {
+        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+    
+    // Obtaining the time interval since 1970 for a given amount of milliseconds
+    
+    public init(milliseconds: Int) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
+    }
+    
     public var addDay: Date? {
         var components = DateComponents()
         components.day = 1
