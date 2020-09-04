@@ -13,6 +13,7 @@ Get moon phase by Date and Location
 - [x] get zodiac sign
 - [x] get moon phase
 - [x] get moon trajectory
+- [x] get moon illumination
 - [ ] get moon rise if rise on past date
 - [ ] get moon set if set on future date
 - [ ] get zodiac sign rise time
@@ -27,7 +28,7 @@ Get moon phase by Date and Location
 ### via Swift Package Manager
 
 ```swift
-    .package(url: "https://github.com/emvakar/EKAstrologyCalc.git", from: "1.0.3")
+    .package(url: "https://github.com/emvakar/EKAstrologyCalc.git", from: "1.0.4")
 ```
 
 ## Usage
@@ -44,10 +45,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-        self.moonPhaseManager = EKAstrologyCalc(location: location)
+        
+        moonPhaseManager = EKAstrologyCalc(location: location)
 
-        let info = self.moonPhaseManager.getInfo(date: Date())
+        let info = moonPhaseManager.getInfo(date: Date())
 
         print("Current localtion: -", info.location.coordinate)
 
