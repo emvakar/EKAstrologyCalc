@@ -5,14 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "EKAstrologyCalc",
-    platforms: [
-        .iOS(.v11), .macOS(.v10_11),
-    ],
+    platforms: [.iOS(.v11), .macOS(.v10_12)],
     products: [
         .library(name: "EKAstrologyCalc", targets: ["EKAstrologyCalc"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/ESKARIA/ESDateHelper.git", from: "1.0.0")
+        .package(url: "https://github.com/ESKARIA/ESDateHelper.git", from: "1.1.0")
     ],
     targets: [
         .target(name: "EKAstrologyCalc", dependencies: ["ESDateHelper"]),

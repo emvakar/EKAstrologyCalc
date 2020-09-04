@@ -11,7 +11,6 @@ final class EKAstrologyCalcTests: XCTestCase {
         ("test_case_2", test_case_2),
         ("test_case_3", test_case_3),
         ("test_case_4", test_case_4),
-        ("test_case_5", test_case_5),
     ]
     
     private let testedDate =  Date(fromString: "2020-07-20T04:18+03:00", format: .isoDateTime)!
@@ -24,26 +23,15 @@ final class EKAstrologyCalcTests: XCTestCase {
     }
     
     func test_case_2() {
-        print("tested date :", testedDate)
-        astroModel.moonModels.enumerated().forEach {
-            print("\($0.offset) model begin :", $0.element.begin ?? Date())
-            print("\($0.offset) model finish:", $0.element.finish ?? Date())
-            print("\($0.offset) model sign  :", $0.element.sign)
-            print("\($0.offset) model age   :", $0.element.age)
-        }
-        XCTAssertTrue(astroModel.moonModels[0].age == 29)
-    }
-    
-    func test_case_3() {
         let willBeDate = Date(fromString: "2020-07-20T00:17:36+00:00", format: .isoDateTimeSec)!
         XCTAssertTrue(astroModel.moonModels[0].begin == willBeDate)
     }
     
-    func test_case_4() {
+    func test_case_3() {
         XCTAssertTrue(astroModel.moonModels[0].sign ==  .cancer)
     }
     
-    func test_case_5() {
+    func test_case_4() {
         XCTAssertTrue(astroModel.phase == .newMoon)
     }
 
