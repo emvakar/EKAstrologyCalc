@@ -17,6 +17,7 @@ import CoreLocation
 /// - moonModels: [EKMoonModel]
 /// - nextLunarEclipse
 /// - previousLunarEclipse
+/// - illumination: EKIllumination?
 public class EKAstrologyModel {
 
     /// дата обычная, например 01.01.1970

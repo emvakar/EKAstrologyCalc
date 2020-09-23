@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import CoreLocation
 
 public struct EKIllumination {
     
-    let fraction: Double
-    let phase: Double
-    let angle: Double
+    public let fraction: Double
+    public let phase: Double
+    public let angle: Double
 }
 
 /**
@@ -136,20 +137,12 @@ class EKSunMoonCalculator {
      * Moon age is the number of days since last new Moon, in days, from 0 to 29.5. Distance in AU. */
     var moonAz: Double, moonEl: Double, moonRise: Double, moonSet: Double, moonTransit: Double, moonAge: Double, moonTransitElev: Double, moonDist: Double
     
-    /// Main constructor for Sun/Moon calculations. Time should be given in
-    /// Universal Time (UT), observer angles in radians.
-    ///
     /// - Parameters:
-    ///   - year: The year.
-    ///   - month: The month.
-    ///   - day: The day.
-    ///   - h: The hour.
-    ///   - m: Minute.
-    ///   - s: Second.
-    ///   - obsLon: Longitude for the observer.
-    ///   - obsLat: Latitude for the observer.
+    ///   - date: Date.
+    ///   - location: Location for the observer.
     /// - Throws: Exception If the date does not exists.
-    internal init(year: Int, month: Int, day: Int, h: Int, m: Int, s: Int, obsLon: Double, obsLat: Double) throws {
+    internal init(date: Date, location: CLLocation) throws {
+        
         sunAz = Double.nan
         sunEl = Double.nan
         sunRise = Double.nan
@@ -165,6 +158,8 @@ class EKSunMoonCalculator {
         moonAge = Double.nan
         moonTransitElev = Double.nan
         moonDist = Double.nan
+        
+        let (year, month, day, h, m, s, obsLon, obsLat) = getCurrentDate(date: date, location: location)
         
         // The conversion formulas are from Meeus, chapter 7.
         var julian: Bool = false
@@ -689,6 +684,29 @@ extension EKSunMoonCalculator {
     private func setUTDate(_ jd: Double) {
         jd_UT = jd
         t = (jd + TTminusUT / EKSunMoonCalculator.SECONDS_PER_DAY - EKSunMoonCalculator.J2000) / EKSunMoonCalculator.JULIAN_DAYS_PER_CENTURY
+    }
+    
+    ///Получить дату дату и геопозицию ввиде -> [1970, 1, 1, 12, 24, 33, широта, долгота]
+    private func getCurrentDate(date: Date, location: CLLocation) -> (y: Int, month: Int, d: Int, h: Int, m: Int, s: Int, lat: Double, lon: Double) {
+        let (y, month, d, h, m, s) = getDateComponents(from: date)
+        let lat = location.coordinate.latitude * EKSunMoonCalculator.DEG_TO_RAD
+        let lon = location.coordinate.longitude * EKSunMoonCalculator.DEG_TO_RAD
+        return (y, month, d, h, m, s, lon, lat)
+    }
+    
+    
+    
+    ///Получить компоненты дня -- например 01.01.1970 12:24:33 -> [1970, 1, 1, 12, 24, 33]
+    private func getDateComponents(from date: Date) -> (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) {
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        let second = calendar.component(.second, from: date)
+        
+        return (year, month, day, hour, minute, second)
     }
     
 }
