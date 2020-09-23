@@ -148,8 +148,9 @@
 				C3E8A25F251B2EBB00790C03 /* MoonTrajectoryCalculator.swift */,
 				C3E8A267251B2F5300790C03 /* MoonRiseSetCalculator.swift */,
 			);
-			path = Calculators;
-			sourceTree = "<group>";
+			name = Calculators;
+			path = Sources/Calculators;
+			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_13 /* Extensions */ = {
 			isa = PBXGroup;
@@ -228,7 +229,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -239,7 +240,6 @@
 				OBJ_36 /* EKAstrologyCalc.podspec */,
 				OBJ_37 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -363,7 +363,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_32 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
