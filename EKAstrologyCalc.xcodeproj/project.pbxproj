@@ -1,0 +1,796 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"EKAstrologyCalc::EKAstrologyCalcPackageTests::ProductTarget" /* EKAstrologyCalcPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_65 /* Build configuration list for PBXAggregateTarget "EKAstrologyCalcPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_68 /* PBXTargetDependency */,
+			);
+			name = EKAstrologyCalcPackageTests;
+			productName = EKAstrologyCalcPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		C3E8A247251B2C6800790C03 /* MoonAgeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8A246251B2C6800790C03 /* MoonAgeCalculator.swift */; };
+		C3E8A250251B2E1F00790C03 /* MoonPhaseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8A24F251B2E1F00790C03 /* MoonPhaseCalculator.swift */; };
+		C3E8A258251B2E4600790C03 /* MoonZodiacSignCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8A257251B2E4600790C03 /* MoonZodiacSignCalculator.swift */; };
+		C3E8A260251B2EBB00790C03 /* MoonTrajectoryCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8A25F251B2EBB00790C03 /* MoonTrajectoryCalculator.swift */; };
+		C3E8A268251B2F5300790C03 /* MoonRiseSetCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8A267251B2F5300790C03 /* MoonRiseSetCalculator.swift */; };
+		C3E8A270251B375600790C03 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8A26F251B375600790C03 /* Double+Extension.swift */; };
+		OBJ_43 /* EKAstroUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* EKAstroUtils.swift */; };
+		OBJ_44 /* EKAstrologyCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* EKAstrologyCalc.swift */; };
+		OBJ_45 /* EKEclipseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* EKEclipseCalculator.swift */; };
+		OBJ_46 /* EKSunMoonCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* EKSunMoonCalculator.swift */; };
+		OBJ_47 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Date+Extension.swift */; };
+		OBJ_48 /* EKAstrologyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* EKAstrologyModel.swift */; };
+		OBJ_49 /* EKEclipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* EKEclipse.swift */; };
+		OBJ_50 /* EKMoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* EKMoonModel.swift */; };
+		OBJ_51 /* EKMoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* EKMoonPhase.swift */; };
+		OBJ_52 /* EKMoonTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* EKMoonTrajectory.swift */; };
+		OBJ_53 /* EKMoonZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* EKMoonZodiacSign.swift */; };
+		OBJ_55 /* ESDateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "ESDateHelper::ESDateHelper::Product" /* ESDateHelper.framework */; };
+		OBJ_63 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_74 /* EKAstrologyCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* EKAstrologyCalcTests.swift */; };
+		OBJ_75 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* XCTestManifests.swift */; };
+		OBJ_77 /* EKAstrologyCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "EKAstrologyCalc::EKAstrologyCalc::Product" /* EKAstrologyCalc.framework */; };
+		OBJ_78 /* ESDateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "ESDateHelper::ESDateHelper::Product" /* ESDateHelper.framework */; };
+		OBJ_85 /* ESDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* ESDateHelper.swift */; };
+		OBJ_86 /* ESString-Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* ESString-Extesion.swift */; };
+		OBJ_93 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Package.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3E8A23C251B296100790C03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "ESDateHelper::ESDateHelper";
+			remoteInfo = ESDateHelper;
+		};
+		C3E8A23D251B296200790C03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "EKAstrologyCalc::EKAstrologyCalc";
+			remoteInfo = EKAstrologyCalc;
+		};
+		C3E8A23E251B296200790C03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "ESDateHelper::ESDateHelper";
+			remoteInfo = ESDateHelper;
+		};
+		C3E8A241251B296300790C03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "EKAstrologyCalc::EKAstrologyCalcTests";
+			remoteInfo = EKAstrologyCalcTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C3E8A246251B2C6800790C03 /* MoonAgeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonAgeCalculator.swift; sourceTree = "<group>"; };
+		C3E8A24F251B2E1F00790C03 /* MoonPhaseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhaseCalculator.swift; sourceTree = "<group>"; };
+		C3E8A257251B2E4600790C03 /* MoonZodiacSignCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonZodiacSignCalculator.swift; sourceTree = "<group>"; };
+		C3E8A25F251B2EBB00790C03 /* MoonTrajectoryCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonTrajectoryCalculator.swift; sourceTree = "<group>"; };
+		C3E8A267251B2F5300790C03 /* MoonRiseSetCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonRiseSetCalculator.swift; sourceTree = "<group>"; };
+		C3E8A26F251B375600790C03 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		"EKAstrologyCalc::EKAstrologyCalc::Product" /* EKAstrologyCalc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EKAstrologyCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"EKAstrologyCalc::EKAstrologyCalcTests::Product" /* EKAstrologyCalcTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = EKAstrologyCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"ESDateHelper::ESDateHelper::Product" /* ESDateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ESDateHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* EKAstrologyCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKAstrologyCalc.swift; sourceTree = "<group>"; };
+		OBJ_11 /* EKEclipseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKEclipseCalculator.swift; sourceTree = "<group>"; };
+		OBJ_12 /* EKSunMoonCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKSunMoonCalculator.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		OBJ_16 /* EKAstrologyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKAstrologyModel.swift; sourceTree = "<group>"; };
+		OBJ_17 /* EKEclipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKEclipse.swift; sourceTree = "<group>"; };
+		OBJ_18 /* EKMoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKMoonModel.swift; sourceTree = "<group>"; };
+		OBJ_19 /* EKMoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKMoonPhase.swift; sourceTree = "<group>"; };
+		OBJ_20 /* EKMoonTrajectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKMoonTrajectory.swift; sourceTree = "<group>"; };
+		OBJ_21 /* EKMoonZodiacSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKMoonZodiacSign.swift; sourceTree = "<group>"; };
+		OBJ_24 /* EKAstrologyCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKAstrologyCalcTests.swift; sourceTree = "<group>"; };
+		OBJ_25 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_29 /* ESDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESDateHelper.swift; sourceTree = "<group>"; };
+		OBJ_30 /* ESString-Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESString-Extesion.swift"; sourceTree = "<group>"; };
+		OBJ_31 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = /Users/vasilemorari/Desktop/EKAstrologyCalc/.build/checkouts/ESDateHelper/Package.swift; sourceTree = "<group>"; };
+		OBJ_36 /* EKAstrologyCalc.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = EKAstrologyCalc.podspec; sourceTree = "<group>"; };
+		OBJ_37 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* EKAstroUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKAstroUtils.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_55 /* ESDateHelper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_77 /* EKAstrologyCalc.framework in Frameworks */,
+				OBJ_78 /* ESDateHelper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3E8A24E251B2E0A00790C03 /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				C3E8A246251B2C6800790C03 /* MoonAgeCalculator.swift */,
+				C3E8A24F251B2E1F00790C03 /* MoonPhaseCalculator.swift */,
+				C3E8A257251B2E4600790C03 /* MoonZodiacSignCalculator.swift */,
+				C3E8A25F251B2EBB00790C03 /* MoonTrajectoryCalculator.swift */,
+				C3E8A267251B2F5300790C03 /* MoonRiseSetCalculator.swift */,
+			);
+			path = Calculators;
+			sourceTree = "<group>";
+		};
+		OBJ_13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* Date+Extension.swift */,
+				C3E8A26F251B375600790C03 /* Double+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		OBJ_15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_16 /* EKAstrologyModel.swift */,
+				OBJ_17 /* EKEclipse.swift */,
+				OBJ_18 /* EKMoonModel.swift */,
+				OBJ_19 /* EKMoonPhase.swift */,
+				OBJ_20 /* EKMoonTrajectory.swift */,
+				OBJ_21 /* EKMoonZodiacSign.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		OBJ_22 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_23 /* EKAstrologyCalcTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_23 /* EKAstrologyCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_24 /* EKAstrologyCalcTests.swift */,
+				OBJ_25 /* XCTestManifests.swift */,
+			);
+			name = EKAstrologyCalcTests;
+			path = Tests/EKAstrologyCalcTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_26 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_27 /* ESDateHelper 1.1.0 */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		OBJ_27 /* ESDateHelper 1.1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_28 /* ESDateHelper */,
+				OBJ_31 /* Package.swift */,
+			);
+			name = "ESDateHelper 1.1.0";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_28 /* ESDateHelper */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_29 /* ESDateHelper.swift */,
+				OBJ_30 /* ESString-Extesion.swift */,
+			);
+			name = ESDateHelper;
+			path = .build/checkouts/ESDateHelper/Sources/ESDateHelper;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"EKAstrologyCalc::EKAstrologyCalc::Product" /* EKAstrologyCalc.framework */,
+				"ESDateHelper::ESDateHelper::Product" /* ESDateHelper.framework */,
+				"EKAstrologyCalc::EKAstrologyCalcTests::Product" /* EKAstrologyCalcTests.xctest */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_22 /* Tests */,
+				OBJ_26 /* Dependencies */,
+				OBJ_32 /* Products */,
+				OBJ_36 /* EKAstrologyCalc.podspec */,
+				OBJ_37 /* README.md */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C3E8A24E251B2E0A00790C03 /* Calculators */,
+				OBJ_8 /* EKAstrologyCalc */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* EKAstrologyCalc */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* EKAstroUtils.swift */,
+				OBJ_10 /* EKAstrologyCalc.swift */,
+				OBJ_11 /* EKEclipseCalculator.swift */,
+				OBJ_12 /* EKSunMoonCalculator.swift */,
+				OBJ_13 /* Extensions */,
+				OBJ_15 /* Models */,
+			);
+			name = EKAstrologyCalc;
+			path = Sources/EKAstrologyCalc;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"EKAstrologyCalc::EKAstrologyCalc" /* EKAstrologyCalc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_39 /* Build configuration list for PBXNativeTarget "EKAstrologyCalc" */;
+			buildPhases = (
+				OBJ_42 /* Sources */,
+				OBJ_54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_56 /* PBXTargetDependency */,
+			);
+			name = EKAstrologyCalc;
+			productName = EKAstrologyCalc;
+			productReference = "EKAstrologyCalc::EKAstrologyCalc::Product" /* EKAstrologyCalc.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"EKAstrologyCalc::EKAstrologyCalcTests" /* EKAstrologyCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_70 /* Build configuration list for PBXNativeTarget "EKAstrologyCalcTests" */;
+			buildPhases = (
+				OBJ_73 /* Sources */,
+				OBJ_76 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_79 /* PBXTargetDependency */,
+				OBJ_80 /* PBXTargetDependency */,
+			);
+			name = EKAstrologyCalcTests;
+			productName = EKAstrologyCalcTests;
+			productReference = "EKAstrologyCalc::EKAstrologyCalcTests::Product" /* EKAstrologyCalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"EKAstrologyCalc::SwiftPMPackageDescription" /* EKAstrologyCalcPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_59 /* Build configuration list for PBXNativeTarget "EKAstrologyCalcPackageDescription" */;
+			buildPhases = (
+				OBJ_62 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EKAstrologyCalcPackageDescription;
+			productName = EKAstrologyCalcPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"ESDateHelper::ESDateHelper" /* ESDateHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_81 /* Build configuration list for PBXNativeTarget "ESDateHelper" */;
+			buildPhases = (
+				OBJ_84 /* Sources */,
+				OBJ_87 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESDateHelper;
+			productName = ESDateHelper;
+			productReference = "ESDateHelper::ESDateHelper::Product" /* ESDateHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"ESDateHelper::SwiftPMPackageDescription" /* ESDateHelperPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_89 /* Build configuration list for PBXNativeTarget "ESDateHelperPackageDescription" */;
+			buildPhases = (
+				OBJ_92 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESDateHelperPackageDescription;
+			productName = ESDateHelperPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "EKAstrologyCalc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"EKAstrologyCalc::EKAstrologyCalc" /* EKAstrologyCalc */,
+				"EKAstrologyCalc::SwiftPMPackageDescription" /* EKAstrologyCalcPackageDescription */,
+				"EKAstrologyCalc::EKAstrologyCalcPackageTests::ProductTarget" /* EKAstrologyCalcPackageTests */,
+				"EKAstrologyCalc::EKAstrologyCalcTests" /* EKAstrologyCalcTests */,
+				"ESDateHelper::ESDateHelper" /* ESDateHelper */,
+				"ESDateHelper::SwiftPMPackageDescription" /* ESDateHelperPackageDescription */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_43 /* EKAstroUtils.swift in Sources */,
+				OBJ_44 /* EKAstrologyCalc.swift in Sources */,
+				C3E8A247251B2C6800790C03 /* MoonAgeCalculator.swift in Sources */,
+				OBJ_45 /* EKEclipseCalculator.swift in Sources */,
+				C3E8A270251B375600790C03 /* Double+Extension.swift in Sources */,
+				OBJ_46 /* EKSunMoonCalculator.swift in Sources */,
+				C3E8A258251B2E4600790C03 /* MoonZodiacSignCalculator.swift in Sources */,
+				OBJ_47 /* Date+Extension.swift in Sources */,
+				C3E8A260251B2EBB00790C03 /* MoonTrajectoryCalculator.swift in Sources */,
+				C3E8A268251B2F5300790C03 /* MoonRiseSetCalculator.swift in Sources */,
+				OBJ_48 /* EKAstrologyModel.swift in Sources */,
+				OBJ_49 /* EKEclipse.swift in Sources */,
+				OBJ_50 /* EKMoonModel.swift in Sources */,
+				OBJ_51 /* EKMoonPhase.swift in Sources */,
+				OBJ_52 /* EKMoonTrajectory.swift in Sources */,
+				OBJ_53 /* EKMoonZodiacSign.swift in Sources */,
+				C3E8A250251B2E1F00790C03 /* MoonPhaseCalculator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_63 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_74 /* EKAstrologyCalcTests.swift in Sources */,
+				OBJ_75 /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_85 /* ESDateHelper.swift in Sources */,
+				OBJ_86 /* ESString-Extesion.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_93 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "ESDateHelper::ESDateHelper" /* ESDateHelper */;
+			targetProxy = C3E8A23C251B296100790C03 /* PBXContainerItemProxy */;
+		};
+		OBJ_68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "EKAstrologyCalc::EKAstrologyCalcTests" /* EKAstrologyCalcTests */;
+			targetProxy = C3E8A241251B296300790C03 /* PBXContainerItemProxy */;
+		};
+		OBJ_79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "EKAstrologyCalc::EKAstrologyCalc" /* EKAstrologyCalc */;
+			targetProxy = C3E8A23D251B296200790C03 /* PBXContainerItemProxy */;
+		};
+		OBJ_80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "ESDateHelper::ESDateHelper" /* ESDateHelper */;
+			targetProxy = C3E8A23E251B296200790C03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EKAstrologyCalc.xcodeproj/EKAstrologyCalc_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = EKAstrologyCalc;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = EKAstrologyCalc;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EKAstrologyCalc.xcodeproj/EKAstrologyCalc_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = EKAstrologyCalc;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = EKAstrologyCalc;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EKAstrologyCalc.xcodeproj/EKAstrologyCalcTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = EKAstrologyCalcTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EKAstrologyCalc.xcodeproj/EKAstrologyCalcTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = EKAstrologyCalcTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EKAstrologyCalc.xcodeproj/ESDateHelper_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ESDateHelper;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ESDateHelper;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EKAstrologyCalc.xcodeproj/ESDateHelper_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ESDateHelper;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ESDateHelper;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_2 /* Build configuration list for PBXProject "EKAstrologyCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_39 /* Build configuration list for PBXNativeTarget "EKAstrologyCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_40 /* Debug */,
+				OBJ_41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_59 /* Build configuration list for PBXNativeTarget "EKAstrologyCalcPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_60 /* Debug */,
+				OBJ_61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_65 /* Build configuration list for PBXAggregateTarget "EKAstrologyCalcPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_66 /* Debug */,
+				OBJ_67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_70 /* Build configuration list for PBXNativeTarget "EKAstrologyCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_71 /* Debug */,
+				OBJ_72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_81 /* Build configuration list for PBXNativeTarget "ESDateHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_82 /* Debug */,
+				OBJ_83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_89 /* Build configuration list for PBXNativeTarget "ESDateHelperPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_90 /* Debug */,
+				OBJ_91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}
