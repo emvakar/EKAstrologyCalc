@@ -691,7 +691,7 @@ extension EKSunMoonCalculator {
         let (y, month, d, h, m, s) = getDateComponents(from: date)
         let lat = location.coordinate.latitude * EKSunMoonCalculator.DEG_TO_RAD
         let lon = location.coordinate.longitude * EKSunMoonCalculator.DEG_TO_RAD
-        return (y, month, d, h, m, s, lat, lon)
+        return (y, month, d, h, m, s, lon, lat)
     }
     
     
