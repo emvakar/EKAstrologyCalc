@@ -14,6 +14,7 @@ public struct EKIllumination {
     public let fraction: Double
     public let phase: Double
     public let angle: Double
+    
 }
 
 /**
@@ -26,7 +27,43 @@ public struct EKIllumination {
  * @author T. Alonso Albi - OAN (Spain), email t.alonso@oan.es
  * @version May 25, 2017 (fixed nutation correction and moon age, better accuracy in Moon)
  */
-class EKSunMoonCalculator {
+public final class EKSunMoonCalculator {
+
+    /**
+     * The set of twilights to calculate (types of rise/set events).
+     */
+    enum TWILIGHT {
+        /**
+         * Event ID for calculation of rising and setting times for astronomical
+         * twilight. In this case, the calculated time will be the time when the
+         * center of the object is at -18 degrees of geometrical elevation below the
+         * astronomical horizon. At this time astronomical observations are possible
+         * because the sky is dark enough.
+         */
+        case TWILIGHT_ASTRONOMICAL
+        /**
+         * Event ID for calculation of rising and setting times for nautical
+         * twilight. In this case, the calculated time will be the time when the
+         * center of the object is at -12 degrees of geometric elevation below the
+         * astronomical horizon.
+         */
+        case TWILIGHT_NAUTICAL
+        /**
+         * Event ID for calculation of rising and setting times for civil twilight.
+         * In this case, the calculated time will be the time when the center of the
+         * object is at -6 degrees of geometric elevation below the astronomical
+         * horizon.
+         */
+        case TWILIGHT_CIVIL
+        /**
+         * The standard value of 34' for the refraction at the local horizon.
+         */
+        case HORIZON_34arcmin
+    }
+    
+    enum Errors: Error {
+        case invalidJulianDay(jd: Double)
+    }
     
     struct CoordsModel {
         
@@ -35,7 +72,7 @@ class EKSunMoonCalculator {
         var dist: Double?
         
     }
-    
+        
     /** Radians to degrees. */
     static let RAD_TO_DEG: Double = 180.0 / Double.pi
     
@@ -87,43 +124,7 @@ class EKSunMoonCalculator {
     static let J1970: Double = 2440588.0
     
     static let e: Double = (Double.pi / 180.0) * 23.4397
-    
-    /**
-     * The set of twilights to calculate (types of rise/set events).
-     */
-    enum TWILIGHT {
-        /**
-         * Event ID for calculation of rising and setting times for astronomical
-         * twilight. In this case, the calculated time will be the time when the
-         * center of the object is at -18 degrees of geometrical elevation below the
-         * astronomical horizon. At this time astronomical observations are possible
-         * because the sky is dark enough.
-         */
-        case TWILIGHT_ASTRONOMICAL
-        /**
-         * Event ID for calculation of rising and setting times for nautical
-         * twilight. In this case, the calculated time will be the time when the
-         * center of the object is at -12 degrees of geometric elevation below the
-         * astronomical horizon.
-         */
-        case TWILIGHT_NAUTICAL
-        /**
-         * Event ID for calculation of rising and setting times for civil twilight.
-         * In this case, the calculated time will be the time when the center of the
-         * object is at -6 degrees of geometric elevation below the astronomical
-         * horizon.
-         */
-        case TWILIGHT_CIVIL
-        /**
-         * The standard value of 34' for the refraction at the local horizon.
-         */
-        case HORIZON_34arcmin
-    }
-    
-    enum Errors: Error {
-        case invalidJulianDay(jd: Double)
-    }
-    
+
     /** Input values. */
     private var jd_UT: Double = 0, t: Double = 0, obsLon: Double = 0, obsLat: Double = 0, TTminusUT: Double = 0
     private var twilight: TWILIGHT = TWILIGHT.HORIZON_34arcmin
@@ -286,99 +287,6 @@ class EKSunMoonCalculator {
         sanomaly = sa
         slongitude = sl
         moonAge = ma
-    }
-    
-    private func getSun() -> [Double] {
-        // SUN PARAMETERS (Formulae from "Calendrical Calculations")
-        let lon: Double = (280.46645 + 36000.76983 * t + 0.0003032 * t * t)
-        let anom: Double = (357.5291 + 35999.0503 * t - 0.0001559 * t * t - 4.8E-07 * t * t * t)
-        sanomaly = anom * EKSunMoonCalculator.DEG_TO_RAD
-        var c: Double = (1.9146 - 0.004817 * t - 0.000014 * t * t) * sin(sanomaly)
-        c = c + (0.019993 - 0.000101 * t) * sin(2 * sanomaly)
-        c = c + 0.00029 * sin(3.0 * sanomaly) // Correction to the mean ecliptic longitude
-        
-        // Now, let calculate nutation and aberration
-        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
-        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
-        let d: Double = -0.00569 - 0.0047785 * sin(M1) - 0.0003667 * sin(M2)
-        
-        slongitude = lon + c + d // apparent longitude (error<0.003 deg)
-        let slatitude: Double = 0 // Sun's ecliptic latitude is always negligible
-        let ecc: Double = 0.016708617 - 4.2037E-05 * t - 1.236E-07 * t * t // Eccentricity
-        let v: Double = sanomaly + c * EKSunMoonCalculator.DEG_TO_RAD // True anomaly
-        let sdistance: Double = 1.000001018 * (1.0 - ecc * ecc) / (1.0 + ecc * cos(v)) // In UA
-        
-        return [slongitude, slatitude, sdistance, atan(696000 / (EKSunMoonCalculator.AU * sdistance))]
-    }
-    
-    private func getMoon() -> [Double] {
-        // MOON PARAMETERS (Formulae from "Calendrical Calculations")
-        let phase: Double = EKSunMoonCalculator.normalizeRadians((297.8502042 + 445267.1115168 * t - 0.00163 * t * t + t * t * t / 538841 - t * t * t * t / 65194000) * EKSunMoonCalculator.DEG_TO_RAD)
-        
-        // Anomalistic phase
-        var anomaly: Double = (134.9634114 + 477198.8676313 * t + 0.008997 * t * t + t * t * t / 69699 - t * t * t * t / 14712000)
-        anomaly = anomaly * EKSunMoonCalculator.DEG_TO_RAD
-        
-        // Degrees from ascending node
-        var node: Double = (93.2720993 + 483202.0175273 * t - 0.0034029 * t * t - t * t * t / 3526000 + t * t * t * t / 863310000)
-        node = node * EKSunMoonCalculator.DEG_TO_RAD
-        
-        let E: Double = 1.0 - (0.002495 + 7.52E-06 * (t + 1.0)) * (t + 1.0)
-        
-        // Now longitude, with the three main correcting terms of evection,
-        // variation, and equation of year, plus other terms (error<0.01 deg)
-        // P. Duffet's MOON program taken as reference
-        var l: Double = (218.31664563 + 481267.8811958 * t - 0.00146639 * t * t + t * t * t / 540135.03 - t * t * t * t / 65193770.4)
-        l += 6.28875 * sin(anomaly) + 1.274018 * sin(2 * phase - anomaly) + 0.658309 * sin(2 * phase)
-        l += 0.213616 * sin(2 * anomaly) - E * 0.185596 * sin(sanomaly) - 0.114336 * sin(2 * node)
-        l += 0.058793 * sin(2 * phase - 2 * anomaly) + 0.057212 * E * sin(2 * phase - anomaly - sanomaly) + 0.05332 * sin(2 * phase + anomaly)
-        l += 0.045874 * E * sin(2 * phase - sanomaly) + 0.041024 * E * sin(anomaly - sanomaly) - 0.034718 * sin(phase) - E * 0.030465 * sin(sanomaly + anomaly)
-        l += 0.015326 * sin(2 * (phase - node)) - 0.012528 * sin(2 * node + anomaly) - 0.01098 * sin(2 * node - anomaly) + 0.010674 * sin(4 * phase - anomaly)
-        l += 0.010034 * sin(3 * anomaly) + 0.008548 * sin(4 * phase - 2 * anomaly)
-        l += -E * 0.00791 * sin(sanomaly - anomaly + 2 * phase) - E * 0.006783 * sin(2 * phase + sanomaly) + 0.005162 * sin(anomaly - phase) + E * 0.005 * sin(sanomaly + phase)
-        l += 0.003862 * sin(4 * phase) + E * 0.004049 * sin(anomaly - sanomaly + 2 * phase) + 0.003996 * sin(2 * (anomaly + phase)) + 0.003665 * sin(2 * phase - 3 * anomaly)
-        l += E * 2.695E-3 * sin(2 * anomaly - sanomaly) + 2.602E-3 * sin(anomaly - 2*(node+phase))
-        l += E * 2.396E-3 * sin(2*(phase - anomaly) - sanomaly) - 2.349E-3 * sin(anomaly+phase)
-        l += E * E * 2.249E-3 * sin(2*(phase-sanomaly)) - E * 2.125E-3 * sin(2*anomaly+sanomaly)
-        l += -E * E * 2.079E-3 * sin(2*sanomaly) + E * E * 2.059E-3 * sin(2*(phase-sanomaly)-anomaly)
-        l += -1.773E-3 * sin(anomaly+2*(phase-node)) - 1.595E-3 * sin(2*(node+phase))
-        l += E * 1.22E-3 * sin(4*phase-sanomaly-anomaly) - 1.11E-3 * sin(2*(anomaly+node))
-        var longitude: Double = l
-        
-        // Let's add nutation here also
-        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
-        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
-        let d: Double = -0.0047785 * sin(M1) - 0.0003667 * sin(M2)
-        longitude += d
-        
-        // Get accurate Moon age
-        let Psin: Double = 29.530588853
-        moonAge = EKSunMoonCalculator.normalizeRadians((longitude - slongitude) * EKSunMoonCalculator.DEG_TO_RAD) * Psin / EKSunMoonCalculator.TWO_PI
-        
-        // Now Moon parallax
-        var parallax: Double = 0.950724 + 0.051818 * cos(anomaly) + 0.009531 * cos(2 * phase - anomaly)
-        parallax += 0.007843 * cos(2 * phase) + 0.002824 * cos(2 * anomaly)
-        parallax += 0.000857 * cos(2 * phase + anomaly) + E * 0.000533 * cos(2 * phase - sanomaly)
-        parallax += E * 0.000401 * cos(2 * phase - anomaly - sanomaly) + E * 0.00032 * cos(anomaly - sanomaly) - 0.000271 * cos(phase)
-        parallax += -E * 0.000264 * cos(sanomaly + anomaly) - 0.000198 * cos(2 * node - anomaly)
-        parallax += 1.73E-4 * cos(3 * anomaly) + 1.67E-4 * cos(4*phase-anomaly)
-        
-        // So Moon distance in Earth radii is, more or less,
-        let distance: Double = 1.0 / sin(parallax * EKSunMoonCalculator.DEG_TO_RAD)
-        
-        // Ecliptic latitude with nodal phase (error<0.01 deg)
-        l = 5.128189 * sin(node) + 0.280606 * sin(node + anomaly) + 0.277693 * sin(anomaly - node)
-        l += 0.173238 * sin(2 * phase - node) + 0.055413 * sin(2 * phase + node - anomaly)
-        l += 0.046272 * sin(2 * phase - node - anomaly) + 0.032573 * sin(2 * phase + node)
-        l += 0.017198 * sin(2 * anomaly + node) + 0.009267 * sin(2 * phase + anomaly - node)
-        l += 0.008823 * sin(2 * anomaly - node) + E * 0.008247 * sin(2 * phase - sanomaly - node) + 0.004323 * sin(2 * (phase - anomaly) - node)
-        l += 0.0042 * sin(2 * phase + node + anomaly) + E * 0.003372 * sin(node - sanomaly - 2 * phase)
-        l += E * 2.472E-3 * sin(2 * phase + node - sanomaly - anomaly)
-        l += E * 2.222E-3 * sin(2 * phase + node - sanomaly)
-        l += E * 2.072E-3 * sin(2 * phase - node - sanomaly - anomaly)
-        let latitude: Double = l
-        
-        return [longitude, latitude, distance * EKSunMoonCalculator.EARTH_RADIUS / EKSunMoonCalculator.AU, atan(1737.4 / (distance * EKSunMoonCalculator.EARTH_RADIUS))]
     }
     
     /**
@@ -707,6 +615,99 @@ extension EKSunMoonCalculator {
         let second = calendar.component(.second, from: date)
         
         return (year, month, day, hour, minute, second)
+    }
+
+    private func getSun() -> [Double] {
+        // SUN PARAMETERS (Formulae from "Calendrical Calculations")
+        let lon: Double = (280.46645 + 36000.76983 * t + 0.0003032 * t * t)
+        let anom: Double = (357.5291 + 35999.0503 * t - 0.0001559 * t * t - 4.8E-07 * t * t * t)
+        sanomaly = anom * EKSunMoonCalculator.DEG_TO_RAD
+        var c: Double = (1.9146 - 0.004817 * t - 0.000014 * t * t) * sin(sanomaly)
+        c = c + (0.019993 - 0.000101 * t) * sin(2 * sanomaly)
+        c = c + 0.00029 * sin(3.0 * sanomaly) // Correction to the mean ecliptic longitude
+        
+        // Now, let calculate nutation and aberration
+        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
+        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
+        let d: Double = -0.00569 - 0.0047785 * sin(M1) - 0.0003667 * sin(M2)
+        
+        slongitude = lon + c + d // apparent longitude (error<0.003 deg)
+        let slatitude: Double = 0 // Sun's ecliptic latitude is always negligible
+        let ecc: Double = 0.016708617 - 4.2037E-05 * t - 1.236E-07 * t * t // Eccentricity
+        let v: Double = sanomaly + c * EKSunMoonCalculator.DEG_TO_RAD // True anomaly
+        let sdistance: Double = 1.000001018 * (1.0 - ecc * ecc) / (1.0 + ecc * cos(v)) // In UA
+        
+        return [slongitude, slatitude, sdistance, atan(696000 / (EKSunMoonCalculator.AU * sdistance))]
+    }
+    
+    private func getMoon() -> [Double] {
+        // MOON PARAMETERS (Formulae from "Calendrical Calculations")
+        let phase: Double = EKSunMoonCalculator.normalizeRadians((297.8502042 + 445267.1115168 * t - 0.00163 * t * t + t * t * t / 538841 - t * t * t * t / 65194000) * EKSunMoonCalculator.DEG_TO_RAD)
+        
+        // Anomalistic phase
+        var anomaly: Double = (134.9634114 + 477198.8676313 * t + 0.008997 * t * t + t * t * t / 69699 - t * t * t * t / 14712000)
+        anomaly = anomaly * EKSunMoonCalculator.DEG_TO_RAD
+        
+        // Degrees from ascending node
+        var node: Double = (93.2720993 + 483202.0175273 * t - 0.0034029 * t * t - t * t * t / 3526000 + t * t * t * t / 863310000)
+        node = node * EKSunMoonCalculator.DEG_TO_RAD
+        
+        let E: Double = 1.0 - (0.002495 + 7.52E-06 * (t + 1.0)) * (t + 1.0)
+        
+        // Now longitude, with the three main correcting terms of evection,
+        // variation, and equation of year, plus other terms (error<0.01 deg)
+        // P. Duffet's MOON program taken as reference
+        var l: Double = (218.31664563 + 481267.8811958 * t - 0.00146639 * t * t + t * t * t / 540135.03 - t * t * t * t / 65193770.4)
+        l += 6.28875 * sin(anomaly) + 1.274018 * sin(2 * phase - anomaly) + 0.658309 * sin(2 * phase)
+        l += 0.213616 * sin(2 * anomaly) - E * 0.185596 * sin(sanomaly) - 0.114336 * sin(2 * node)
+        l += 0.058793 * sin(2 * phase - 2 * anomaly) + 0.057212 * E * sin(2 * phase - anomaly - sanomaly) + 0.05332 * sin(2 * phase + anomaly)
+        l += 0.045874 * E * sin(2 * phase - sanomaly) + 0.041024 * E * sin(anomaly - sanomaly) - 0.034718 * sin(phase) - E * 0.030465 * sin(sanomaly + anomaly)
+        l += 0.015326 * sin(2 * (phase - node)) - 0.012528 * sin(2 * node + anomaly) - 0.01098 * sin(2 * node - anomaly) + 0.010674 * sin(4 * phase - anomaly)
+        l += 0.010034 * sin(3 * anomaly) + 0.008548 * sin(4 * phase - 2 * anomaly)
+        l += -E * 0.00791 * sin(sanomaly - anomaly + 2 * phase) - E * 0.006783 * sin(2 * phase + sanomaly) + 0.005162 * sin(anomaly - phase) + E * 0.005 * sin(sanomaly + phase)
+        l += 0.003862 * sin(4 * phase) + E * 0.004049 * sin(anomaly - sanomaly + 2 * phase) + 0.003996 * sin(2 * (anomaly + phase)) + 0.003665 * sin(2 * phase - 3 * anomaly)
+        l += E * 2.695E-3 * sin(2 * anomaly - sanomaly) + 2.602E-3 * sin(anomaly - 2*(node+phase))
+        l += E * 2.396E-3 * sin(2*(phase - anomaly) - sanomaly) - 2.349E-3 * sin(anomaly+phase)
+        l += E * E * 2.249E-3 * sin(2*(phase-sanomaly)) - E * 2.125E-3 * sin(2*anomaly+sanomaly)
+        l += -E * E * 2.079E-3 * sin(2*sanomaly) + E * E * 2.059E-3 * sin(2*(phase-sanomaly)-anomaly)
+        l += -1.773E-3 * sin(anomaly+2*(phase-node)) - 1.595E-3 * sin(2*(node+phase))
+        l += E * 1.22E-3 * sin(4*phase-sanomaly-anomaly) - 1.11E-3 * sin(2*(anomaly+node))
+        var longitude: Double = l
+        
+        // Let's add nutation here also
+        let M1: Double = (124.90 - 1934.134 * t + 0.002063 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
+        let M2: Double = (201.11 + 72001.5377 * t + 0.00057 * t * t) * EKSunMoonCalculator.DEG_TO_RAD
+        let d: Double = -0.0047785 * sin(M1) - 0.0003667 * sin(M2)
+        longitude += d
+        
+        // Get accurate Moon age
+        let Psin: Double = 29.530588853
+        moonAge = EKSunMoonCalculator.normalizeRadians((longitude - slongitude) * EKSunMoonCalculator.DEG_TO_RAD) * Psin / EKSunMoonCalculator.TWO_PI
+        
+        // Now Moon parallax
+        var parallax: Double = 0.950724 + 0.051818 * cos(anomaly) + 0.009531 * cos(2 * phase - anomaly)
+        parallax += 0.007843 * cos(2 * phase) + 0.002824 * cos(2 * anomaly)
+        parallax += 0.000857 * cos(2 * phase + anomaly) + E * 0.000533 * cos(2 * phase - sanomaly)
+        parallax += E * 0.000401 * cos(2 * phase - anomaly - sanomaly) + E * 0.00032 * cos(anomaly - sanomaly) - 0.000271 * cos(phase)
+        parallax += -E * 0.000264 * cos(sanomaly + anomaly) - 0.000198 * cos(2 * node - anomaly)
+        parallax += 1.73E-4 * cos(3 * anomaly) + 1.67E-4 * cos(4*phase-anomaly)
+        
+        // So Moon distance in Earth radii is, more or less,
+        let distance: Double = 1.0 / sin(parallax * EKSunMoonCalculator.DEG_TO_RAD)
+        
+        // Ecliptic latitude with nodal phase (error<0.01 deg)
+        l = 5.128189 * sin(node) + 0.280606 * sin(node + anomaly) + 0.277693 * sin(anomaly - node)
+        l += 0.173238 * sin(2 * phase - node) + 0.055413 * sin(2 * phase + node - anomaly)
+        l += 0.046272 * sin(2 * phase - node - anomaly) + 0.032573 * sin(2 * phase + node)
+        l += 0.017198 * sin(2 * anomaly + node) + 0.009267 * sin(2 * phase + anomaly - node)
+        l += 0.008823 * sin(2 * anomaly - node) + E * 0.008247 * sin(2 * phase - sanomaly - node) + 0.004323 * sin(2 * (phase - anomaly) - node)
+        l += 0.0042 * sin(2 * phase + node + anomaly) + E * 0.003372 * sin(node - sanomaly - 2 * phase)
+        l += E * 2.472E-3 * sin(2 * phase + node - sanomaly - anomaly)
+        l += E * 2.222E-3 * sin(2 * phase + node - sanomaly)
+        l += E * 2.072E-3 * sin(2 * phase - node - sanomaly - anomaly)
+        let latitude: Double = l
+        
+        return [longitude, latitude, distance * EKSunMoonCalculator.EARTH_RADIUS / EKSunMoonCalculator.AU, atan(1737.4 / (distance * EKSunMoonCalculator.EARTH_RADIUS))]
     }
     
 }

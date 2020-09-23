@@ -22,14 +22,13 @@ class EKEclipseCalculator {
      * - param eclipseType type of eclipse: Eclipse.SOLAR or Eclipse.LUNAR
      * - param next true to get next eclipse, false to get previous
      */
-    static func getEclipseFor(date: Date, eclipseType:EKEclispeType, next: Bool) -> EKEclipse
-    {
+    static func getEclipseFor(date: Date, eclipseType:EKEclispeType, next: Bool) -> EKEclipse {
         let e = EKEclipse()
         
         let year = EKAstroUtils.dayToYear(date)
         var k = Double(0), T = Double(0), TT = Double(0), TTT = Double(0),
-        F = Double(0), S = Double(0), C = Double(0), M = Double(0),
-        M_ = Double(0), P = Double(0), Tau = Double(0), n = Double(0)
+            F = Double(0), S = Double(0), C = Double(0), M = Double(0),
+            M_ = Double(0), P = Double(0), Tau = Double(0), n = Double(0)
         var eclipseFound = false
         
         // AFFC, p. 32, f. 32.2
@@ -38,8 +37,7 @@ class EKEclipseCalculator {
         
         k = next ? k + Double(eclipseType.rawValue) * 0.5: k - Double(eclipseType.rawValue) * 0.5;
         
-        repeat
-        {
+        repeat {
             // AFFC, p. 128, f. 32.3
             T = k / 1236.85;
             TT = T * T;
@@ -59,10 +57,10 @@ class EKEclipseCalculator {
             // no eclipse exactly, examine other lunation
             if !eclipseFound {
                 if next {
-                  k += 1
+                    k += 1
                 }
                 else {
-                  k -= 1
+                    k -= 1
                 }
                 continue
             }
@@ -72,61 +70,61 @@ class EKEclipseCalculator {
             // mean anomaly of the Sun
             // AFFC, p. 129
             M = 359.2242 + 29.10535608 * k
-            - 0.0000333 * TT
-            - 0.00000347 * TTT;
+                - 0.0000333 * TT
+                - 0.00000347 * TTT;
             M = EKAstroUtils.toRadians(EKAstroUtils.to360(M))
             
             // mean anomaly of the Moon
             // AFFC, p. 129
             M_ = 306.0253 + 385.81691806 * k
-            + 0.0107306 * TT
-            + 0.00001236 * TTT;
+                + 0.0107306 * TT
+                + 0.00001236 * TTT;
             M_ = EKAstroUtils.toRadians(EKAstroUtils.to360(M_))
             
             // time of mean phase
             // AFFC, p. 128, f. 32.1
             var timeByJulianDate: Double = 2415020.75933 + 29.53058868 * k
-            + 0.0001178 * TT
-            - 0.000000155 * TTT
-            + 0.00033 *
-            sin(EKAstroUtils.toRadians(166.56 + 132.87 * T - 0.009173 * TT))
+                + 0.0001178 * TT
+                - 0.000000155 * TTT
+                + 0.00033 *
+                sin(EKAstroUtils.toRadians(166.56 + 132.87 * T - 0.009173 * TT))
             
             // time of maximum eclipse
             timeByJulianDate += (0.1734 - 0.000393 * T) * sin(M)
-            + 0.0021 * sin(M + M)
-            - 0.4068 * sin(M_)
-            + 0.0161 * sin(M_ + M_)
-            - 0.0051 * sin(M + M_)
-            - 0.0074 * sin(M - M_)
-            - 0.0104 * sin(F + F);
+                + 0.0021 * sin(M + M)
+                - 0.4068 * sin(M_)
+                + 0.0161 * sin(M_ + M_)
+                - 0.0051 * sin(M + M_)
+                - 0.0074 * sin(M - M_)
+                - 0.0104 * sin(F + F);
             
             e.maxPhaseDate = EKAstroUtils.gregorianDateFrom(julianTime: timeByJulianDate)
             
             // AFFC, p. 133
             S = 5.19595
-            - 0.0048 * cos(M)
-            + 0.0020 * cos(M + M)
-            - 0.3283 * cos(M_)
-            - 0.0060 * cos(M + M_)
-            + 0.0041 * cos(M - M_);
+                - 0.0048 * cos(M)
+                + 0.0020 * cos(M + M)
+                - 0.3283 * cos(M_)
+                - 0.0060 * cos(M + M_)
+                + 0.0041 * cos(M - M_);
             
             C = 0.2070 * sin(M)
-            + 0.0024 * sin(M + M)
-            - 0.0390 * sin(M_)
-            + 0.0115 * sin(M_ + M_)
-            - 0.0073 * sin(M + M_)
-            - 0.0067 * sin(M - M_)
-            + 0.0117 * sin(F + F);
+                + 0.0024 * sin(M + M)
+                - 0.0390 * sin(M_)
+                + 0.0115 * sin(M_ + M_)
+                - 0.0073 * sin(M + M_)
+                - 0.0067 * sin(M - M_)
+                + 0.0117 * sin(F + F);
             
             e.gamma =
-            S * sin(F) + C * cos(F);
+                S * sin(F) + C * cos(F);
             
             e.u =
-            0.0059
-            + 0.0046 * cos(M)
-            - 0.0182 * cos(M_)
-            + 0.0004 * cos(M_ + M_)
-            - 0.0005 * cos(M + M_);
+                0.0059
+                + 0.0046 * cos(M)
+                - 0.0182 * cos(M_)
+                + 0.0004 * cos(M_ + M_)
+                - 0.0005 * cos(M + M_);
             
             // SOLAR ECLIPSE
             if eclipseType == .solar {
@@ -144,7 +142,7 @@ class EKEclipseCalculator {
                     e.type = .SolarNoncenral
                     e.phase = 1;
                 }
-                    // central eclipse
+                // central eclipse
                 else
                 {
                     e.phase = 1;
@@ -157,7 +155,7 @@ class EKEclipseCalculator {
                     if e.u > 0 && e.u < 0.0047{
                         C = 0.00464 * (1 - e.gamma * e.gamma).squareRoot()
                         if (e.u < C) {
-                          e.type = .SolarCentralAnnularTotal
+                            e.type = .SolarCentralAnnularTotal
                         }
                         else {
                             e.type = .SolarCentralAnnular
@@ -170,7 +168,7 @@ class EKEclipseCalculator {
                     e.type = .SolarPartial
                     e.phase = (1.5432 + e.u - fabs(e.gamma)) / (0.5461 + e.u + e.u);
                 }
-            
+                
                 // LUNAR ECLIPSE
             } else {
                 e.rho = 1.2847 + e.u;

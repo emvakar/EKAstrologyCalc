@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EKAstroUtils {
+final class EKAstroUtils {
 
     static func isLeap(year: Int) -> Bool {
         if year < 1582 && year % 4 == 0 {
@@ -41,11 +41,7 @@ class EKAstroUtils {
             fatalError("Can't unwrap date components")
         }
 
-        let dayOfYear = EKAstroUtils.dayOfYear(
-            year: year,
-            month: month,
-            day: day
-        )
+        let dayOfYear = EKAstroUtils.dayOfYear(year: year, month: month, day: day)
 
         return Double(year) + Double(dayOfYear) / 365.2425;
     }

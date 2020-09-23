@@ -42,7 +42,7 @@ public class EKEclipse {
     public var phase:Double = 0
     
     /** Type of eclipse */
-    public var type:EclipseType = .undefined
+    public var type: EclipseType = .undefined
     
     /** Minimal distance between:
      a) solar eclipse: center of Moon shadow axis and Earth center;
