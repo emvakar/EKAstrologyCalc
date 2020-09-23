@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EKMoonZodiacSignCalculatorProtocol {
+public protocol EKMoonZodiacSignCalculatorProtocol {
     
     func getMoonZodicaSign(date: Date) -> EKMoonZodiacSign
     
