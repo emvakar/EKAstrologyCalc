@@ -13,7 +13,7 @@ import ESDateHelper
 public class EKAstrologyCalc {
 
     /// Location
-    private var location: CLLocation
+    private let location: CLLocation
     
     private let moonAgeCalculator: EKMoonAgeCalculatorProtocol  = EKMoonAgeCalculator()
     
@@ -36,10 +36,12 @@ public class EKAstrologyCalc {
     /// - Parameter date: current date
     /// - Returns: Astrology model
     public func getInfo(date: Date) -> EKAstrologyModel {
+        
         let phase = moonPhaseCalculator.getMoonPhase(date: date)
 
         let trajectory = moontrajectoryCalculator.getMoonTrajectory(date: date)
         let moonModels = getMoonModels(date: date)
+        
         let eclipses = [
             EKEclipseCalculator.getEclipseFor(date: date, eclipseType: .lunar, next: false),
             EKEclipseCalculator.getEclipseFor(date: date, eclipseType: .lunar, next: true)
@@ -57,6 +59,7 @@ public class EKAstrologyCalc {
         )
         return astrologyModel
     }
+    
 }
 
 // MARK: - Private
