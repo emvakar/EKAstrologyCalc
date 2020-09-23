@@ -12,8 +12,8 @@ import Foundation
 class EKEclipseCalculator {
     
     enum EKEclispeType: Int {
-        case Solar = 0
-        case Lunar = 1
+        case solar = 0
+        case lunar = 1
     }
     
     /**
@@ -129,7 +129,7 @@ class EKEclipseCalculator {
             - 0.0005 * cos(M + M_);
             
             // SOLAR ECLIPSE
-            if eclipseType == .Solar {
+            if eclipseType == .solar {
                 // eclipse is not observable from the Earth
                 if fabs(e.gamma) > 1.5432 + e.u {
                     eclipseFound = false;

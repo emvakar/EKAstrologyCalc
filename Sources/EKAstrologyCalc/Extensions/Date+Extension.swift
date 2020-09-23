@@ -10,6 +10,20 @@ import ESDateHelper
 
 extension Date {
     
+    ///Получить начало дня -- например 01.01.1970 23:59:59
+    var startOfDate: Date {
+        return Calendar.current.startOfDay(for: self)
+    }
+    
+    ///Получить конец дня -- например 01.01.1970 00:00:00
+    var endOfDate: Date? {
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        let endDate = Calendar.current.date(byAdding: components, to: self.startOfDate)
+        return endDate
+    }
+    
     // Extended functionality to get milliseconds from 1970 to present time
     public var millisecondsSince1970: Int {
         return Int((self.timeIntervalSince1970 * 1000.0).rounded())
