@@ -20,6 +20,7 @@ Get moon phase by Date and Location
 - [ ] get zodiac sign set time
 - [ ] get mercury status and times
 - [x] get eclipse times (begin, duration, finish)
+- [ ] create UI for calendar
 
 ### Support EKAstrologyCalc development by giving a ⭐️
 
