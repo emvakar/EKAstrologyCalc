@@ -41,7 +41,10 @@ public class EKAstrologyModel {
     
     public let illumination: EKIllumination?
 
-    init(date: Date, location: CLLocation, trajectory: EKMoonTrajectory, phase: EKMoonPhase, moonModels: [EKMoonModel], lunarEclipses: [EKEclipse], illumination: EKIllumination?) {
+    public let sunModel: EKSunMoonModel?
+    public let moonModel: EKSunMoonModel?
+
+    init(date: Date, location: CLLocation, trajectory: EKMoonTrajectory, phase: EKMoonPhase, moonModels: [EKMoonModel], lunarEclipses: [EKEclipse], illumination: EKIllumination?, sunModel: EKSunMoonModel?, moonModel: EKSunMoonModel?) {
         self.date = date
         self.location = location
         self.trajectory = trajectory
@@ -50,5 +53,7 @@ public class EKAstrologyModel {
         self.previousLunarEclipse = lunarEclipses[0]
         self.nextLunarEclipse = lunarEclipses[1]
         self.illumination = illumination
+        self.sunModel = sunModel
+        self.moonModel = moonModel
     }
 }

@@ -24,7 +24,6 @@ public class EKAstrologyCalc {
     private lazy var moonPhaseCalculator: EKMoonPhaseCalculatorProtocol = EKMoonPhaseCalculator(moonAgeCalculator: moonAgeCalculator)
     
     private lazy var moontrajectoryCalculator: EKMoonTrajectoryCalculatorProtocol = EKMoonTrajectoryCalculator(moonAgeCalculator: moonAgeCalculator)
-    
 
     // MARK: - Init
     
@@ -48,6 +47,11 @@ public class EKAstrologyCalc {
         ]
         
         let illumination = try? EKSunMoonCalculator(date: date, location: location).getMoonIllumination(date: date)
+
+        let sunModel = EKSunCalculator(date: date, location: location)?.getSolar()
+
+        let moonModel = getMoonRiseSet(date: date)
+
         let astrologyModel = EKAstrologyModel(
             date: date,
             location: location,
@@ -55,8 +59,11 @@ public class EKAstrologyCalc {
             phase: phase,
             moonModels: moonModels,
             lunarEclipses: eclipses,
-            illumination: illumination
+            illumination: illumination,
+            sunModel: sunModel,
+            moonModel: moonModel
         )
+
         return astrologyModel
     }
     
@@ -65,6 +72,13 @@ public class EKAstrologyCalc {
 // MARK: - Private
 
 extension EKAstrologyCalc {
+
+    private func getMoonRiseSet(date: Date) -> EKSunMoonModel? {
+        let moonRise = try? moonRiseSetCalculator.getMoonRiseDay(date: date).get()
+        let moonSet = try? moonRiseSetCalculator.getMoonSetDay(date: date).get()
+        let moonModel = EKSunMoonModel(rise: moonRise, set: moonSet)
+        return moonModel
+    }
 
     // Получить модели лунного дня для текущего человеческого дня
     private func getMoonModels(date: Date) -> [EKMoonModel] {

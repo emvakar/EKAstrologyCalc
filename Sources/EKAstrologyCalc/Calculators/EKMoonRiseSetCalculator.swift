@@ -13,7 +13,9 @@ public protocol EKMoonRiseSetCalculatorProtocol {
     
     func getMoonRise(date: Date) -> Result<Date, Error>
     func getMoonSet(date: Date) -> Result<Date, Error>
-    
+
+    func getMoonRiseDay(date: Date) -> Result<Date, Error>
+    func getMoonSetDay(date: Date) -> Result<Date, Error>
 }
 
 public final class EKMoonRiseSetCalculator {
@@ -41,6 +43,16 @@ extension EKMoonRiseSetCalculator: EKMoonRiseSetCalculatorProtocol {
     
     ///Получить заход луны
     public func getMoonSet(date: Date) -> Result<Date, Error> {
+        return getMoonRiseOrSet(date: date, isRise: false)
+    }
+
+    ///Получить восход луны
+    public func getMoonRiseDay(date: Date) -> Result<Date, Error> {
+        return getMoonRiseOrSet(date: date, isRise: true)
+    }
+
+    ///Получить заход луны
+    public func getMoonSetDay(date: Date) -> Result<Date, Error> {
         return getMoonRiseOrSet(date: date, isRise: false)
     }
     
