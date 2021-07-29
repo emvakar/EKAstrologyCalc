@@ -12,9 +12,8 @@ import ESDateHelper
 /// Calculator
 public class EKAstrologyCalc {
 
-    /// Location
-    private let location: CLLocation
-    
+    var location: CLLocation!
+
     private let moonAgeCalculator: EKMoonAgeCalculatorProtocol  = EKMoonAgeCalculator()
     
     private let moonZodiaSignCalculator: EKMoonZodiacSignCalculatorProtocol = EKMoonZodiacSignCalculator()
@@ -27,14 +26,13 @@ public class EKAstrologyCalc {
 
     // MARK: - Init
     
-    public init(location: CLLocation) {
-        self.location = location
-    }
+    public init() { }
 
     /// get information by date
     /// - Parameter date: current date
     /// - Returns: Astrology model
-    public func getInfo(date: Date) -> EKAstrologyModel {
+    public func getInfo(date: Date, location: CLLocation) -> EKAstrologyModel {
+        self.location = location
         
         let phase = moonPhaseCalculator.getMoonPhase(date: date)
 
@@ -45,12 +43,30 @@ public class EKAstrologyCalc {
             EKEclipseCalculator.getEclipseFor(date: date, eclipseType: .lunar, next: false),
             EKEclipseCalculator.getEclipseFor(date: date, eclipseType: .lunar, next: true)
         ]
-        
-        let illumination = try? EKSunMoonCalculator(date: date, location: location).getMoonIllumination(date: date)
+
+        let sunMoonCalc = try? EKSunMoonCalculator(date: date, location: location)
+        sunMoonCalc?.calcSunAndMoon()
+
+        let illumination = sunMoonCalc?.getMoonIllumination(date: date)
 
         let sunModel = EKSunCalculator(date: date, location: location)?.getSolar()
-
         let moonModel = getMoonRiseSet(date: date)
+
+        let sunInfo = EKInfoModel(sunRiseSet: sunModel,
+                                  moonRiseSet: moonModel,
+                                  sunAz: sunMoonCalc?.sunAz,
+                                  sunEl: sunMoonCalc?.sunEl,
+                                  sunTransit: sunMoonCalc?.sunTransit,
+                                  sunTransitElev: sunMoonCalc?.sunTransitElev,
+                                  sunDist: sunMoonCalc?.sunDist)
+
+        let moonInfo = EKInfoModel(moonRiseSet: moonModel,
+                                   moonAz: sunMoonCalc?.moonAz,
+                                   moonEl: sunMoonCalc?.moonEl,
+                                   moonTransit: sunMoonCalc?.moonTransit,
+                                   moonAge: sunMoonCalc?.moonAge,
+                                   moonTransitElev: sunMoonCalc?.moonTransitElev,
+                                   moonDist: sunMoonCalc?.moonDist)
 
         let astrologyModel = EKAstrologyModel(
             date: date,
@@ -60,8 +76,8 @@ public class EKAstrologyCalc {
             moonModels: moonModels,
             lunarEclipses: eclipses,
             illumination: illumination,
-            sunModel: sunModel,
-            moonModel: moonModel
+            sunInfo: sunInfo,
+            moonInfo: moonInfo
         )
 
         return astrologyModel
@@ -73,10 +89,10 @@ public class EKAstrologyCalc {
 
 extension EKAstrologyCalc {
 
-    private func getMoonRiseSet(date: Date) -> EKSunMoonModel? {
+    private func getMoonRiseSet(date: Date) -> EKRiseSetModel? {
         let moonRise = try? moonRiseSetCalculator.getMoonRiseDay(date: date).get()
         let moonSet = try? moonRiseSetCalculator.getMoonSetDay(date: date).get()
-        let moonModel = EKSunMoonModel(rise: moonRise, set: moonSet)
+        let moonModel = EKRiseSetModel(rise: moonRise, set: moonSet)
         return moonModel
     }
 

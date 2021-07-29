@@ -1,13 +1,13 @@
 //
 //  EKSunModel.swift
-//  EKSunModel
+//  EKAstrologyCalc
 //
 //  Created by Emil Karimov on 28.07.2021.
 //
 
 import Foundation
 
-public class EKSunMoonModel {
+public class EKRiseSetModel {
 
     /// восход солнца
     public var rise: Date?

@@ -17,7 +17,7 @@ public struct EKSunCalculator {
     /// The date to generate sunrise / sunset times for
     fileprivate(set) var date: Date
     
-    fileprivate(set) var solar: EKSunMoonModel?
+    fileprivate(set) var solar: EKRiseSetModel?
     
     // MARK: Init
     
@@ -40,15 +40,15 @@ public struct EKSunCalculator {
     /// - Note: Can return `nil` objects if sunrise / sunset does not occur on that day.
     public mutating func calculate() {
 
-        let solar = EKSunMoonModel(
+        let solar = EKRiseSetModel(
             rise: calculate(.sunrise, for: date, and: .official),
             set: calculate(.sunset, for: date, and: .official)
         )
         self.solar = solar
     }
 
-    public func getSolar() -> EKSunMoonModel {
-        let solar = EKSunMoonModel(
+    public func getSolar() -> EKRiseSetModel {
+        let solar = EKRiseSetModel(
             rise: calculate(.sunrise, for: date, and: .official),
             set: calculate(.sunset, for: date, and: .official)
             )
