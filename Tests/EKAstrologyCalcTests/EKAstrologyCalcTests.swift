@@ -18,8 +18,8 @@ final class EKAstrologyCalcTests: XCTestCase {
     
     private let testedDate = Date(fromString: "2021-07-28T04:18+03:00", format: .isoDateTime)!
     private let location = CLLocation(latitude: 55.751244, longitude: 37.618423) // Moscow location
-    private lazy var manager = EKAstrologyCalc(location: location)
-    private lazy var astroModel = manager.getInfo(date: testedDate)
+    private lazy var manager = EKAstrologyCalc()
+    private lazy var astroModel = manager.getInfo(date: testedDate, location: location)
     
     func test_case_01() {
         XCTAssertTrue(astroModel.date == testedDate)
@@ -46,7 +46,7 @@ final class EKAstrologyCalcTests: XCTestCase {
         var infos = [EKAstrologyModel]()
         guard let startYear = Date().startOfYear?.adjust(.hour, offset: 3) else { XCTFail("date must be"); return }
         for i in 0..<364 {
-            let info = manager.getInfo(date: startYear.adjust(.day, offset: i))
+            let info = manager.getInfo(date: startYear.adjust(.day, offset: i), location: location)
             infos.append(info)
         }
     }
@@ -71,14 +71,15 @@ final class EKAstrologyCalcTests: XCTestCase {
 
         let randomFailedDate = Date(fromString: "2022-07-28T20:44:30+03:00", format: .isoDateTimeSec)!
 
-        XCTAssertTrue(astroModel.moonModel != nil)
-        XCTAssertTrue(astroModel.moonModel?.rise == moonRiseWillBe)
-        XCTAssertTrue(astroModel.moonModel?.set == moonSetWillBe)
+        XCTAssertTrue(astroModel.moonInfo != nil)
+        XCTAssertTrue(astroModel.sunInfo != nil)
+        XCTAssertTrue(astroModel.moonInfo?.moonRiseSet?.rise == moonRiseWillBe)
+        XCTAssertTrue(astroModel.moonInfo?.moonRiseSet?.set == moonSetWillBe)
 
-        XCTAssertTrue(astroModel.sunModel?.rise == sunRiseWillBe)
-        XCTAssertTrue(astroModel.sunModel?.set == sunSetWillBe)
+        XCTAssertTrue(astroModel.sunInfo?.sunRiseSet?.rise == sunRiseWillBe)
+        XCTAssertTrue(astroModel.sunInfo?.sunRiseSet?.set == sunSetWillBe)
 
-        XCTAssertFalse(astroModel.sunModel?.rise == randomFailedDate)
+        XCTAssertFalse(astroModel.sunInfo?.sunRiseSet?.rise == randomFailedDate)
 
     }
 }

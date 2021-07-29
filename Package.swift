@@ -1,11 +1,16 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "EKAstrologyCalc",
-    platforms: [.iOS(.v11), .macOS(.v10_12)],
+    platforms: [
+        .iOS(.v11),
+        .macOS(.v10_12),
+        .tvOS(.v11),
+        .watchOS(.v5),
+    ],
     products: [
         .library(name: "EKAstrologyCalc", targets: ["EKAstrologyCalc"]),
     ],
