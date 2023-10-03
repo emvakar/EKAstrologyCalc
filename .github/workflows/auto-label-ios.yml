@@ -1,0 +1,25 @@
+name: Auto Label
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  auto-label:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Add label to issue
+      uses: actions/github-script@v5
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const issueNumber = context.issue.number;
+          const repo = context.repo;
+          const labelToAdd = "server";
+
+          await github.rest.issues.addLabels({
+            owner: repo.owner,
+            repo: repo.repo,
+            issue_number: issueNumber,
+            labels: [labelToAdd],
+          });

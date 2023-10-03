@@ -1,0 +1,29 @@
+name: Tests
+
+on: 
+  push:
+    branches:
+      - develop
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+      - '**/*.gitignore'
+      - '**/*.eslintrc.json'
+      - '**/*.dockerignore'
+      # - '.github/**'
+      
+  workflow_dispatch:
+
+env:
+  BUILD_BRANCH: ${{ github.ref_name }}
+  GIT_TERMINAL_PROMPT: 1
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: swift build -v
+      - name: Run tests
+        run: swift test -v

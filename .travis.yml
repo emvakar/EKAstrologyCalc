@@ -1,7 +1,0 @@
-language: swift
-osx_image: xcode11.4
-notifications:
-  slack: eskaria:RRTsJOW40z95SajyTLBy7lxy
-script:
-  - swift build
-  - swift test
