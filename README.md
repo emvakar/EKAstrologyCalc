@@ -1,4 +1,4 @@
-[![Swift Version](https://img.shields.io/badge/Swift-5.2-green.svg)](https://swift.org) ![Cocoapods](https://img.shields.io/cocoapods/v/EKAstrologyCalc.svg) [![Build Status](https://travis-ci.com/emvakar/AstrologyCalc.svg?branch=master)](https://travis-ci.com/emvakar/EKAstrologyCalc)
+[![Swift Version](https://img.shields.io/badge/Swift-5.9-green.svg)](https://swift.org) ![example event parameter](https://github.com/emvakar/EKAstrologyCalc/actions/workflows/tests.yml/badge.svg?branch=master)
 
 # Astrology Calculator
 This is Moon Calc Framework written on Swift
