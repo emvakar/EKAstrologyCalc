@@ -22,8 +22,11 @@ jobs:
   test:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@main
+        with:
+          swift-version: "5"
       - name: Build
-        run: swift build -v
+        run: swift build
       - name: Run tests
-        run: swift test -v
+        run: swift test
