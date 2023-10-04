@@ -19,7 +19,7 @@ env:
   GIT_TERMINAL_PROMPT: 1
 
 jobs:
-  build:
+  test:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
