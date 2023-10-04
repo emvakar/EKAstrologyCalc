@@ -3,6 +3,8 @@ name: Tests
 on: 
   push:
     branches:
+      - main
+      - master
       - develop
     paths-ignore:
       - '**.md'
