@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "ESDateHelper",
-        "repositoryURL": "https://github.com/ESKARIA/ESDateHelper.git",
-        "state": {
-          "branch": null,
-          "revision": "c6c6af34536f3afd3996b6a922f66e2bea0479ab",
-          "version": "1.1.0"
-        }
+  "pins" : [
+    {
+      "identity" : "esdatehelper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ESKARIA/ESDateHelper.git",
+      "state" : {
+        "revision" : "6a1fedbbfc0a7ac1a8137d89fbcae0f9bf4e1ff3",
+        "version" : "1.1.1"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }
