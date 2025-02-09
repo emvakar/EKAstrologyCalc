@@ -4,9 +4,9 @@ import ESDateHelper
 
 @testable import EKAstrologyCalc
 
-final class EKAstrologyCalcTests: XCTestCase {
+final class EKAstrologyCalcTests: XCTestCase, @unchecked Sendable {
     
-    static var allTests = [
+    static let allTests = [
         ("test_case_1", test_case_1),
         ("test_case_2", test_case_2),
         ("test_case_3", test_case_3),

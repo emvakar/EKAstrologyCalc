@@ -8,30 +8,41 @@
 
 import Foundation
 
-/// Модель лунного дня
-///
-/// - age: Int - лунный день
-/// - sign: EKMoonZodiacSign - лунный знак зодиака
-/// - begin: Date? - начало лунного дня
-/// - finish: Date? - окончание лунного дня
+/// Модель, представляющая информацию о лунном дне.
 public class EKMoonModel {
 
-    /// лунный день
+    /// Лунный день (возраст луны в днях)
     public var age: Int
 
-    /// лунный знак зодиака
+    /// Лунный знак зодиака
     public var sign: EKMoonZodiacSign
 
-    /// восход луны
+    /// Время начала текущего лунного дня
     public var begin: Date?
 
-    /// заход луны
+    /// Время окончания текущего лунного дня
     public var finish: Date?
 
-    public init(age: Int, sign: EKMoonZodiacSign, begin: Date?, finish: Date?) {
+    /// Время восхода луны
+    public var rise: Date?
+
+    /// Время захода луны
+    public var set: Date?
+
+    /// Инициализация модели лунного дня
+    /// - Parameters:
+    ///   - age: Возраст луны в днях
+    ///   - sign: Лунный знак зодиака
+    ///   - begin: Дата и время начала лунного дня
+    ///   - finish: Дата и время окончания лунного дня
+    ///   - rise: Дата и время восхода луны
+    ///   - set: Дата и время захода луны
+    public init(age: Int, sign: EKMoonZodiacSign, begin: Date?, finish: Date?, rise: Date?, set: Date?) {
         self.age = age
         self.sign = sign
         self.begin = begin
         self.finish = finish
+        self.rise = rise
+        self.set = set
     }
 }
