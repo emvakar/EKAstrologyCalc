@@ -3,6 +3,7 @@
 📅 Astrology Calculator for Moon Phases, Zodiac Signs & More  
 🛠 Swift-based astronomical calculations for iOS, macOS & tvOS  
 
+![Swift Version](https://img.shields.io/badge/Swift-6.0-green.svg)
 ![GitHub stars](https://img.shields.io/github/stars/emvakar/EKAstrologyCalc?style=flat-square)
 ![GitHub forks](https://img.shields.io/github/forks/emvakar/EKAstrologyCalc?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/emvakar/EKAstrologyCalc?style=flat-square)
