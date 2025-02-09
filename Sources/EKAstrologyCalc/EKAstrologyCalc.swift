@@ -59,7 +59,7 @@ public class EKAstrologyCalc {
         )
         return astrologyModel
     }
-    
+
 }
 
 // MARK: - Private
@@ -86,7 +86,7 @@ extension EKAstrologyCalc {
         if ages.count < 1 {
             return []
         } else if ages.count == 1 {
-            let model = EKMoonModel(age: ages[0], sign: zodiacSignEnd, begin: prevMoonRise, finish: nextMoonRise)
+            let model = EKMoonModel(age: ages[0], sign: zodiacSignEnd, begin: prevMoonRise, finish: nextMoonRise, rise: moonRise, set: moonSet)
             return [model]
         } else if ages.count == 2 {
 
@@ -94,8 +94,8 @@ extension EKAstrologyCalc {
                 nextMoonRise = try? moonRiseSetCalculator.getMoonRise(date: endDate).get()
             }
 
-            let model1 = EKMoonModel(age: ages[0], sign: zodiacSignStart, begin: prevMoonRise, finish: moonRise)
-            let model2 = EKMoonModel(age: ages[1], sign: zodiacSignEnd, begin: moonRise, finish: nextMoonRise)
+            let model1 = EKMoonModel(age: ages[0], sign: zodiacSignStart, begin: prevMoonRise, finish: moonRise, rise: moonRise, set: moonSet)
+            let model2 = EKMoonModel(age: ages[1], sign: zodiacSignEnd, begin: moonRise, finish: nextMoonRise, rise: moonRise, set: moonSet)
             return [model1, model2]
         } else if ages.count == 3 {
             if (moonSet?.timeIntervalSince1970 ?? 0) < (nextMoonRise?.timeIntervalSince1970 ?? 0) && (moonSet?.timeIntervalSince1970 ?? 0) > (moonRise?.timeIntervalSince1970 ?? 0) {
@@ -103,9 +103,9 @@ extension EKAstrologyCalc {
             }
 
             let middleZodiacSign = (zodiacSignStart == zodiacSignEnd) ? zodiacSignStart : zodiacSignEnd
-            let model1 = EKMoonModel(age: ages[0], sign: zodiacSignStart, begin: prevMoonRise, finish: moonRise)
-            let model2 = EKMoonModel(age: ages[1], sign: middleZodiacSign, begin: moonRise, finish: moonSet)
-            let model3 = EKMoonModel(age: ages[2], sign: zodiacSignEnd, begin: moonSet, finish: nextMoonRise)
+            let model1 = EKMoonModel(age: ages[0], sign: zodiacSignStart, begin: prevMoonRise, finish: moonRise, rise: moonRise, set: moonSet)
+            let model2 = EKMoonModel(age: ages[1], sign: middleZodiacSign, begin: moonRise, finish: moonSet, rise: moonRise, set: moonSet)
+            let model3 = EKMoonModel(age: ages[2], sign: zodiacSignEnd, begin: moonSet, finish: nextMoonRise, rise: moonRise, set: moonSet)
             return [model1, model2, model3]
         } else {
             return []
